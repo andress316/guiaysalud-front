@@ -1,0 +1,41 @@
+/* Import Flowbite styles */
+@import 'flowbite/dist/flowbite.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@layer utilities {
+  .animation-pause {
+    animation-play-state: paused;
+  }
+}
+
+
+/* Siempre activo el scrollbar en guías */
+@layer components {
+  .scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 13px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #f7f4ed;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #c7c7c7;
+    border-radius: 100vh;
+    border: 1px solid #ffffff;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #222058;
+  }
+}

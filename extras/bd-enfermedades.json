@@ -1,0 +1,178 @@
+[
+{
+    "nombre": "Cáncer de Pulmón",
+    "tipo": "cancer-pulmon",
+    "descripcion":"El cáncer de cabeza y cuello es un grupo de cánceres que se desarrollan en la región de la cabeza y el cuello, que incluye la cavidad oral, garganta (faringe y laringe), nariz, senos paranasales y glándulas salivales. La mayoría de estos cánceres son carcinomas de células escamosas y suelen estar asociados con el consumo de tabaco, alcohol y el virus del papiloma humano (VPH).",
+    "sintomas":[""],
+    "etapas":[""],
+    "tratamiento":[""]
+  },
+{
+  "nombre": "Cáncer de Cabeza y Cuello",
+  "tipo": "cancer-cabeza-cuello",
+  "descripcion":"El cáncer de cabeza y cuello es un grupo de cánceres que se desarrollan en la región de la cabeza y el cuello, que incluye la cavidad oral, garganta (faringe y laringe), nariz, senos paranasales y glándulas salivales. La mayoría de estos cánceres son carcinomas de células escamosas y suelen estar asociados con el consumo de tabaco, alcohol y el virus del papiloma humano (VPH).",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "Cáncer de Cérvix",
+  "tipo": "cancer-cervix",
+  "descripcion":"El cáncer de cérvix o cáncer cervical se desarrolla en las células del cuello uterino, la parte inferior del útero que conecta con la vagina. Su principal causa es la infección persistente por el virus del papiloma humano (VPH), un virus de transmisión sexual. Es un cáncer prevenible mediante la vacunación contra el VPH y se puede detectar de forma temprana a través de la citología o prueba de Papanicolaou.",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "Cáncer de Colorrectal",
+  "tipo": "cancer-colorrectal",
+  "descripcion":"El cáncer colorrectal es un tipo de cáncer que se origina en el colon o el recto, partes del intestino grueso. Comienza como pólipos o crecimientos anormales en el revestimiento intestinal, que con el tiempo pueden volverse malignos. Factores de riesgo incluyen la edad, dieta poco saludable, antecedentes familiares y enfermedades como la colitis ulcerosa. Se puede prevenir con cribados regulares como la colonoscopia.",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "Cáncer de Endometrio",
+  "tipo": "cancer-endometrio",
+  "descripcion":"El cáncer de endometrio es un tipo de cáncer que se origina en el revestimiento interno del útero, llamado endometrio. Es el tipo más común de cáncer uterino y generalmente afecta a mujeres después de la menopausia. Los factores de riesgo incluyen la obesidad, desequilibrios hormonales y el uso prolongado de estrógenos sin progestina. Los síntomas suelen incluir sangrado vaginal anormal.",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "Cáncer de Endometrio",
+  "tipo": "cancer-endometrio",
+  "descripcion":"El cáncer de endometrio es un tipo de cáncer que se origina en el revestimiento interno del útero, llamado endometrio. Es el tipo más común de cáncer uterino y generalmente afecta a mujeres después de la menopausia. Los factores de riesgo incluyen la obesidad, desequilibrios hormonales y el uso prolongado de estrógenos sin progestina. Los síntomas suelen incluir sangrado vaginal anormal.",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "Cáncer de Esófago",
+  "tipo": "cancer-esofago",
+  "descripcion":"El cáncer de esófago se desarrolla en el esófago, el tubo que conecta la garganta con el estómago. Los dos tipos principales son el carcinoma de células escamosas y el adenocarcinoma. Los factores de riesgo incluyen el consumo excesivo de alcohol, tabaco, reflujo ácido crónico y la obesidad. Los síntomas comunes incluyen dificultad para tragar, pérdida de peso y dolor en el pecho.",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "Cáncer de GIST",
+  "tipo": "cancer-gist",
+  "descripcion":"El cáncer de esófago se desarrolla en el esófago, el tubo que conecta la garganta con el estómago. Los dos tipos principales son el carcinoma de células escamosas y el adenocarcinoma. Los factores de riesgo incluyen el consumo excesivo de alcohol, tabaco, reflujo ácido crónico y la obesidad. Los síntomas comunes incluyen dificultad para tragar, pérdida de peso y dolor en el pecho.",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "Cáncer de Hígado",
+  "tipo": "cancer-higado",
+  "descripcion":"El cáncer de hígado es una enfermedad en la que se forman células malignas en los tejidos del hígado. El tipo más común es el carcinoma hepatocelular, que suele estar asociado con enfermedades hepáticas crónicas como la cirrosis, infecciones por hepatitis B o C, y el consumo excesivo de alcohol. Los síntomas incluyen pérdida de peso, dolor abdominal y coloración amarillenta de la piel (ictericia).",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "Hepatocarcinoma",
+  "tipo": "cancer-hepatocarcinoma",
+  "descripcion":"El hepatocarcinoma o carcinoma hepatocelular es el tipo más común de cáncer de hígado, que se origina en los hepatocitos, las principales células del hígado. Suele estar relacionado con factores de riesgo como la cirrosis, hepatitis B o C y el consumo excesivo de alcohol. Los síntomas incluyen pérdida de peso, dolor abdominal, fatiga e ictericia (coloración amarilla de la piel y ojos).",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "Leucemia",
+  "tipo": "cancer-leucemia",
+  "descripcion":"La leucemia es un tipo de cáncer que afecta la sangre y la médula ósea, donde se produce una proliferación anormal de glóbulos blancos. Esta enfermedad impide que la sangre funcione correctamente, lo que causa fatiga, infecciones frecuentes, moretones o sangrados fáciles y anemia. Existen varios tipos de leucemia, como la leucemia mieloide y la linfocítica, que pueden ser agudas o crónicas.",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "Cáncer de Ovario",
+  "tipo": "cancer-ovario",
+  "descripcion":"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. ",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "Melanoma",
+  "tipo": "cancer-melanoma",
+  "descripcion":"El melanoma es un tipo agresivo de cáncer de piel que se origina en los melanocitos, las células que producen melanina, el pigmento que da color a la piel. Suele estar asociado a la exposición excesiva a los rayos UV del sol o de camas de bronceado. Aparece como un lunar nuevo o un cambio en uno existente. Si no se detecta temprano, puede diseminarse a otros órganos.",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "Cáncer de Próstata",
+  "tipo": "cancer-prostata",
+  "descripcion":"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. ",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "Cáncer Renal",
+  "tipo": "cancer-renal",
+  "descripcion":"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. ",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "Cáncer Testicular",
+  "tipo": "cancer-testicular",
+  "descripcion":"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. ",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "Cáncer de Tiroides",
+  "tipo": "cancer-tiroides",
+  "descripcion":"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. ",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "Cáncer de Urotelio",
+  "tipo": "cancer-urotelio",
+  "descripcion":"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. ",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "Cáncer Úteror",
+  "tipo": "cancer-utero",
+  "descripcion":"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. ",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "Cáncer Vaginal",
+  "tipo": "cancer-vaginal",
+  "descripcion":"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. ",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "Cáncer de Vejiga",
+  "tipo": "cancer-vejiga",
+  "descripcion":"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. ",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "Cáncer Vesicular / Vías Biliares",
+  "tipo": "cancer-viliar-vias-biliares",
+  "descripcion":"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. ",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+}
+]

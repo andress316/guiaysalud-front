@@ -1,0 +1,14 @@
+{
+    "id" : "objectId",
+    "TipoCancer" : "Pulmon",
+    "Subtipo" : "celulasPequeñas",
+    "TipoHistologico" : "adenocarcinoma",
+    "Etapa" : "1",
+    "TerapiaSistemicaPrevia" : true,
+    "MutacionPDL1" : -50,
+    "MutacionEGFR" : true,
+    "MutacionROSE1" : true,
+    "MutacionALK" : true,
+    "MetastasisCerebral" : true,
+    "ECOG" : 1
+}

@@ -1,0 +1,166 @@
+{
+    "enfermedad": {
+        "value": "Pulmon",
+        "isValid": true,
+        "isAnswered": true,
+        "isPending": false,
+        "validationErr": null,
+        "isCorrectIncorrectScreenDisplayed": false,
+        "isLocked": false,
+        "blockName": "dropdown"
+    },
+    "metastasis": {
+        "value": "false",
+        "isValid": true,
+        "isAnswered": true,
+        "isPending": false,
+        "validationErr": null,
+        "isCorrectIncorrectScreenDisplayed": false,
+        "isLocked": false,
+        "blockName": "dropdown"
+    },
+    "cirugia": {
+        "value": "no-cirugia",
+        "isValid": true,
+        "isAnswered": true,
+        "isPending": false,
+        "validationErr": null,
+        "isCorrectIncorrectScreenDisplayed": false,
+        "isLocked": false,
+        "blockName": "dropdown"
+    },
+    "tratamiento": {
+        "value": "no-tratamiento",
+        "isValid": true,
+        "isAnswered": true,
+        "isPending": false,
+        "validationErr": null,
+        "isCorrectIncorrectScreenDisplayed": false,
+        "isLocked": false,
+        "blockName": "dropdown"
+    },
+    "guiasSeleccionadas": {
+        "value": [
+            "info-general"
+        ],
+        "isValid": true,
+        "isAnswered": true,
+        "isPending": false,
+        "validationErr": null,
+        "isCorrectIncorrectScreenDisplayed": false,
+        "isLocked": false,
+        "blockName": "multiple-choice"
+    },
+    "terminos": {
+        "value": "si-acepto",
+        "isValid": true,
+        "isAnswered": true,
+        "isPending": false,
+        "validationErr": null,
+        "isCorrectIncorrectScreenDisplayed": false,
+        "isLocked": false,
+        "blockName": "dropdown"
+    },
+    "sexoDelPaciente": {
+        "value": "masculino",
+        "isValid": true,
+        "isAnswered": true,
+        "isPending": false,
+        "validationErr": null,
+        "isCorrectIncorrectScreenDisplayed": false,
+        "isLocked": false,
+        "blockName": "dropdown"
+    },
+    "regionDelPaciente": {
+        "value": "tarapaca",
+        "isValid": true,
+        "isAnswered": true,
+        "isPending": false,
+        "validationErr": null,
+        "isCorrectIncorrectScreenDisplayed": false,
+        "isLocked": false,
+        "blockName": "dropdown"
+    },
+    "ciudadDelPaciente": {
+        "value": "santiago",
+        "isValid": true,
+        "isAnswered": true,
+        "isPending": false,
+        "validationErr": null,
+        "isCorrectIncorrectScreenDisplayed": false,
+        "isLocked": false,
+        "blockName": "short-text"
+    },
+    "dolorSintomas": {
+        "value": "1",
+        "isValid": true,
+        "isAnswered": true,
+        "isPending": false,
+        "validationErr": null,
+        "isCorrectIncorrectScreenDisplayed": false,
+        "isLocked": false,
+        "blockName": "dropdown"
+    },
+    "descansoEnCama": {
+        "value": "1",
+        "isValid": true,
+        "isAnswered": true,
+        "isPending": false,
+        "validationErr": null,
+        "isCorrectIncorrectScreenDisplayed": false,
+        "isLocked": false,
+        "blockName": "dropdown"
+    },
+    "actividadDiaria": {
+        "value": "1",
+        "isValid": true,
+        "isAnswered": true,
+        "isPending": false,
+        "validationErr": null,
+        "isCorrectIncorrectScreenDisplayed": false,
+        "isLocked": false,
+        "blockName": "dropdown"
+    },
+    "nombre": {
+        "value": "Diego Sánchez",
+        "isValid": true,
+        "isAnswered": true,
+        "isPending": false,
+        "validationErr": null,
+        "isCorrectIncorrectScreenDisplayed": false,
+        "isLocked": false,
+        "blockName": "short-text"
+    },
+    "email": {
+        "value": "a.reyescareaga@gmail.com",
+        "isValid": true,
+        "isAnswered": true,
+        "isPending": false,
+        "validationErr": null,
+        "isCorrectIncorrectScreenDisplayed": false,
+        "isLocked": false,
+        "blockName": "email"
+    },
+    "telefono": {
+        "value": "+56957600539",
+        "isValid": true,
+        "isAnswered": true,
+        "isPending": false,
+        "validationErr": null,
+        "isCorrectIncorrectScreenDisplayed": false,
+        "isLocked": false,
+        "blockName": "short-text"
+    },
+    "tipoDeCancerPulmon": {
+        "value": "celulas-pequeñas",
+        "isValid": true,
+        "isAnswered": true,
+        "isPending": false,
+        "validationErr": null,
+        "isCorrectIncorrectScreenDisplayed": false,
+        "isLocked": false,
+        "blockName": "dropdown"
+    },
+    "password": "CRZKHW8Q",
+    "nombreFormulario": "campañas"
+}
