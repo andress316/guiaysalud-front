@@ -12,6 +12,7 @@ import backgroundImage from '../assets/IMG-1.png'
 const ConfirmarCuenta = () => {
   const [alerta, setAlerta] = useState({})
   const [cuentaConfirmada, setCuentaConfirmada] = useState(false)
+  const [cargando, setCargando] = useState(true)
   const params = useParams();
   const { id } = params
 
@@ -20,8 +21,6 @@ const ConfirmarCuenta = () => {
     const confirmarCuenta = async () => {
       try {
 
-
-        // Problemas con el TOKEN... Importante arreglar
         const tokenAPI = await getAuthToken();
 
         const configWithTokenAPI = {
@@ -32,13 +31,17 @@ const ConfirmarCuenta = () => {
         };
 
         const { data, status } = await axios.post(`https://apiusers.guiaysalud.com/api/users/activate/${id}`, configWithTokenAPI);
-       
+
+        console.log(data)
+        console.log(status)
+
 
         if (data.error === '0405.user' && status === 200) {
           setAlerta({
             msg: 'Usuario NO encontrado',
             error: true
           })
+          setCargando(false)
           setCuentaConfirmada(true)
           return
         }
@@ -47,12 +50,25 @@ const ConfirmarCuenta = () => {
         if (data.error === '0406.user' && status === 200) {
           setAlerta({
             msg: 'El usuario ya está activado',
-            error: true
+            error: false
           })
+          setCargando(false)
           setCuentaConfirmada(true)
           return
         }
 
+        if (data.message === 'Usuario activado exitosamente' && status === 200) {
+          setAlerta({
+            msg: 'Usuario activado exitosamente',
+            error: false
+          })
+          setCargando(false)
+          setCuentaConfirmada(true)
+          return
+        }
+
+
+        setCargando(false)
         setCuentaConfirmada(false)
 
       } catch (error) {
@@ -71,7 +87,7 @@ const ConfirmarCuenta = () => {
 
 
   return (
-  
+
     <>
 
       <div className=" flex justify-center p-5 md:py-24 md:flex-row flex-col items-center md:items-start relative pt-40 h-screen bg-cover" style={{ backgroundImage: `url(${backgroundImage})` }}>
@@ -79,12 +95,17 @@ const ConfirmarCuenta = () => {
           <h2 className="text-4xl font-poppins font-semibold text-white mb-6 text-center animate-pulse">Activar Cuenta</h2>
           {msg && <Alerta alerta={alerta} />}
 
-          <button
-            type="submit"
-            className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 focus:ring-4 focus:ring-purple-300 transition duration-300 transform">
-            {cuentaConfirmada ? <><Link to="/login" className=""> Iniciar Sesión <i className="fas fa-arrow-right ml-2"></i></Link></> : <><Link to="/registrar" className=""> Crear Cuenta <i className="fas fa-arrow-right ml-2"></i></Link></>}
-
-          </button>
+          {cargando ?
+            <button
+              type="submit"
+              className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 focus:ring-4 focus:ring-purple-300 transition duration-300 transform">
+              <Spinner color="purple" aria-label="Default status example" />
+            </button> :
+            <button
+              type="submit"
+              className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 focus:ring-4 focus:ring-purple-300 transition duration-300 transform">
+              {cuentaConfirmada ? <><Link to="/login" className=""> Iniciar Sesión <i className="fas fa-arrow-right ml-2"></i></Link></> : <><Link to="/registrar" className=""> Crear Cuenta <i className="fas fa-arrow-right ml-2"></i></Link></>}
+            </button>}
 
         </div>
       </div>

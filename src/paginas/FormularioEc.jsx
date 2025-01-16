@@ -1,5 +1,7 @@
-import {clienteAxios} from "../config/clienteAxios.jsx";
+import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth.jsx";
 
 import { Form, useFieldAnswer, useCurrentBlock, useFormAnswers } from "@quillforms/renderer-core";
 import "@quillforms/renderer-core/build-style/style.css";
@@ -18,21 +20,35 @@ import seleccionGuias from "../formularios/guiasSeleccion.js";
 import contacto from "../formularios/contacto.js";
 import terminosForm from "../formularios/terminosYcondiciones.js";
 import tratamientoDespues from "../formularios/tratamientoDespues.js";
+import cancerMamaFormulario from "../formularios/cancerDeMama.js";
+import cancerCabezaCuelloFormulario from "../formularios/cancerDeCabezaCuello.js";
+import cancerLinfomaFormulario from "../formularios/cancerLinfoma.js";
+import cancerLeucemiaFormulario from "../formularios/cancerLeucemia.js";
+import metastasisTratamiento from "../formularios/metastasisTratamiento.js";
+
+import getAuthToken from "../utils/AuthToken.js";
 
 
 registerCoreBlocks();
 
 
-const FormularioLoggedUsers = () => {
+const FormularioEc = () => {
+
+  const { auth, setAuth } = useAuth();
 
   const enfermedad = useFieldAnswer("enfermedad");
   const tuvoCirugia = useFieldAnswer("cirugia");
   const recibioTratamiento = useFieldAnswer("tratamiento");
-  const cuandoTratamiento = useFieldAnswer("cirugia-antes-o-despues");
+  const cirugiaAntesODespues = useFieldAnswer("cirugiaAntesODespues");
+  const metastasis = useFieldAnswer("metastasis")
+
 
   const [userEmail, setUserEmail] = useState('')
   const [userPassword, setUserpassword] = useState('')
-  const autoLoginUrl = `/form-auto-login/${userEmail}/${userPassword}`
+  const autoLoginUrl = `/login-usuario/${userEmail}/${userPassword}`
+  const navigate = useNavigate();
+
+  const [cargando, setCargando] = useState(false)
 
 
   const [mensajeFinal, setMensajeFinal] = useState(`En poco recibirás tus guías.\n\nRevisa tu correo y whatsapp.\n\n\n\n
@@ -40,8 +56,22 @@ const FormularioLoggedUsers = () => {
 
 
 
+  if (cargando) return (
+    <>
+      <div className="absolute right-1/2 bottom-1/2 transform translate-x-1/2 translate-y-1/2">
+        <div className="p-4 bg-gradient-to-tr animate-spin from-yellow-500 to-blue-500 via-purple-500 rounded-full">
+          <div className="bg-white rounded-full dark:bg-slate-800">
+            <div className="w-28 h-28 rounded-full"></div>
+          </div>
+        </div>
+      </div>
+      <h1 className="font-poppins font-medium text-slate-500 dark:text-white absolute right-1/2 bottom-1/2 transform translate-x-1/2 translate-y-1/2 animate-pulse">Cargando</h1>
+    </>
+  )
+
+
   return (
-    <div style={{ width: "100%", height: "100vh", background: "red" }}>
+    <div className="h-screen w-screen z-50">
 
       <Form
         formId="1"
@@ -49,19 +79,20 @@ const FormularioLoggedUsers = () => {
           FormMessages: {
             block: {
               dropdown: {
-                placeholder: "Carajo"
+                placeholder: "Bienvenido"
               }
             }
           },
-          blocks: [
+          blocks:  [
+
 
             // Sección 1: Pantalla de bienvenida
             {
               name: "welcome-screen",
               id: "bienvenida",
               attributes: {
-                label: `Recibe tu guía para el cáncer acá.`,
-                description: "Edúcate con nuestras guías para pacientes",
+                label: `Accede a tratamientos de última generación.`,
+                description: "Te ayudamos a realizar una búsqueda de estudios clínicos para tu condición.",
                 attachment: {
                   type: "image",
                   url:
@@ -77,13 +108,20 @@ const FormularioLoggedUsers = () => {
 
             // Sección 3: Formularios de tipo de cáncer
             ...(enfermedad?.includes("otro") ? otroTipoDeCancerForm : []),
+            ...(enfermedad?.includes("cancer-cabeza-cuello") ? cancerCabezaCuelloFormulario : []),
             ...(enfermedad?.includes("cancer-pulmon") ? cancerPulmonFormulario : []),
+            ...(enfermedad?.includes("cancer-mama") ? cancerMamaFormulario : []),
+            ...(enfermedad?.includes("cancer-linfoma") ? cancerLinfomaFormulario : []),
+            ...(enfermedad?.includes("cancer-leucemia") ? cancerLeucemiaFormulario : []),
 
             // Sección 4: datos Generales
             datosGeneralesFormulario,
 
+
             // Sección 5: Estado del paciente
             metastasisForm,
+            ...(metastasis?.includes("true") ? metastasisTratamiento : []),
+
 
             // Sección 6: Cirugía
             {
@@ -143,8 +181,11 @@ const FormularioLoggedUsers = () => {
             },
 
             ...(recibioTratamiento?.includes("si") ? tratamientos : []),
-            ...(cuandoTratamiento?.includes("despues") ? tratamientoDespues : []),
-
+            ...(recibioTratamiento?.includes("si") && cirugiaAntesODespues?.includes("despues") ? tratamientoDespues : []),
+            // ...(recibioTratamiento?.includes("si") && tuvoCirugia?.includes("si") ? tratamientoDespues : []),
+            
+            
+            
             // Sección 8: ECOG
             ecogForm,
 
@@ -159,10 +200,8 @@ const FormularioLoggedUsers = () => {
               }
             },
 
-            // Sección 10: Selección de guías
-            seleccionGuias,
 
-            // Sección 11: Mensaje
+            // Sección 10: Mensaje
             {
               name: "statement",
               id: "mensaje2",
@@ -173,10 +212,11 @@ const FormularioLoggedUsers = () => {
               }
             },
 
-            // Sección 12: datos de contacto
+
+            // Sección 11: datos de contacto
             contacto,
 
-            // Sección 13: Términos y condiciones
+            // Sección 12: Términos y condiciones
             terminosForm
 
           ],
@@ -217,7 +257,7 @@ const FormularioLoggedUsers = () => {
             'label.errorAlert.email': 'Email inválido',
             'block.email.placeholder': 'Escribe acá...',
 
-            'block.defaultThankYouScreen.label': `${mensajeFinal === 'Usuario ya existente.' ? 'Usuario ya existente.\n\nDebes iniciar sesión para crear nuevas guías.\n\n\n\n<a class="renderer-core-button css-ai2jtz" href="/login">Iniciar Sesión<svg class="renderer-core-arrow-icon css-1aucf1m" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"></path></svg></a>' : `En poco recibirás tus guías.\n\nRevisa tu correo y whatsapp.\n\n\n\n<a class="renderer-core-button css-ai2jtz" href=${autoLoginUrl}>Ir a inicio<svg class="renderer-core-arrow-icon css-1aucf1m" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"></path></svg></a>`}`
+            'block.defaultThankYouScreen.label': `En poco recibirás tus guías.\n\nRevisa tu correo y whatsapp.\n\n\n\n<a class="renderer-core-button css-ai2jtz" href="/login">Iniciar Sesión<svg class="renderer-core-arrow-icon css-1aucf1m" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"></path></svg></a>`
           }
         }}
 
@@ -225,20 +265,64 @@ const FormularioLoggedUsers = () => {
         onSubmit={(data, { completeForm, setIsSubmitting }) => {
 
           const datosFormulario = data
+          console.log(datosFormulario)
+
 
           // Agregamos datos necesarios para crear usuarios al objeto de respuestas
-          datosFormulario.answers.password = Math.random().toString(36).toUpperCase().slice(-8)
+          // datosFormulario.answers.password = Math.random().toString(36).toUpperCase().slice(-8)
+          datosFormulario.answers.nombreFormulario = 'Meta EC'
 
           async function submit(info) {
             setUserEmail(info.answers.email.value)
             setUserpassword(info.answers.password)
+            
             try {
-              // Enviamos el formulario al sistema de usuarios, guias y whatsapp
-              const formulario = await clienteAxios.post(`/formularioGuias/cancer`, info.answers)
-              setMensajeFinal(formulario.data.msg)
 
+              const tokenAPI = await getAuthToken(); // Obtén el token usando la función
+
+              // Autorización para peticiones
+              const configWithTokenAPI = {
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: tokenAPI
+                }
+              }
+
+              // Petición enviando formulario para guías
+              const url = 'https://apiguia.guiaysalud.com/api/v2/guides'
+              const formulario = await axios.post(url, info.answers, configWithTokenAPI)
+
+              console.log(formulario)
+              console.log(formulario.data.msg)
+
+              const userNew = formulario.data.userNew
+              console.log('userNew: ', userNew)
+              const email = formulario.data.correo
+              const password = formulario.data.password
+
+
+              if (!password) {
+                await setIsSubmitting(false);
+                await completeForm();
+                setMensajeFinal(true)
+                return
+              }
+
+
+              setCargando(true)
               await setIsSubmitting(false);
               await completeForm();
+
+              // Petición para login
+              const { data } = await axios.post('https://apiusers.guiaysalud.com/api/users/login', { email, password }, configWithTokenAPI);
+
+              const token = data.token.replace('Bearer ', '');
+              localStorage.setItem('tokenUser', token);
+              setAuth(data.user);
+
+              window.open("/app", "_self");
+
+
             } catch (error) {
               console.log(error)
             }
@@ -250,4 +334,4 @@ const FormularioLoggedUsers = () => {
   );
 };
 
-export default FormularioLoggedUsers;
+export default FormularioEc;

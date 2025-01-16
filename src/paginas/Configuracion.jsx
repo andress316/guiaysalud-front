@@ -18,7 +18,7 @@ const Configuracion = () => {
     return (
         <>
             <div className="md:h-screen">
-                <div className='flex px-5 pt-36 md:py-10 flex-col items-center relative'>
+                <div className='flex px-5 pt-36 md:py-10 flex-col items-center'>
                     <h1 className="text-center lg:text-5xl xl:text-6xl text-4xl mb-4 font-black text-indigo-900 dark:text-white lg:pr-5 font-poppins">Configuración de <span className="text-pink-500 dark:text-pink-500">Sistema</span></h1>
                 </div>
 
@@ -44,7 +44,6 @@ const Configuracion = () => {
                 </div>
 
             </div>
-            <Footer />
         </>
 
     )

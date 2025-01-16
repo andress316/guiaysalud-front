@@ -1,40 +1,8 @@
 [
 {
-    "nombre": "Cáncer de Pulmón",
-    "tipo": "cancer-pulmon",
-    "descripcion":"El cáncer de cabeza y cuello es un grupo de cánceres que se desarrollan en la región de la cabeza y el cuello, que incluye la cavidad oral, garganta (faringe y laringe), nariz, senos paranasales y glándulas salivales. La mayoría de estos cánceres son carcinomas de células escamosas y suelen estar asociados con el consumo de tabaco, alcohol y el virus del papiloma humano (VPH).",
-    "sintomas":[""],
-    "etapas":[""],
-    "tratamiento":[""]
-  },
-{
   "nombre": "Cáncer de Cabeza y Cuello",
   "tipo": "cancer-cabeza-cuello",
   "descripcion":"El cáncer de cabeza y cuello es un grupo de cánceres que se desarrollan en la región de la cabeza y el cuello, que incluye la cavidad oral, garganta (faringe y laringe), nariz, senos paranasales y glándulas salivales. La mayoría de estos cánceres son carcinomas de células escamosas y suelen estar asociados con el consumo de tabaco, alcohol y el virus del papiloma humano (VPH).",
-  "sintomas":[""],
-  "etapas":[""],
-  "tratamiento":[""]
-},
-{
-  "nombre": "Cáncer de Cérvix",
-  "tipo": "cancer-cervix",
-  "descripcion":"El cáncer de cérvix o cáncer cervical se desarrolla en las células del cuello uterino, la parte inferior del útero que conecta con la vagina. Su principal causa es la infección persistente por el virus del papiloma humano (VPH), un virus de transmisión sexual. Es un cáncer prevenible mediante la vacunación contra el VPH y se puede detectar de forma temprana a través de la citología o prueba de Papanicolaou.",
-  "sintomas":[""],
-  "etapas":[""],
-  "tratamiento":[""]
-},
-{
-  "nombre": "Cáncer de Colorrectal",
-  "tipo": "cancer-colorrectal",
-  "descripcion":"El cáncer colorrectal es un tipo de cáncer que se origina en el colon o el recto, partes del intestino grueso. Comienza como pólipos o crecimientos anormales en el revestimiento intestinal, que con el tiempo pueden volverse malignos. Factores de riesgo incluyen la edad, dieta poco saludable, antecedentes familiares y enfermedades como la colitis ulcerosa. Se puede prevenir con cribados regulares como la colonoscopia.",
-  "sintomas":[""],
-  "etapas":[""],
-  "tratamiento":[""]
-},
-{
-  "nombre": "Cáncer de Endometrio",
-  "tipo": "cancer-endometrio",
-  "descripcion":"El cáncer de endometrio es un tipo de cáncer que se origina en el revestimiento interno del útero, llamado endometrio. Es el tipo más común de cáncer uterino y generalmente afecta a mujeres después de la menopausia. Los factores de riesgo incluyen la obesidad, desequilibrios hormonales y el uso prolongado de estrógenos sin progestina. Los síntomas suelen incluir sangrado vaginal anormal.",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
@@ -56,9 +24,17 @@
   "tratamiento":[""]
 },
 {
+  "nombre": "Cáncer Gástrico",
+  "tipo": "cancer-gastrico",
+  "descripcion":"El cáncer gástrico, o de estómago, es una enfermedad caracterizada por el crecimiento descontrolado de células malignas en el revestimiento interno del estómago, siendo el adenocarcinoma el tipo más común. Suele estar asociado a factores como la infección por Helicobacter pylori, dietas altas en sal o alimentos procesados, consumo de alcohol y tabaco, predisposición genética y condiciones médicas como gastritis crónica. Sus síntomas iniciales suelen ser inespecíficos, incluyendo indigestión persistente, pérdida de peso y apetito, náuseas o vómitos, lo que dificulta un diagnóstico temprano y favorece su detección en etapas avanzadas.",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
   "nombre": "Cáncer de GIST",
   "tipo": "cancer-gist",
-  "descripcion":"El cáncer de esófago se desarrolla en el esófago, el tubo que conecta la garganta con el estómago. Los dos tipos principales son el carcinoma de células escamosas y el adenocarcinoma. Los factores de riesgo incluyen el consumo excesivo de alcohol, tabaco, reflujo ácido crónico y la obesidad. Los síntomas comunes incluyen dificultad para tragar, pérdida de peso y dolor en el pecho.",
+  "descripcion":"El cáncer GIST (tumor del estroma gastrointestinal) es un tipo raro de tumor que se origina en las células intersticiales de Cajal, responsables de coordinar los movimientos del tracto gastrointestinal. Puede desarrollarse en cualquier parte del sistema digestivo, siendo más común en el estómago y el intestino delgado. Se asocia con mutaciones genéticas como las de los genes KIT o PDGFRA. Los síntomas incluyen dolor abdominal, sangrado gastrointestinal, fatiga y pérdida de peso. Su tratamiento principal es la cirugía, complementada con terapias dirigidas como el imatinib en casos avanzados o metastásicos.",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
@@ -67,14 +43,6 @@
   "nombre": "Cáncer de Hígado",
   "tipo": "cancer-higado",
   "descripcion":"El cáncer de hígado es una enfermedad en la que se forman células malignas en los tejidos del hígado. El tipo más común es el carcinoma hepatocelular, que suele estar asociado con enfermedades hepáticas crónicas como la cirrosis, infecciones por hepatitis B o C, y el consumo excesivo de alcohol. Los síntomas incluyen pérdida de peso, dolor abdominal y coloración amarillenta de la piel (ictericia).",
-  "sintomas":[""],
-  "etapas":[""],
-  "tratamiento":[""]
-},
-{
-  "nombre": "Hepatocarcinoma",
-  "tipo": "cancer-hepatocarcinoma",
-  "descripcion":"El hepatocarcinoma o carcinoma hepatocelular es el tipo más común de cáncer de hígado, que se origina en los hepatocitos, las principales células del hígado. Suele estar relacionado con factores de riesgo como la cirrosis, hepatitis B o C y el consumo excesivo de alcohol. Los síntomas incluyen pérdida de peso, dolor abdominal, fatiga e ictericia (coloración amarilla de la piel y ojos).",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
@@ -90,7 +58,7 @@
 {
   "nombre": "Cáncer de Ovario",
   "tipo": "cancer-ovario",
-  "descripcion":"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. ",
+  "descripcion":"El cáncer de ovario es una enfermedad en la que células malignas crecen en los ovarios, las glándulas responsables de producir óvulos y hormonas femeninas. Es conocido como un “asesino silencioso” porque en sus etapas iniciales suele ser asintomático o presenta síntomas inespecíficos, como hinchazón abdominal, dolor pélvico, cambios en los hábitos urinarios o digestivos, y fatiga. Los factores de riesgo incluyen antecedentes familiares, mutaciones genéticas como BRCA1 y BRCA2, y la edad avanzada. El tratamiento depende de la etapa e incluye cirugía, quimioterapia y, en algunos casos, terapia dirigida o inmunoterapia.",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
@@ -104,9 +72,25 @@
   "tratamiento":[""]
 },
 {
+  "nombre": "Mieloma Múltiple",
+  "tipo": "cancer-mieloma-multiple",
+  "descripcion":"El mieloma múltiple es un tipo de cáncer de la sangre que afecta a las células plasmáticas, un tipo de glóbulo blanco responsable de producir anticuerpos en la médula ósea. En esta enfermedad, las células plasmáticas anormales se multiplican de forma descontrolada, interfiriendo con la producción normal de células sanguíneas y formando tumores en los huesos o tejidos blandos. Los síntomas incluyen dolor óseo, fatiga, infecciones frecuentes, anemia, daño renal y niveles elevados de calcio en sangre. Es una enfermedad crónica que requiere tratamiento especializado, como quimioterapia, terapia dirigida, inmunoterapia y, en algunos casos, trasplante de médula ósea.",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
   "nombre": "Cáncer de Próstata",
   "tipo": "cancer-prostata",
-  "descripcion":"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. ",
+  "descripcion":"El cáncer de próstata es una enfermedad en la que células malignas crecen de forma descontrolada en la próstata, una glándula del sistema reproductor masculino que produce parte del líquido seminal. Es uno de los cánceres más comunes en hombres, especialmente en mayores de 50 años, y puede ser de crecimiento lento o agresivo. Aunque en etapas tempranas puede ser asintomático, síntomas como dificultad para orinar, necesidad frecuente de orinar, sangre en la orina o semen y dolor en la pelvis pueden aparecer en etapas avanzadas. El tratamiento incluye vigilancia activa, cirugía, radioterapia, terapia hormonal y, en algunos casos, quimioterapia o inmunoterapia.",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "Cáncer Pulmón",
+  "tipo": "cancer-pulmon",
+  "descripcion":"El cáncer de próstata es una enfermedad en la que células malignas crecen de forma descontrolada en la próstata, una glándula del sistema reproductor masculino que produce parte del líquido seminal. Es uno de los cánceres más comunes en hombres, especialmente en mayores de 50 años, y puede ser de crecimiento lento o agresivo. Aunque en etapas tempranas puede ser asintomático, síntomas como dificultad para orinar, necesidad frecuente de orinar, sangre en la orina o semen y dolor en la pelvis pueden aparecer en etapas avanzadas. El tratamiento incluye vigilancia activa, cirugía, radioterapia, terapia hormonal y, en algunos casos, quimioterapia o inmunoterapia.",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
@@ -114,47 +98,7 @@
 {
   "nombre": "Cáncer Renal",
   "tipo": "cancer-renal",
-  "descripcion":"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. ",
-  "sintomas":[""],
-  "etapas":[""],
-  "tratamiento":[""]
-},
-{
-  "nombre": "Cáncer Testicular",
-  "tipo": "cancer-testicular",
-  "descripcion":"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. ",
-  "sintomas":[""],
-  "etapas":[""],
-  "tratamiento":[""]
-},
-{
-  "nombre": "Cáncer de Tiroides",
-  "tipo": "cancer-tiroides",
-  "descripcion":"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. ",
-  "sintomas":[""],
-  "etapas":[""],
-  "tratamiento":[""]
-},
-{
-  "nombre": "Cáncer de Urotelio",
-  "tipo": "cancer-urotelio",
-  "descripcion":"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. ",
-  "sintomas":[""],
-  "etapas":[""],
-  "tratamiento":[""]
-},
-{
-  "nombre": "Cáncer Úteror",
-  "tipo": "cancer-utero",
-  "descripcion":"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. ",
-  "sintomas":[""],
-  "etapas":[""],
-  "tratamiento":[""]
-},
-{
-  "nombre": "Cáncer Vaginal",
-  "tipo": "cancer-vaginal",
-  "descripcion":"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. ",
+  "descripcion":"El cáncer renal es una enfermedad en la que células malignas crecen en los riñones, los órganos encargados de filtrar la sangre y producir orina. El tipo más común es el carcinoma de células renales. Factores de riesgo incluyen tabaquismo, obesidad, presión arterial alta, exposición a toxinas y antecedentes familiares. Puede ser asintomático en etapas iniciales, pero en fases avanzadas puede causar sangre en la orina, dolor en la parte baja de la espalda, fatiga, pérdida de peso y fiebre persistente. El tratamiento incluye cirugía, inmunoterapia, terapias dirigidas y, en casos seleccionados, radioterapia o quimioterapia.",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
@@ -162,7 +106,7 @@
 {
   "nombre": "Cáncer de Vejiga",
   "tipo": "cancer-vejiga",
-  "descripcion":"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. ",
+  "descripcion":"El cáncer de vejiga es una enfermedad en la que células malignas crecen en el revestimiento interno de la vejiga, un órgano del sistema urinario que almacena la orina. El tipo más común es el carcinoma urotelial. Los factores de riesgo incluyen el tabaquismo, la exposición a productos químicos, infecciones crónicas de la vejiga y antecedentes familiares. Los síntomas frecuentes incluyen sangre en la orina, necesidad urgente o frecuente de orinar y dolor al orinar. El tratamiento depende de la etapa e incluye cirugía, quimioterapia, inmunoterapia y, en algunos casos, radioterapia.",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
@@ -170,7 +114,7 @@
 {
   "nombre": "Cáncer Vesicular / Vías Biliares",
   "tipo": "cancer-viliar-vias-biliares",
-  "descripcion":"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. ",
+  "descripcion":"El cáncer de vesícula biliar es una enfermedad poco común en la que células malignas crecen en la vesícula biliar, un órgano pequeño debajo del hígado que almacena la bilis. Generalmente, se asocia con factores como cálculos biliares, inflamación crónica de la vesícula, obesidad y antecedentes familiares. Es difícil de diagnosticar en etapas tempranas debido a la falta de síntomas específicos, pero en etapas avanzadas puede causar dolor abdominal, ictericia, náuseas, pérdida de peso y fiebre. El tratamiento incluye cirugía, quimioterapia y, en casos seleccionados, radioterapia.",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]

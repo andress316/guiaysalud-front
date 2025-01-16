@@ -21,6 +21,11 @@ import contacto from "../formularios/contacto.js";
 import terminosForm from "../formularios/terminosYcondiciones.js";
 import tratamientoDespues from "../formularios/tratamientoDespues.js";
 import cancerMamaFormulario from "../formularios/cancerDeMama.js";
+import cancerCabezaCuelloFormulario from "../formularios/cancerDeCabezaCuello.js";
+import cancerLinfomaFormulario from "../formularios/cancerLinfoma.js";
+import cancerLeucemiaFormulario from "../formularios/cancerLeucemia.js";
+import metastasisTratamiento from "../formularios/metastasisTratamiento.js";
+import tratamientosCancer from "../formularios/tratamientosCancer.js";
 
 import getAuthToken from "../utils/AuthToken.js";
 
@@ -35,7 +40,10 @@ const Formulario = () => {
   const enfermedad = useFieldAnswer("enfermedad");
   const tuvoCirugia = useFieldAnswer("cirugia");
   const recibioTratamiento = useFieldAnswer("tratamiento");
-  const cuandoTratamiento = useFieldAnswer("cirugia-antes-o-despues");
+  const cirugiaAntesODespues = useFieldAnswer("cirugiaAntesODespues");
+  const metastasis = useFieldAnswer("metastasis")
+  const tratamientosSeleccionados = useFieldAnswer("tratamientosDelPaciente")
+
 
   const [userEmail, setUserEmail] = useState('')
   const [userPassword, setUserpassword] = useState('')
@@ -85,8 +93,8 @@ const Formulario = () => {
               name: "welcome-screen",
               id: "bienvenida",
               attributes: {
-                label: `Recibe tu guía para el cáncer acá.`,
-                description: "Edúcate con nuestras guías para pacientes",
+                label: `Consejos y guías para pacientes con cáncer.`,
+                description: "Recibe gratis consejos y guías creadas por especialistas.",
                 attachment: {
                   type: "image",
                   url:
@@ -102,14 +110,20 @@ const Formulario = () => {
 
             // Sección 3: Formularios de tipo de cáncer
             ...(enfermedad?.includes("otro") ? otroTipoDeCancerForm : []),
-            ...(enfermedad?.includes("Pulmon") ? cancerPulmonFormulario : []),
-            ...(enfermedad?.includes("Mama") ? cancerMamaFormulario : []),
+            ...(enfermedad?.includes("cancer-cabeza-cuello") ? cancerCabezaCuelloFormulario : []),
+            ...(enfermedad?.includes("cancer-pulmon") ? cancerPulmonFormulario : []),
+            ...(enfermedad?.includes("cancer-mama") ? cancerMamaFormulario : []),
+            ...(enfermedad?.includes("cancer-linfoma") ? cancerLinfomaFormulario : []),
+            ...(enfermedad?.includes("cancer-leucemia") ? cancerLeucemiaFormulario : []),
 
             // Sección 4: datos Generales
             datosGeneralesFormulario,
 
+
             // Sección 5: Estado del paciente
             metastasisForm,
+            ...(metastasis?.includes("true") ? metastasisTratamiento : []),
+
 
             // Sección 6: Cirugía
             {
@@ -169,7 +183,10 @@ const Formulario = () => {
             },
 
             ...(recibioTratamiento?.includes("si") ? tratamientos : []),
-            ...(cuandoTratamiento?.includes("despues") ? tratamientoDespues : []),
+            ...(recibioTratamiento?.includes("si") && cirugiaAntesODespues?.includes("despues") ? tratamientoDespues : []),
+            // ...(recibioTratamiento?.includes("si") && tuvoCirugia?.includes("si") ? tratamientoDespues : []),
+
+
 
             // Sección 8: ECOG
             ecogForm,
@@ -261,15 +278,81 @@ const Formulario = () => {
         // Enviamos el formulario
         onSubmit={(data, { completeForm, setIsSubmitting }) => {
 
-          const datosFormulario = data
+          let datosFormulario = data
+
+          // Creamos respuesta de tratamientos seleccionados
+          const tratamientosSeleccionados = datosFormulario.answers.tratamientosDelPaciente.value
+          console.log(tratamientosSeleccionados)
+          datosFormulario.answers.quimioterapia = { value: '0' }
+          datosFormulario.answers.radioterapia = { value: '0' }
+          datosFormulario.answers.inmunoterapia = { value: '0' }
+          datosFormulario.answers.terapiaHormonal = { value: '0' }
+          datosFormulario.answers.terapiaDirigida = { value: '0' }
+
+
+          const quimioterapia = tratamientosSeleccionados.find(tratamiento => {
+            return tratamiento === 'quimioterapia'
+          })
+
+          if (quimioterapia === 'quimioterapia') {
+            datosFormulario.answers.quimioterapia.value = '1'
+          }
+
+          const radioterapia = tratamientosSeleccionados.find(tratamiento => {
+            return tratamiento === 'radioterapia'
+          })
+
+          if (radioterapia === 'radioterapia') {
+            datosFormulario.answers.radioterapia.value = '1'
+          }
+
+          const inmunoterapia = tratamientosSeleccionados.find(tratamiento => {
+            return tratamiento === 'inmunoterapia'
+          })
+
+          if (inmunoterapia === 'inmunoterapia') {
+            datosFormulario.answers.inmunoterapia.value = '1'
+          }
+
+          const terapiaHormonal = tratamientosSeleccionados.find(tratamiento => {
+            return tratamiento === 'terapiaHormonal'
+          })
+
+          if (terapiaHormonal === 'terapiaHormonal') {
+            datosFormulario.answers.terapiaHormonal.value = '1'
+          }
+
+          const terapiaDirigida = tratamientosSeleccionados.find(tratamiento => {
+            return tratamiento === 'terapiaDirigida'
+          })
+
+          if (terapiaDirigida === 'terapiaDirigida') {
+            datosFormulario.answers.terapiaDirigida.value = '1'
+          }
+
+
+
+          console.log(datosFormulario)
+
+
 
           // Agregamos datos necesarios para crear usuarios al objeto de respuestas
-          datosFormulario.answers.password = Math.random().toString(36).toUpperCase().slice(-8)
-          datosFormulario.answers.nombreFormulario = 'campañas'
+          // datosFormulario.answers.password = Math.random().toString(36).toUpperCase().slice(-8)
+          datosFormulario.answers.nombreFormulario = 'Meta Guías'
 
           async function submit(info) {
+
             setUserEmail(info.answers.email.value)
             setUserpassword(info.answers.password)
+
+
+
+
+
+
+
+
+
             try {
 
               const tokenAPI = await getAuthToken(); // Obtén el token usando la función
@@ -283,8 +366,8 @@ const Formulario = () => {
               }
 
               // Petición enviando formulario para guías
-              const url = 'https://apiguia.guiaysalud.com/api/v1/guides'
-              const formulario = await axios.post(url, info.answers, configWithTokenAPI)
+              const url = 'https://apiguia.guiaysalud.com/api/v2/guides'
+              const formulario = await axios.post(url, info, configWithTokenAPI)
 
               console.log(formulario)
               console.log(formulario.data.msg)
@@ -303,30 +386,18 @@ const Formulario = () => {
               }
 
 
-                setCargando(true)
-                await setIsSubmitting(false);
-                await completeForm();
+              setCargando(true)
+              await setIsSubmitting(false);
+              await completeForm();
 
-                // Petición para login
-                const { data } = await axios.post('https://apiusers.guiaysalud.com/api/users/login', { email, password }, configWithTokenAPI);
+              // Petición para login
+              const { data } = await axios.post('https://apiusers.guiaysalud.com/api/users/login', { email, password }, configWithTokenAPI);
 
-                const token = data.token.replace('Bearer ', '');
-                localStorage.setItem('tokenUser', token);
-                setAuth(data.user);
+              const token = data.token.replace('Bearer ', '');
+              localStorage.setItem('tokenUser', token);
+              setAuth(data.user);
 
-                window.open("/app", "_self");
-
-              
-
-
-
-
-
-
-
-              // http://localhost:5173/formulario-consejos-cancer?nav=false
-
-
+              window.open("/app", "_self");
 
 
             } catch (error) {

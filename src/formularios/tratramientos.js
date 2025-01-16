@@ -27,11 +27,11 @@ const tratamientos = [{
             },
             {
                 label: "Terapia Hormonal",
-                value: "terapia-hormonal"
+                value: "terapiaHormonal"
             },
             {
                 label: "Terapia Dirigida",
-                value: "terapia-dirigida"
+                value: "terapiaDirigida"
             },
             {
                 label: "No estoy seguro/a",

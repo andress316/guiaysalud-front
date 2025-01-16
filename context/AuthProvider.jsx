@@ -8,7 +8,6 @@ const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
 
-    // const modoMantenimiento = useParams()
 
     const [auth, setAuth] = useState({});
     const [cargando, setCargando] = useState(true);
@@ -17,10 +16,14 @@ const AuthProvider = ({ children }) => {
     const [enfermedades, setEnfermedades] = useState([])
     const [avatar, setAvatar] = useState('')
     const [avatarGrande, setAvatarGrande] = useState('')
+    const [mantenimiento, setMantenimiento] = useState(false)
 
     // Utilizamos el useEffect para autorizar a los usuarios con el Token
     //Para eso se consulta la API con el token y se guarda los datos de Auth en el state
     useEffect(() => {
+
+        //Verificamos si estamos en mantenimiento llamada a la
+        
 
         // Verificamos el theme
         const theme = localStorage.getItem('theme')
@@ -109,6 +112,13 @@ const AuthProvider = ({ children }) => {
     }, []);
 
 
+    if(mantenimiento){
+        return (
+            <>
+                Estamos en mantenimeinto
+            </>
+        )
+    }
 
     return (
         <AuthContext.Provider

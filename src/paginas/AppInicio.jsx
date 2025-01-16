@@ -14,12 +14,13 @@ import guiasDeUsuario from "../utils/GuiasBd.js";
 import Alerta from "../components/Alerta.jsx";
 
 
-import { Carousel, Modal, Select, Spinner } from "flowbite-react";
+import { Button, Carousel, Modal, Select, Spinner } from "flowbite-react";
 
 import BDEnfermedades from "../../extras/bd-enfermedades.json"
 
 
 const AppInicio = () => {
+
   const { auth, cargando } = useAuth();
   const [guias, setGuias] = useState([]);
   const [mensaje, setMensaje] = useState('');
@@ -39,11 +40,11 @@ const AppInicio = () => {
   const [openModal, setOpenModal] = useState(false);
   const emailInputRef = useRef < HTMLInputElement > (null);
 
-      //Consultamos si el usuario lleno toda su información
-      if (!auth.enfermedad) {
-        setOpenModal(true)
-      }
 
+  //Consultamos si el usuario lleno toda su información
+  if (!openModal && !auth.enfermedad) {
+    setOpenModal(true)
+  }
 
 
   // calculamos los días y años para formulario de información
@@ -55,7 +56,6 @@ const AppInicio = () => {
     };
   }
   calcularAnos(1924)
-
 
   const dias = []
   function calcularDias(diaInicial, limit) {
@@ -69,14 +69,11 @@ const AppInicio = () => {
 
 
 
-
   useEffect(() => {
-
     //Consultamos el sexo para el avatar
     if (auth.sexo && auth.sexo === "femenino") {
       setAvatarUsuario(avatarUsuarioFemenino)
     }
-
 
 
     //Consulta de guías generadas
@@ -100,10 +97,9 @@ const AppInicio = () => {
         };
 
         const { data } = await axios.get(`https://apiusers.guiaysalud.com/api/users/${auth.id}/guide`, configWithTokenAPI);
-
+        console.log(data)
         // const { data } = await axios.get(`https://apiusers.guiaysalud.com/api/users/${auth.id}`, configWithTokenAPI);
         // console.log(data)
-
 
 
 
@@ -128,6 +124,7 @@ const AppInicio = () => {
           }
         };
 
+
         const { data } = await axios.get(`https://apiusers.guiaysalud.com/api/users/${auth.id}/conversaciones`, configWithTokenAPI);
         console.log(data)
 
@@ -146,6 +143,7 @@ const AppInicio = () => {
       } catch (error) {
         console.error('Error al consultar la conversación en el chat:', error);
       }
+
     };
 
     consultarGuias();
@@ -244,8 +242,9 @@ const AppInicio = () => {
 
   return (
 
-    <>
-      <div className='flex px-5 pt-36 md:py-10 flex-col items-center relative'>
+    <div className="">
+
+      <div className='flex px-5 pt-36 md:py-10 flex-col items-center'>
         <h1 className="text-center lg:text-5xl xl:text-6xl text-4xl mb-4 font-black text-indigo-900 dark:text-white lg:pr-5 font-poppins">Bienvenido <span className="text-pink-500 dark:text-pink-500">{auth.nombre}</span></h1>
         <p className="font-poppins text-indigo-900 dark:text-white dark:text-gray100 md:text-2xl text-xl text-center">Panel de guía y apoyo para <span className="font-extrabold">{auth.enfermedad}</span></p>
         <Link to="/app/configuracion" className="font-poppins font-medium text-md mt-2 text-gray-400 hover:text-pink-500">¿Necesitas cambiar de enfermedad?</Link>
@@ -302,12 +301,7 @@ const AppInicio = () => {
                 value={mensaje}
                 onChange={e => setMensaje(e.target.value)}
               />
-              <button
-                type="submit"
-                className="px-7 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-full transition"
-              >
-                {botonCargando ? <Spinner color="purple" aria-label="Default status example" /> : "Enviar"}
-              </button>
+              <button type="submit" className="block mt-2  px-6 py-2 rounded text-center text-white text-lg font-semibold transition bg-pink-500 hover:hover:bg-pink-600">{botonCargando ? <Spinner color="purple" aria-label="Default status example" /> : "Enviar"}</button>
             </form>
           </div>
         </div>
@@ -341,7 +335,7 @@ const AppInicio = () => {
 
 
           <div className="bg-white dark:bg-slate-700 rounded-xl mb-10 items-start justify-start transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
-            <h1 className="font-poppins font-bold text-indigo-900 dark:text-white dark:text-gray100 md:text-xl text-xl px-9 pt-5 ">Mis guías</h1>
+            <h1 className="font-poppins font-bold text-indigo-900 dark:text-white dark:text-gray100 md:text-xl text-xl px-9 pt-5 ">Guías y consejos</h1>
             <p className="px-9 font-poppins text-gray-400 animate-pulse">Desliza para ver más ⮕</p>
             <div className="flex overflow-x-scroll scrollbar">
               <div className="flex flex-nowrap p-6">
@@ -374,7 +368,7 @@ const AppInicio = () => {
           </div>
           <div className="w-2/3">
             <h1 className="font-poppins font-bold text-indigo-900 dark:text-white dark:text-gray100 md:text-lg text-md">Búsqueda de tratamientos modernos</h1>
-            <Link role='button' href="" target="_blank" className="block  px-3 py-1  w-full text-center text-sm font-poppins font-medium bg-gradient-to-r from-indigo-600 to-indigo-800 hover:from-pink-500 hover:to-purple-700 text-white rounded-full transition mt-2">¡Comenzar!</Link>
+            <Link role='button' to={"/app/estudios-clinicos-form"} target="_self" className="block mt-2  px-6 py-2 rounded text-center text-white text-lg font-semibold transition bg-blue-500 hover:hover:bg-blue-600">¡Comenzar!</Link>
           </div>
         </div>
 
@@ -384,7 +378,7 @@ const AppInicio = () => {
           </div>
           <div className="w-2/3">
             <h1 className="font-poppins font-bold text-indigo-900 dark:text-white dark:text-gray100 md:text-lg text-md">Grupos de apoyo para pacientes</h1>
-            <Link role='button' href="" target="_blank" className="block  px-3 py-1  w-full text-center text-sm font-poppins font-medium bg-gradient-to-r from-indigo-600 to-indigo-800 hover:from-pink-500 hover:to-purple-700 text-white rounded-full transition mt-2">¡Unirme!</Link>
+            <Link role='button' to={"/app/grupos-apoyo"} target="_self" className="block mt-2  px-6 py-2 rounded text-center text-white text-lg font-semibold transition bg-blue-500 hover:hover:bg-blue-600">¡Unirme!</Link>
           </div>
         </div>
 
@@ -506,9 +500,7 @@ const AppInicio = () => {
         </Modal.Body>
       </Modal>
 
-
-      <Footer />
-    </>
+    </div>
 
 
 

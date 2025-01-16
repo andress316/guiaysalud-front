@@ -3,19 +3,16 @@ import { Link, useSearchParams } from 'react-router-dom';
 import logoBlanco from '../assets/guiaysalud-logo-blanco.png'
 
 const Footer = () => {
-  const [searchParams, setSearchParams] = useSearchParams()
-  // Desactivamos el Navbar con parametros url
-  const showActiveNav = searchParams.get('nav') === 'false'
 
 
   return (
-    <div className={`bg-black ${showActiveNav ? "hidden" : ""}`}>
+    <div className={`bg-black ${window.location.pathname.includes("form") ? "hidden" : ""}`}>
         <div className="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
           <Link to="/" className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
             <img className='h-10' src={logoBlanco} alt="" />
           </Link>
           <p className="text-sm text-gray-100 sm:ml-6 sm:mt-0 mt-4">
-            © 2024 Guía y Salud —
+            © 2025 Guía y Salud —
             <Link
               to="/"
               rel="noopener noreferrer"

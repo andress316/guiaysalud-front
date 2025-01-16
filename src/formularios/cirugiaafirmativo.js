@@ -22,7 +22,7 @@ const siTuvoCirugia = [
             "separator": "/",
             required: true,
             label: "Ingresa la fecha de la cirugía.",
-            placeholder:"Día - Mes - Año"
+            placeholder:"Día / Mes / Año"
           }
         },
         {

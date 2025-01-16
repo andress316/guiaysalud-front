@@ -1,0 +1,72 @@
+[
+    {
+        "nombre":"Comunidad Guía y Salud Chile",
+        "enfermedad":"global",
+        "enfermedadDisplay":"Grupo Global",
+        "descripcion":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+        "miembros":30,
+        "status":"activo",
+        "hidden":false,
+        "pais":"Chile",
+        "ciudad":"Todo el país",
+        "link":"",
+        "img":"",
+        "posicion":1
+    },
+    {
+        "nombre":"Pacientes Diagnosticados",
+        "enfermedad":"cancer-pulmon",
+        "enfermedadDisplay":"Cáncer de Pulmón",
+        "descripcion":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+        "miembros":50,
+        "status":"activo",
+        "hidden":false,
+        "pais":"Chile",
+        "ciudad":"Todo el país",
+        "link":"",
+        "img":"",
+        "posicion":3
+    },
+    {
+        "nombre":"Pacientes Diagnosticados",
+        "enfermedad":"cancer-gastrico",
+        "enfermedadDisplay":"Cáncer Gástrico",
+        "descripcion":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+        "miembros":20,
+        "status":"activo",
+        "hidden":false,
+        "pais":"Chile",
+        "ciudad":"Todo el país",
+        "link":"",
+        "img":"",
+        "posicion":5
+    },
+    {
+        "nombre":"Pacientes Diagnosticados",
+        "enfermedad":"cancer-prostata",
+        "enfermedadDisplay":"Cáncer de Próstata",
+        "descripcion":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+        "miembros":20,
+        "status":"activo",
+        "hidden":false,
+        "pais":"Chile",
+        "ciudad":"Todo el país",
+        "link":"",
+        "img":"",
+        "posicion":4
+    },
+    {
+        "nombre":"Pacientes Diagnosticados",
+        "enfermedad":"cancer-ovario",
+        "enfermedadDisplay":"Cáncer de Ovario",
+        "descripcion":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+        "miembros":10,
+        "status":"activo",
+        "hidden":false,
+        "pais":"Chile",
+        "ciudad":"Todo el país",
+        "link":"",
+        "img":"",
+        "posicion":2
+    }
+]

@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 const RutaProtegida = () => {
 
   const { auth, cargando } = useAuth();
+  
   if (cargando) return (
     <>
       <div className="absolute right-1/2 bottom-1/2 transform translate-x-1/2 translate-y-1/2">
@@ -23,12 +24,14 @@ const RutaProtegida = () => {
     <>
       {auth.id ?
         <>
+
           <AuthHeader />
-          <main className="container-fluid mx-auto md:justify-center">
+          <main className="container-fluid justify-center">
             <div>
               <Outlet />
             </div>
           </main>
+          <Footer />
         </> :
         <Navigate to="/login" />}
     </>

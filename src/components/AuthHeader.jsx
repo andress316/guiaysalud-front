@@ -8,6 +8,7 @@ import useAuth from "../../hooks/useAuth";
 const AuthHeader = () => {
   const { darkTheme, setDarkTheme, auth, setAuth } = useAuth()
   const [hamburgerMenu, sethamburgerMenu] = useState(false)
+  const [dropdown, setDropdown] = useState(false)
 
   const handleCerrarSesion = e => {
     e.preventDefault();
@@ -18,7 +19,12 @@ const AuthHeader = () => {
 
   const handleHamburgerMenu = () => {
     sethamburgerMenu(!hamburgerMenu)
+    setDropdown(false)
   };
+
+  const handleDropdown1 = () => {
+    setDropdown(!dropdown)
+  }
 
   const handleDarkTheme = () => {
     setDarkTheme(!darkTheme)
@@ -40,7 +46,7 @@ const AuthHeader = () => {
     <>
 
 
-      <nav className="z-20 bg-white dark:bg-slate-800 fixed md:static w-full md-w-auto boder-b md:border-none shadow-lg md_shadow-none dark:boder-none">
+      <nav className={`z-10 bg-white dark:bg-slate-800 fixed md:static w-full md-w-auto boder-b md:border-none shadow-lg md_shadow-none dark:boder-none transition ${window.location.pathname.includes("form") ? "hidden" : ""}`}>
         <div className="p-6 container mx-auto">
           <div className="flex items-center justify-between">
 
@@ -67,6 +73,28 @@ const AuthHeader = () => {
 
                 <div className="px-6 pt-32 flex flex-col md:flex-row md:items-center gap-3 md:p-0 ">
                   <Link to="/" className="tracking-wide cursor-pointer px-3 py-2 rounded hover:text-white font-semibold text-lg transition hover:bg-pink-500 ">Inicio</Link>
+
+                  <div className="relative z-30">
+
+                    <button onClick={handleDropdown1} className="flex items-center tracking-wide cursor-pointer px-3 py-2 rounded transition hover:bg-yellow-300 hover:text-white hover:fill-white dark:fill-white font-semibold text-lg text-left mr-2">
+                      <div className="mr-2">Guía y Apoyo</div>
+                      <svg height="1rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" /></svg>
+                    </button>
+
+
+                    <div className={`rounded border border-gray-200 bg-white dark:bg-slate-800 dark:border-slate-700 absolute top-[50px] w-[250px] shadow-md ${!dropdown ? 'hidden' : ''}`}>
+                      <Link to={"/app/guias-form"}>
+                        <div className="cursor-pointer hover:bg-gray-300 dark:hover:bg-slate-900 p-4">Consejos personalizados</div>
+                      </Link>
+                      <Link to={"/app/estudios-clinicos-form"}>
+                        <div className="cursor-pointer hover:bg-gray-300 dark:hover:bg-slate-900 p-4">Búsqueda Estudios Clínicos</div>
+                      </Link>
+                      <Link to={"/app/grupos-apoyo"}>
+                        <div className="cursor-pointer hover:bg-gray-300 dark:hover:bg-slate-900 p-4">Grupos de apoyo</div>
+                      </Link>
+
+                    </div>
+                  </div>
                   {/* <Link to="/app/perfil" className="tracking-wide cursor-pointer px-3 py-2 rounded hover:text-white font-semibold text-lg transition hover:bg-yellow-400 ">Mi perfil</Link>
                   <Link to="/app/blog" className="tracking-wide cursor-pointer px-3 py-2 rounded hover:text-white font-semibold text-lg transition hover:bg-indigo-500 ">Blog</Link> */}
 

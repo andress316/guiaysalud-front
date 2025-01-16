@@ -39,11 +39,7 @@ const datosGeneralesFormulario = {
                 {
                   label: "Chile",
                   value: "chile"
-                },
-                {
-                  label: "Argentina",
-                  value: "argentina"
-                },
+                }
               ],
               label: "¿Cuál es el país del paciente?",
               description: "Selecciona el país de residencia.",
