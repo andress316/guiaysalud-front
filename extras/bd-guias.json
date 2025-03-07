@@ -1,0 +1,918 @@
+[
+    {
+        "id": 1,
+        "enfermedad": "cabeza-cuello",
+        "tipoGuia": "info-general",
+        "nombreDisplay": "¿Qué es la enfermedad?",
+        "descripcion": "Descripción general del cáncer de cabeza y cuello para pacientes diagnosticados.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/cabeza-cuello.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 2,
+        "enfermedad": "colorrectal",
+        "tipoGuia": "info-general",
+        "nombreDisplay": "¿Qué es la enfermedad?",
+        "descripcion": "Descripción general del cáncer colorrectal para pacientes diagnosticados.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/colorrectal.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 3,
+        "enfermedad": "endometrio",
+        "tipoGuia": "info-general",
+        "nombreDisplay": "¿Qué es la enfermedad?",
+        "descripcion": "Descripción general del cáncer de endometrio para pacientes diagnosticados.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/endometrio.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 4,
+        "enfermedad": "esofago",
+        "tipoGuia": "info-general",
+        "nombreDisplay": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/esofago.webp",
+        "descripcion": "Descripción general del cáncer de esófago para pacientes diagnosticados.",
+        "img": "https://www.google.com",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 5,
+        "enfermedad": "gastrico",
+        "tipoGuia": "info-general",
+        "nombreDisplay": "¿Qué es la enfermedad?",
+        "descripcion": "Descripción general del cáncer gástrico para pacientes diagnosticados.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/gastrico.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 6,
+        "enfermedad": "gist",
+        "tipoGuia": "info-general",
+        "nombreDisplay": "¿Qué es la enfermedad?",
+        "descripcion": "Descripción general del cáncer GIST para pacientes diagnosticados.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/gist.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 7,
+        "enfermedad": "higado",
+        "tipoGuia": "info-general",
+        "nombreDisplay": "¿Qué es la enfermedad?",
+        "descripcion": "Descripción general del cáncer de hígado para pacientes diagnosticados.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/higado.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 8,
+        "enfermedad": "leucemia",
+        "tipoGuia": "info-general",
+        "nombreDisplay": "¿Qué es la enfermedad?",
+        "descripcion": "Descripción general de la leucemia para pacientes diagnosticados.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/leucemia.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 9,
+        "enfermedad": "linfoma",
+        "tipoGuia": "info-general",
+        "nombreDisplay": "¿Qué es la enfermedad?",
+        "descripcion": "Descripción general de linfoma para pacientes diagnosticados.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/linfoma.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 10,
+        "enfermedad": "mama",
+        "tipoGuia": "info-general",
+        "nombreDisplay": "¿Qué es la enfermedad?",
+        "descripcion": "Descripción general del cáncer de mama para pacientes diagnosticados.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/mama.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 11,
+        "enfermedad": "melanoma",
+        "tipoGuia": "info-general",
+        "nombreDisplay": "¿Qué es la enfermedad?",
+        "descripcion": "Descripción general del melanoma para pacientes diagnosticados.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/melanoma.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 12,
+        "enfermedad": "mieloma-multiple",
+        "tipoGuia": "info-general",
+        "nombreDisplay": "¿Qué es la enfermedad?",
+        "descripcion": "Descripción general del mieloma múltiple para pacientes diagnosticados.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/mieloma.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 13,
+        "enfermedad": "ovario",
+        "tipoGuia": "info-general",
+        "nombreDisplay": "¿Qué es la enfermedad?",
+        "descripcion": "Descripción general del cáncer de ovario para pacientes diagnosticados.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/ovario.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 14,
+        "enfermedad": "prostata",
+        "tipoGuia": "info-general",
+        "nombreDisplay": "¿Qué es la enfermedad?",
+        "descripcion": "Descripción general del cáncer de próstata para pacientes diagnosticados.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/prostata.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 15,
+        "enfermedad": "pancreas",
+        "tipoGuia": "info-general",
+        "nombreDisplay": "¿Qué es el Cáncer de Páncreas?",
+        "descripcion": "Descripción general del cáncer de páncreas para pacientes diagnosticados.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/pancreas.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 16,
+        "enfermedad": "pulmon",
+        "tipoGuia": "info-general",
+        "nombreDisplay": "¿Qué es el Cáncer de Pulmón?",
+        "descripcion": "Descripción general del cáncer de pulmón para pacientes diagnosticados.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/pulmon.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 17,
+        "enfermedad": "renal",
+        "tipoGuia": "info-general",
+        "nombreDisplay": "¿Qué es la enfermedad?",
+        "descripcion": "Descripción general del cáncer renal para pacientes diagnosticados.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/renal.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 18,
+        "enfermedad": "vejiga",
+        "tipoGuia": "info-general",
+        "nombreDisplay": "¿Qué es la enfermedad?",
+        "descripcion": "Descripción general del cáncer de vejiga para pacientes diagnosticados.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/vejiga.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+        "id": 19,
+        "enfermedad": "cabeza-cuello",
+        "tipoGuia": "alimentacion-efectos-secundarios",
+        "nombreDisplay": "Alimentación y Efectos Secundarios",
+        "descripcion": "Consejos de alimentación durante el tratamiento.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/alimentacion.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 20,
+        "enfermedad": "colorrectal",
+        "tipoGuia": "alimentacion-efectos-secundarios",
+        "nombreDisplay": "Alimentación y Efectos Secundarios",
+        "descripcion": "Consejos de alimentación durante el tratamiento.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/alimentacion.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 21,
+        "enfermedad": "endometrio",
+        "tipoGuia": "alimentacion-efectos-secundarios",
+        "nombreDisplay": "Alimentación y Efectos Secundarios",
+        "descripcion": "Consejos de alimentación durante el tratamiento.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/alimentacion.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 22,
+        "enfermedad": "esofago",
+        "tipoGuia": "alimentacion-efectos-secundarios",
+        "nombreDisplay": "Alimentación y Efectos Secundarios",
+        "descripcion": "Consejos de alimentación durante el tratamiento.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/alimentacion.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 23,
+        "enfermedad": "gastrico",
+        "tipoGuia": "alimentacion-efectos-secundarios",
+        "nombreDisplay": "Alimentación y Efectos Secundarios",
+        "descripcion": "Consejos de alimentación durante el tratamiento.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/alimentacion.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 24,
+        "enfermedad": "gist",
+        "tipoGuia": "alimentacion-efectos-secundarios",
+        "nombreDisplay": "Alimentación y Efectos Secundarios",
+        "descripcion": "Consejos de alimentación durante el tratamiento.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/alimentacion.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 25,
+        "enfermedad": "higado",
+        "tipoGuia": "alimentacion-efectos-secundarios",
+        "nombreDisplay": "Alimentación y Efectos Secundarios",
+        "descripcion": "Consejos de alimentación durante el tratamiento.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/alimentacion.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 26,
+        "enfermedad": "leucemia",
+        "tipoGuia": "alimentacion-efectos-secundarios",
+        "nombreDisplay": "Alimentación y Efectos Secundarios",
+        "descripcion": "Consejos de alimentación durante el tratamiento.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/alimentacion.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 27,
+        "enfermedad": "linfoma",
+        "tipoGuia": "alimentacion-efectos-secundarios",
+        "nombreDisplay": "Alimentación y Efectos Secundarios",
+        "descripcion": "Consejos de alimentación durante el tratamiento.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/alimentacion.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 28,
+        "enfermedad": "mama",
+        "tipoGuia": "alimentacion-efectos-secundarios",
+        "nombreDisplay": "Alimentación y Efectos Secundarios",
+        "descripcion": "Consejos de alimentación durante el tratamiento.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/alimentacion.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 29,
+        "enfermedad": "melanoma",
+        "tipoGuia": "alimentacion-efectos-secundarios",
+        "nombreDisplay": "Alimentación y Efectos Secundarios",
+        "descripcion": "Consejos de alimentación durante el tratamiento.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/alimentacion.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 30,
+        "enfermedad": "mieloma-multiple",
+        "tipoGuia": "alimentacion-efectos-secundarios",
+        "nombreDisplay": "Alimentación y Efectos Secundarios",
+        "descripcion": "Consejos de alimentación durante el tratamiento.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/alimentacion.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 31,
+        "enfermedad": "ovario",
+        "tipoGuia": "alimentacion-efectos-secundarios",
+        "nombreDisplay": "Alimentación y Efectos Secundarios",
+        "descripcion": "Consejos de alimentación durante el tratamiento.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/alimentacion.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 32,
+        "enfermedad": "prostata",
+        "tipoGuia": "alimentacion-efectos-secundarios",
+        "nombreDisplay": "Alimentación y Efectos Secundarios",
+        "descripcion": "Consejos de alimentación durante el tratamiento.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/alimentacion.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 33,
+        "enfermedad": "pancreas",
+        "tipoGuia": "alimentacion-efectos-secundarios",
+        "nombreDisplay": "¿QuAlimentación y EfectosSecundariosreas?",
+        "descripcion": "Consejos de alimentación durante el tratamiento.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/alimentacion.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 34,
+        "enfermedad": "pulmon",
+        "tipoGuia": "alimentacion-efectos-secundarios",
+        "nombreDisplay": "Alimentación y Efectos Secundarios",
+        "descripcion": "Consejos de alimentación durante el tratamiento.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/alimentacion.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 35,
+        "enfermedad": "renal",
+        "tipoGuia": "alimentacion-efectos-secundarios",
+        "nombreDisplay": "Alimentación y Efectos Secundarios",
+        "descripcion": "Consejos de alimentación durante el tratamiento.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/alimentacion.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 36,
+        "enfermedad": "vejiga",
+        "tipoGuia": "alimentacion-efectos-secundarios",
+        "nombreDisplay": "Alimentación y Efectos Secundarios",
+        "descripcion": "Consejos de alimentación durante el tratamiento.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/alimentacion.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+        "id": 37,
+        "enfermedad": "cabeza-cuello",
+        "tipoGuia": "salud-mental",
+        "nombreDisplay": "Consejos de Salud Mental",
+        "descripcion": "Pensamientos que debes evitar como paciente.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/salud-mental.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 38,
+        "enfermedad": "colorrectal",
+        "tipoGuia": "salud-mental",
+        "nombreDisplay": "Consejos de Salud Mental",
+        "descripcion": "Pensamientos que debes evitar como paciente.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/salud-mental.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 39,
+        "enfermedad": "endometrio",
+        "tipoGuia": "salud-mental",
+        "nombreDisplay": "Consejos de Salud Mental",
+       "descripcion": "Pensamientos que debes evitar como paciente.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/salud-mental.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 40,
+        "enfermedad": "esofago",
+        "tipoGuia": "salud-mental",
+        "nombreDisplay": "Consejos de Salud Mental",
+        "descripcion": "Pensamientos que debes evitar como paciente.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/salud-mental.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 41,
+        "enfermedad": "gastrico",
+        "tipoGuia": "salud-mental",
+        "nombreDisplay": "Alimentación y EfectosSecundarios",
+        "descripcion": "Pensamientos que debes evitar como paciente.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/salud-mental.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 42,
+        "enfermedad": "gist",
+        "tipoGuia": "salud-mental",
+        "nombreDisplay": "Consejos de Salud Mental",
+        "descripcion": "Pensamientos que debes evitar como paciente.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/salud-mental.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 43,
+        "enfermedad": "higado",
+        "tipoGuia": "salud-mental",
+        "nombreDisplay": "Consejos de Salud Mental",
+        "descripcion": "Pensamientos que debes evitar como paciente.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/salud-mental.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 44,
+        "enfermedad": "leucemia",
+        "tipoGuia": "salud-mental",
+        "nombreDisplay": "Consejos de Salud Mental",
+        "descripcion": "Pensamientos que debes evitar como paciente.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/salud-mental.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 45,
+        "enfermedad": "linfoma",
+        "tipoGuia": "salud-mental",
+        "nombreDisplay": "Consejos de Salud Mental",
+        "descripcion": "Pensamientos que debes evitar como paciente.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/salud-mental.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 46,
+        "enfermedad": "mama",
+        "tipoGuia": "salud-mental",
+        "nombreDisplay": "Consejos de Salud Mental",
+        "descripcion": "Pensamientos que debes evitar como paciente.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/salud-mental.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 47,
+        "enfermedad": "melanoma",
+        "tipoGuia": "salud-mental",
+        "nombreDisplay": "Consejos de Salud Mental",
+        "descripcion": "Pensamientos que debes evitar como paciente.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/salud-mental.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 48,
+        "enfermedad": "mieloma-multiple",
+        "tipoGuia": "salud-mental",
+        "nombreDisplay": "Consejos de Salud Mental",
+        "descripcion": "Pensamientos que debes evitar como paciente.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/salud-mental.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 49,
+        "enfermedad": "ovario",
+        "tipoGuia": "salud-mental",
+        "nombreDisplay": "Consejos de Salud Mental",
+        "descripcion": "Pensamientos que debes evitar como paciente.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/salud-mental.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 50,
+        "enfermedad": "prostata",
+        "tipoGuia": "salud-mental",
+        "nombreDisplay": "Consejos de Salud Mental",
+        "descripcion": "Pensamientos que debes evitar como paciente.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/salud-mental.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 51,
+        "enfermedad": "pancreas",
+        "tipoGuia": "salud-mental",
+        "nombreDisplay": "Consejos de Salud Mental",
+        "descripcion": "Pensamientos que debes evitar como paciente.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/salud-mental.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 52,
+        "enfermedad": "pulmon",
+        "tipoGuia": "salud-mental",
+        "nombreDisplay": "Consejos de Salud Mental",
+        "descripcion": "Pensamientos que debes evitar como paciente.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/salud-mental.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 53,
+        "enfermedad": "renal",
+        "tipoGuia": "salud-mental",
+        "nombreDisplay": "Consejos de Salud Mental",
+        "descripcion": "Pensamientos que debes evitar como paciente.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/salud-mental.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 54,
+        "enfermedad": "vejiga",
+        "tipoGuia": "salud-mental",
+        "nombreDisplay": "Consejos de Salud Mental",
+        "descripcion": "Pensamientos que debes evitar como paciente.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/salud-mental.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+        "id": 55,
+        "enfermedad": "cabeza-cuello",
+        "tipoGuia": "estudios-clinicos",
+        "nombreDisplay": "Tratamientos modernos en Chile",
+        "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 56,
+        "enfermedad": "colorrectal",
+        "tipoGuia": "estudios-clinicos",
+        "nombreDisplay": "Tratamientos modernos en Chile",
+        "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 57,
+        "enfermedad": "endometrio",
+        "tipoGuia": "estudios-clinicos",
+        "nombreDisplay": "Tratamientos modernos en Chile",
+        "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 58,
+        "enfermedad": "esofago",
+        "tipoGuia": "estudios-clinicos",
+        "nombreDisplay": "Tratamientos modernos en Chile",
+        "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 59,
+        "enfermedad": "gastrico",
+        "tipoGuia": "estudios-clinicos",
+        "nombreDisplay": "Tratamientos modernos en Chile",
+        "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 60,
+        "enfermedad": "gist",
+        "tipoGuia": "estudios-clinicos",
+        "nombreDisplay": "Tratamientos modernos en Chile",
+        "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 61,
+        "enfermedad": "higado",
+        "tipoGuia": "estudios-clinicos",
+        "nombreDisplay": "Tratamientos modernos en Chile",
+        "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 62,
+        "enfermedad": "leucemia",
+        "tipoGuia": "estudios-clinicos",
+        "nombreDisplay": "Tratamientos modernos en Chile",
+        "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 63,
+        "enfermedad": "linfoma",
+        "tipoGuia": "estudios-clinicos",
+        "nombreDisplay": "Tratamientos modernos en Chile",
+        "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 64,
+        "enfermedad": "mama",
+        "tipoGuia": "estudios-clinicos",
+        "nombreDisplay": "Tratamientos modernos en Chile",
+        "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 65,
+        "enfermedad": "melanoma",
+        "tipoGuia": "estudios-clinicos",
+        "nombreDisplay": "Tratamientos modernos en Chile",
+        "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 66,
+        "enfermedad": "mieloma-multiple",
+        "tipoGuia": "estudios-clinicos",
+        "nombreDisplay": "Tratamientos modernos en Chile",
+        "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 67,
+        "enfermedad": "ovario",
+        "tipoGuia": "estudios-clinicos",
+        "nombreDisplay": "Tratamientos modernos en Chile",
+        "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 68,
+        "enfermedad": "prostata",
+        "tipoGuia": "estudios-clinicos",
+        "nombreDisplay": "Tratamientos modernos en Chile",
+        "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 69,
+        "enfermedad": "pancreas",
+        "tipoGuia": "estudios-clinicos",
+        "nombreDisplay": "Tratamientos modernos en Chile",
+        "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 70,
+        "enfermedad": "pulmon",
+        "tipoGuia": "estudios-clinicos",
+        "nombreDisplay": "Tratamientos modernos en Chile",
+        "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 71,
+        "enfermedad": "renal",
+        "tipoGuia": "estudios-clinicos",
+        "nombreDisplay": "Tratamientos modernos en Chile",
+        "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 72,
+        "enfermedad": "vejiga",
+        "tipoGuia": "estudios-clinicos",
+        "nombreDisplay": "Tratamientos modernos en Chile",
+        "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    }
+]

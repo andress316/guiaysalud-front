@@ -7,8 +7,12 @@ import { Select, TextInput, Spinner } from "flowbite-react";
 import getAuthToken from '../utils/AuthToken';
 import Alerta from './Alerta';
 import validarTel from '../../helpers/validartel';
+import cambiarNombreEnfermedad from '../../helpers/CambiarNombreEnfermedad';
+import capitalizeString from '../../helpers/CapitalizeString';
 
 import BDEnfermedades from "../../extras/bd-enfermedades.json"
+
+import stringMayusculas from '../../helpers/stringMayusculas';
 
 const ConfiguracionPerfil = () => {
     const [editarPerfil, setEditarPerfil] = useState(false)
@@ -74,7 +78,7 @@ const ConfiguracionPerfil = () => {
 
         // Contruimos el objeto con la nueva info
         const nuevaInfoUsuario = {
-            nombre: nuevoNombre,
+            nombre: stringMayusculas(nuevoNombre),
             enfermedad: nuevaEnfermedad,
             sexo: nuevoSexo,
             fechaNacimiento: `${nuevoDia}/${nuevoMes}/${nuevoAno}`,
@@ -150,11 +154,11 @@ const ConfiguracionPerfil = () => {
                             
                             <div className='mb-5'>
                                 <h3 className='font-poppins'>Condición:</h3>
-                                <h3 className='font-poppins font-semibold text-xl'>{auth.enfermedad ? enfermedad : '-'}</h3>
+                                <h3 className='font-poppins font-semibold text-xl'>{auth.enfermedad ? cambiarNombreEnfermedad(enfermedad) : '-'}</h3>
                             </div>
                             <div className='mb-5'>
                                 <h3 className='font-poppins'>Sexo:</h3>
-                                <h3 className='font-poppins font-semibold text-xl'>{auth.sexo ? sexo : '-'}</h3>
+                                <h3 className='font-poppins font-semibold text-xl'>{auth.sexo ? capitalizeString(sexo) : '-'}</h3>
                             </div>
                             <div className='mb-5'>
                                 <h3 className='font-poppins'>Fecha de nacimiento:</h3>
@@ -196,7 +200,7 @@ const ConfiguracionPerfil = () => {
                                     <div className="mb-2 block">
                                         <h3 className='font-poppins'>Nombre:</h3>
                                     </div>
-                                    <TextInput id="nombre" name="nombre" type="text" sizing="md" placeholder={auth.nombre} value={nuevoNombre} onChange={e => setNuevoNombre(e.target.value)} className='font-poppins' />
+                                    <TextInput id="nombre" name="nombre" type="text" sizing="md" placeholder={auth.nombre} value={nuevoNombre} onChange={e => setNuevoNombre(e.target.value)} />
                                 </div>
 
 
@@ -207,10 +211,10 @@ const ConfiguracionPerfil = () => {
                                         </div>
                                         <Select id="enfermedad" placeholder={auth.enfermedad} onChange={e => setNuevaEnfermedad(e.target.value)}>
                                             <option value="" selected disabled hidden>
-                                                {auth.enfermedad ? auth.enfermedad : 'Seleccionar'}
+                                                {auth.enfermedad ? cambiarNombreEnfermedad(auth.enfermedad) : 'Seleccionar'}
                                             </option>
                                             {BDEnfermedades.length ? (BDEnfermedades.map((enfermedad) => (
-                                                <option value={enfermedad.nombre} >{enfermedad.nombre}</option>
+                                                <option value={enfermedad.nombre} >{cambiarNombreEnfermedad(enfermedad.nombre)}</option>
                                             ))) : 'No has creado ninguna guía aún...'}
                                         </Select>
                                     </div>
@@ -225,7 +229,7 @@ const ConfiguracionPerfil = () => {
                                         </div>
                                         <Select id="sexo" placeholder={auth.sexo} onChange={e => setNuevoSexo(e.target.value)}>
                                             <option value="" selected disabled hidden>
-                                                {auth.sexo ? auth.sexo : 'Seleccionar'}
+                                                {auth.sexo ? capitalizeString(auth.sexo) : 'Seleccionar'}
                                             </option>
                                             <option value="masculino" >Masculino</option>
                                             <option value="femenino" >Femenino</option>

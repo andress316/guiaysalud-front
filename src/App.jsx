@@ -13,6 +13,8 @@ import Perfil from "./paginas/Perfil"
 import Blog from "./paginas/Blog"
 import RutaPublica from "./layouts/RutaPublica"
 import TerminosYcondiciones from "./paginas/TerminosYcondiciones"
+import PoliticasPrivacidad from "./paginas/PoliticasPrivacidad"
+import EliminarDatosUsuario from "./paginas/EliminarDatosUsuario"
 import Configuracion from "./paginas/Configuracion"
 import Nosotros from "./paginas/Nosotros"
 
@@ -37,11 +39,10 @@ function App() {
         <AuthProvider>
           <Routes>
             <Route path="/" element={<RutaPublica />}>
-
               <Route index element={<Inicio />} />
-              
-              
-              <Route path="/terminosycondiciones" element={<TerminosYcondiciones />} />
+              <Route path="/terminos-y-condiciones" element={<TerminosYcondiciones />} />
+              <Route path="/politicas-de-privacidad" element={<PoliticasPrivacidad />} />
+              <Route path="/eliminar-datos" element={<EliminarDatosUsuario />} />
               <Route path="/login" element={<Login />} />
               <Route path="/nosotros" element={<Nosotros />} />
               <Route path="/registrar" element={<Registrar />} />
@@ -50,18 +51,18 @@ function App() {
               <Route path="/confirmar/:id" element={<ConfirmarCuenta />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/login-usuario/:email/:password" element={<FormAutoLogin />} />
-
+              <Route path="/guias-forms" element={<FormularioGuias />} />
               <Route path="/estudios-clinicos-doctores" element={<FormularioDoctores />} />
-              <Route path="/guias-form" element={<FormularioGuias />} />
-              <Route path="/estudios-clinicos-form" element={<FormularioEc/>} />
+              <Route path="/consejos-form" element={<FormularioGuias />} />
+              <Route path="/estudios-clinicos-form" element={<FormularioEc />} />
             </Route>
 
 
             <Route path="/app" element={<RutaProtegida />}>
-          
+
               <Route index element={<AppInicio />} />
               <Route path='/app/configuracion' element={<Configuracion />} />
-              <Route path='/app/guias-form' element={<FormularioGuiasLogged />} />
+              <Route path='/app/consejos-form' element={<FormularioGuiasLogged />} />
               <Route path='/app/estudios-clinicos-form' element={<FormularioEcLogged />} />
               <Route path='/app/grupos-apoyo' element={<GruposApoyo />} />
 

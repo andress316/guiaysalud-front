@@ -3,15 +3,18 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import getAuthToken from "../utils/AuthToken";
-import CardGuia from "../components/CardGuia";
-import Footer from "../components/Footer";
+import CardGuiaCreada from "../components/CardGuia";
+import CardGuiaNoCreada from "../components/CardGuiaNoCreada.jsx";
 import avatarGuiaYSalud from "../assets/avatar-guia-y-salud.png"
-import avatarUsuarioMasculino from "../assets/AVATAR-HOMBRE-02.png"
-import avatarUsuarioFemenino from "../assets/AVATAR-MUJER-02.png"
+import avatarUsuarioMasculino from "../assets/avatar-hombre-02.png"
+import avatarUsuarioFemenino from "../assets/avatar-mujer-02.png"
 import iconoBusquedaTratamiento from "../assets/ICONO-TRATAMIENTOS.png"
 import iconoGrupos from "../assets/ICONO-GRUPOS.png"
-import guiasDeUsuario from "../utils/GuiasBd.js";
+import iconoFundaciones from "../assets/fundaciones.png"
 import Alerta from "../components/Alerta.jsx";
+import bdGuias from "../../extras/bd-guias.json"
+import cambiarNombreEnfermedad from "../../helpers/CambiarNombreEnfermedad.jsx";
+
 
 
 import { Button, Carousel, Modal, Select, Spinner } from "flowbite-react";
@@ -39,6 +42,11 @@ const AppInicio = () => {
 
   const [openModal, setOpenModal] = useState(false);
   const emailInputRef = useRef < HTMLInputElement > (null);
+
+  const [guiasCreadas, setGuiasCreadas] = useState([])
+  const [guiasNoCreadas, setGuiasNoCreadas] = useState([])
+
+
 
 
   //Consultamos si el usuario lleno toda su información
@@ -76,7 +84,12 @@ const AppInicio = () => {
     }
 
 
+    // ==============================
+    // #region Consultar guías de usuario
+    // ==============================
+
     //Consulta de guías generadas
+
     const consultarGuias = async () => {
       const token = localStorage.getItem('token');
       const config = {
@@ -97,11 +110,75 @@ const AppInicio = () => {
         };
 
         const { data } = await axios.get(`https://apiusers.guiaysalud.com/api/users/${auth.id}/guide`, configWithTokenAPI);
-        console.log(data)
-        // const { data } = await axios.get(`https://apiusers.guiaysalud.com/api/users/${auth.id}`, configWithTokenAPI);
-        // console.log(data)
+
+        console.log("data guias:", data)
+        let guiasDeUsuario
+
+        if (data.guias){
+          guiasDeUsuario = data.guias
+        } else {
+          guiasDeUsuario = []
+        }
 
 
+
+        // Consulta guias disponibles por enfermedad del usuario
+        let guiasDisponibles = [];
+        bdGuias.forEach(guia => {
+          if (guia.enfermedad === auth.enfermedad) {
+            guiasDisponibles.push(guia);
+          }
+        });
+
+
+        // Filtramos las guías de la enfermedad
+        let guiasUserEnfermedad = [];
+        guiasDeUsuario.forEach(guia => {
+          if (guia.enfermedad === auth.enfermedad) {
+            guiasUserEnfermedad = [...guiasUserEnfermedad, guia];
+          }
+        });
+
+
+        // Verificamos los valores de los arreglos
+        const compararGuias = (guiasDisp, guiasUsua) => {
+          const faltantes = guiasDisp.filter(guiaDisp =>
+            !guiasUsua.some(guiaUsua => guiaUsua.tipoGuia.includes(guiaDisp.tipoGuia))
+          );
+          return faltantes;
+        };
+
+
+        const valoresFaltantes = compararGuias(guiasDisponibles, guiasUserEnfermedad);
+        setGuiasNoCreadas(valoresFaltantes)
+
+
+
+        // Paso 1: Agrupar los objetos por `tipoGuia`
+        const guiasAgrupadas = guiasUserEnfermedad.reduce((acc, guia) => {
+          const tipo = guia.tipoGuia[0];
+          if (!acc[tipo]) {
+            acc[tipo] = [];
+          }
+          acc[tipo].push(guia);
+          return acc;
+        }, {});
+
+        // Paso 2: Seleccionar el objeto más reciente para cada `tipoGuia`
+        const guiasMasRecientes = Object.values(guiasAgrupadas).map(grupo => {
+          return grupo.reduce((masReciente, guia) => {
+            return new Date(guia.fecha) > new Date(masReciente.fecha) ? guia : masReciente;
+          });
+        });
+
+        // Paso 3: Ordenar el arreglo resultante por `tipoGuia`
+        guiasMasRecientes.sort((a, b) => a.tipoGuia[0].localeCompare(b.tipoGuia[0]));
+        setGuiasCreadas(guiasMasRecientes)
+
+
+        // ==============================
+        // #endregion Consultar guías de usuario
+        // ==============================
 
       } catch (error) {
         console.error('Error al consultar las guías:', error);
@@ -126,7 +203,7 @@ const AppInicio = () => {
 
 
         const { data } = await axios.get(`https://apiusers.guiaysalud.com/api/users/${auth.id}/conversaciones`, configWithTokenAPI);
-        console.log(data)
+        // console.log(data)
 
 
         const formattedData = data.map(msg => [
@@ -227,6 +304,7 @@ const AppInicio = () => {
       const { data } = await axios.put(`https://apiusers.guiaysalud.com/api/users/${auth.id}`, newAuthData, configWithTokenBot)
       setBotonCargando(false)
       setOpenModal(false)
+      window.location.reload();
 
     } catch (error) {
       console.log(error)
@@ -246,7 +324,7 @@ const AppInicio = () => {
 
       <div className='flex px-5 pt-36 md:py-10 flex-col items-center'>
         <h1 className="text-center lg:text-5xl xl:text-6xl text-4xl mb-4 font-black text-indigo-900 dark:text-white lg:pr-5 font-poppins">Bienvenido <span className="text-pink-500 dark:text-pink-500">{auth.nombre}</span></h1>
-        <p className="font-poppins text-indigo-900 dark:text-white dark:text-gray100 md:text-2xl text-xl text-center">Panel de guía y apoyo para <span className="font-extrabold">{auth.enfermedad}</span></p>
+        <p className="font-poppins text-indigo-900 dark:text-white dark:text-gray100 md:text-2xl text-xl text-center">Panel de guía y apoyo para <span className="font-extrabold">{cambiarNombreEnfermedad(auth.enfermedad)}</span></p>
         <Link to="/app/configuracion" className="font-poppins font-medium text-md mt-2 text-gray-400 hover:text-pink-500">¿Necesitas cambiar de enfermedad?</Link>
 
 
@@ -258,7 +336,7 @@ const AppInicio = () => {
 
         {/* Sección Chat */}
         <div className="w-full md:w-1/2 lg:w-1/3 items-center">
-          <div className="flex flex-col h-[80vh] mx-auto overflow-hidden dark:bg-slate-700 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+          <div className="flex flex-col h-[80vh] mx-auto overflow-hidden dark:bg-slate-700 bg-white rounded-xl shadow-lg">
 
             {/* Header del chat */}
             <div className="flex items-center p-4 bg-gradient-to-r from-indigo-800 to-indigo-950 py-5 shadow-lg gap-3">
@@ -297,7 +375,7 @@ const AppInicio = () => {
               <input
                 type="text"
                 placeholder="Escribir mensaje"
-                className="font-poppins flex-1 p-3 rounded-full focus:outline-none focus:ring-2 focus:ring-violet-500 mr-2 bg-gray-100 dark:bg-gray-900 dark:text-white text-slate-700 border-none"
+                className="font-poppins flex-1 p-3 rounded focus:outline-none focus:ring-2 focus:ring-violet-500 mr-2 bg-gray-100 dark:bg-gray-900 dark:text-white text-slate-700 border-none"
                 value={mensaje}
                 onChange={e => setMensaje(e.target.value)}
               />
@@ -323,39 +401,48 @@ const AppInicio = () => {
         <div className="lg:w-2/3 w-full md:w-1/2 mt-5 md:mt-0">
           <div className="flex bg-white dark:bg-slate-700 rounded-xl mb-10 h-44  items-center justify-center transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
             <Carousel slideInterval={5000}>
-              <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" alt="..." />
-              <img src="https://flowbite.com/docs/images/carousel/carousel-2.svg" alt="..." />
-              <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="..." />
-              <img src="https://flowbite.com/docs/images/carousel/carousel-4.svg" alt="..." />
-              <img src="https://flowbite.com/docs/images/carousel/carousel-5.svg" alt="..." />
+              <img src="https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/banner-guia-y-salud.webp" alt="guiaysalud.com síguenos en redes sociales" />
             </Carousel>
           </div>
 
 
 
 
-          <div className="bg-white dark:bg-slate-700 rounded-xl mb-10 items-start justify-start transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+
+
+
+          <div className="bg-white dark:bg-slate-700 rounded-xl mb-10 items-start justify-start shadow-lg">
             <h1 className="font-poppins font-bold text-indigo-900 dark:text-white dark:text-gray100 md:text-xl text-xl px-9 pt-5 ">Guías y consejos</h1>
             <p className="px-9 font-poppins text-gray-400 animate-pulse">Desliza para ver más ⮕</p>
             <div className="flex overflow-x-scroll scrollbar">
               <div className="flex flex-nowrap p-6">
-                {guiasDeUsuario.length ? (guiasDeUsuario.map((guia) => (
-                  <CardGuia
-                    key={guia._id}
-                    nombre={guia.nombre}
-                    guia_nombre_display={guia.guia_nombre_display}
+
+                {
+                (guiasNoCreadas.map((guia) => (
+                  <CardGuiaNoCreada
+                    key={guia.id}
+                    nombre={guia.tipoGuia}
+                    enfermedad={guia.enfermedad}
+                  />)))
+                }
+                {
+                (guiasCreadas.map((guia) => (
+                  <CardGuiaCreada
+                    key={guia.id}
+                    nombre={guia.tipoGuia}
+                    enfermedad={guia.enfermedad}
                     fecha={guia.fecha}
-                    url={guia.url}
-                    url_preview_img={guia.url_preview_img}
-                    created={guia.created}
-                    descripcion={guia.descripcion}
-                  />
-                ))) : 'No has creado ninguna guía aún...'}
+                    url={guia.pdf}
+                    created={guia.fecha}
+
+                  />)))
+                }
+                
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div >
 
 
 
@@ -368,7 +455,7 @@ const AppInicio = () => {
           </div>
           <div className="w-2/3">
             <h1 className="font-poppins font-bold text-indigo-900 dark:text-white dark:text-gray100 md:text-lg text-md">Búsqueda de tratamientos modernos</h1>
-            <Link role='button' to={"/app/estudios-clinicos-form"} target="_self" className="block mt-2  px-6 py-2 rounded text-center text-white text-lg font-semibold transition bg-blue-500 hover:hover:bg-blue-600">¡Comenzar!</Link>
+            <Link role='button' to={"/app/estudios-clinicos-form"} target="_blank" className="block mt-2  px-6 py-2 rounded text-center text-white text-lg font-semibold transition bg-blue-500 hover:hover:bg-blue-600">¡Comenzar!</Link>
           </div>
         </div>
 
@@ -382,7 +469,17 @@ const AppInicio = () => {
           </div>
         </div>
 
-        <div className="flex bg-white dark:bg-slate-700 rounded-xl mb-5 h-44 w-full md:w-1/2 items-center justify-center transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">Acá van alianzas</div>
+        <div className="flex bg-white dark:bg-slate-700 rounded-xl mb-5 h-44 w-full md:w-1/2 items-center justify-start p-5 gap-3 transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+          <div className="w-1/3">
+            <img src={iconoFundaciones} alt="" />
+          </div>
+          <div className="w-2/3">
+            <h1 className="font-poppins font-bold text-indigo-900 dark:text-white dark:text-gray100 md:text-lg text-md">Fundaciones y agrupaciones</h1>
+            <Link role='button' to={"/app/grupos-apoyo"} target="_self" className="block mt-2  px-6 py-2 rounded text-center text-white text-lg font-semibold transition bg-blue-500 hover:hover:bg-blue-600">¡Unirme!</Link>
+          </div>
+        </div>
+
+        {/* <div className="flex bg-white dark:bg-slate-700 rounded-xl mb-5 h-44 w-full md:w-1/2 items-center justify-center transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">Acá van alianzas</div> */}
       </div>
 
 
@@ -411,7 +508,7 @@ const AppInicio = () => {
                         <option value="" selected disabled hidden>Seleccionar</option>
 
                         {BDEnfermedades.length ? (BDEnfermedades.map((enfermedad) => (
-                          <option value={enfermedad.tipo} >{enfermedad.nombre}</option>
+                          <option value={enfermedad.nombre} >{cambiarNombreEnfermedad(enfermedad.nombre)}</option>
                         ))) : <option value="" >Seleccionar</option>}
                       </Select>
                     </div>
@@ -500,7 +597,7 @@ const AppInicio = () => {
         </Modal.Body>
       </Modal>
 
-    </div>
+    </div >
 
 
 

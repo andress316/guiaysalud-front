@@ -1,26 +1,28 @@
+import imgMetastasis from "../assets/form-cabebzaycuello.webp";
+
 const metastasisForm = {
     name: "dropdown",
     id: "metastasis",
     attributes: {
         attachment: {
             type: "image",
-            url:
-                "https://quillforms.com/wp-content/uploads/2022/10/ludovic-migneault-B9YbNbaemMI-unsplash_50-scaled.jpeg"
+            url: imgMetastasis
         },
         choices: [
             {
                 label: "Si",
-                value: "true"
+                value: "1"
             },
             {
                 label: "No",
-                value: "false"
+                value: "0"
             },
         ],
         label: "¿El cáncer se ha extendido a otros órganos?",
         nextBtnLabel: "Siguiente",
         layout: "split-right",
-        required: true
+        required: true,
+        description:"Las células cancerosas se diseminan desde el tumor original hacia otras partes del cuerpo, formando nuevos tumores en órganos o tejidos distantes, a través de la sangre o el sistema linfático."
     }
 }
 

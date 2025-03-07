@@ -1,3 +1,5 @@
+import imgLeucemia from "../assets/form-leucemia.webp";
+
 const cancerLeucemiaFormulario = [
     {
       name: "dropdown",
@@ -5,8 +7,7 @@ const cancerLeucemiaFormulario = [
       attributes: {
         attachment: {
           type: "image",
-          url:
-            "https://quillforms.com/wp-content/uploads/2022/10/ludovic-migneault-B9YbNbaemMI-unsplash_50-scaled.jpeg"
+          url: imgLeucemia
         },
         choices: [
           {
@@ -25,11 +26,16 @@ const cancerLeucemiaFormulario = [
             label: "Otro",
             value: "otro"
           },
+          {
+            label: "No lo sé",
+            value: "noSe"
+          },
         ],
         label: "¿Qué tipo de Leucemia es?",
         nextBtnLabel: "Siguiente",
+        required: true,
         layout: "split-right",
-        required: true
+        description:"Si no recuerdas o no estás seguro del tipo de luecemia selecciona 'No lo sé'."
       }
     }
   

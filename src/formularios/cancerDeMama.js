@@ -1,3 +1,5 @@
+import imgMama from "../assets/form-mama.webp";
+
 const cancerMamaFormulario = [
     {
       name: "dropdown",
@@ -5,8 +7,7 @@ const cancerMamaFormulario = [
       attributes: {
         attachment: {
           type: "image",
-          url:
-            "https://quillforms.com/wp-content/uploads/2022/10/ludovic-migneault-B9YbNbaemMI-unsplash_50-scaled.jpeg"
+          url: imgMama
         },
         choices: [
           {
@@ -18,14 +19,15 @@ const cancerMamaFormulario = [
             value: "her2-"
           },
           {
-            label: "Mama triple -",
+            label: "Mama Triple Negativo",
             value: "triplenegativo"
           },
         ],
         label: "¿Selecciona tu tipo de cáncer de mama?",
         nextBtnLabel: "Siguiente",
+        required: true,
         layout: "split-right",
-        required: true
+        description:"Selecciona el tipo de cáncer de mama con el que fuiste diagnosticada (HER2+, HER2-, Triple Negativo)"
       }
     }
   

@@ -12,7 +12,7 @@ const Footer = () => {
             <img className='h-10' src={logoBlanco} alt="" />
           </Link>
           <p className="text-sm text-gray-100 sm:ml-6 sm:mt-0 mt-4">
-            © 2025 Guía y Salud —
+            © 2025 Guía y Salud - UMA PROJECT SPA —
             <Link
               to="/"
               rel="noopener noreferrer"
@@ -23,7 +23,7 @@ const Footer = () => {
             </Link>
           </p>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-            <Link to="/" className="text-gray-200" target="_blank">
+            <Link to="https://www.facebook.com/guiaysalud" className="text-gray-200" target="_blank">
               <svg
                 fill="currentColor"
                 strokeLinecap="round"
@@ -36,7 +36,7 @@ const Footer = () => {
               </svg>
             </Link>
 
-            <Link to="/" className="ml-3 text-gray-200" target="_blank">
+            {/* <Link to="/" className="ml-3 text-gray-200" target="_blank">
               <svg
                 fill="currentColor"
                 strokeLinecap="round"
@@ -47,9 +47,9 @@ const Footer = () => {
               >
                 <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
               </svg>
-            </Link>
+            </Link> */}
 
-            <Link to="/" className="ml-3 text-gray-200" target="_blank">
+            <Link to="https://www.instagram.com/guiaysalud" className="ml-3 text-gray-200" target="_blank">
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -64,7 +64,7 @@ const Footer = () => {
               </svg>
             </Link>
 
-            <Link to="/" className="ml-3 text-gray-200" target="_blank">
+            {/* <Link to="/" className="ml-3 text-gray-200" target="_blank">
               <svg
                 fill="currentColor"
                 stroke="currentColor"
@@ -80,7 +80,7 @@ const Footer = () => {
                 />
                 <circle cx={4} cy={4} r={2} stroke="none" />
               </svg>
-            </Link>
+            </Link> */}
           </span>
         </div>
       </div>

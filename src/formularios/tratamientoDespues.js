@@ -42,33 +42,3 @@ const tratamientoDespues =[
 ]
 
 export default tratamientoDespues
-
-
-// const tratamientoDespues =[
-//     {
-//         name: "dropdown",
-//         id: "cirugiaDespuesDeTratamiento",
-//         attributes: {
-//             choices: [
-//                 {
-//                     label: "Fue primero el tratamiento y después la operación",
-//                     value: "tratamientoOperacion"
-//                 },
-//                 {
-//                     label: "Fue la operación y menos de 6 meses después empezó tratamiento",
-//                     value: "operacionTratamiento>6meses"
-//                 },
-//                 {
-//                     label: "Fue la operación y más de  6 meses después empezó tratamiento",
-//                     value: "operacionTratamiento<6meses"
-//                 }
-//             ],
-//             label: "El tratamiento fue 6 meses antes o 6 meses después de la operación?",
-//             nextBtnLabel: "Siguiente",
-//             description:"Seleccione un periodo de tiempo aproximado.",
-//             required: true
-//         }
-//     }
-// ]
-
-// export default tratamientoDespues

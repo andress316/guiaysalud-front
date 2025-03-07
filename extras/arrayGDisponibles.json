@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "enfermedad": "pulmon",
+        "tipoGuia": "info-general",
+        "descripcion": "Descripción general del cáncer de pulmón para pacientes diagnosticados",
+        "img": "https://www.google.com",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 2,
+        "enfermedad": "pulmon",
+        "tipoGuia": "nutricion",
+        "descripcion": "Consejos de nutrición para pacientes con cáncer de pulmón.",
+        "img": "https://www.google.com",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 5,
+        "enfermedad": "pulmon",
+        "tipoGuia": "legal",
+        "descripcion": "Consejos legales para la cobertura de tratamiento en pacientes con cáncer de pulmón.",
+        "img": "https://www.google.com",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 6,
+        "enfermedad": "pulmon",
+        "tipoGuia": "comunicacion",
+        "descripcion": "Consejos para la comunicación familiar en pacientes con cáncer de pulmón.",
+        "img": "https://www.google.com",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 7,
+        "enfermedad": "pulmon",
+        "tipoGuia": "test",
+        "descripcion": "Consejos para la comunicación familiar en pacientes con cáncer de pulmón.",
+        "img": "https://www.google.com",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    }
+]

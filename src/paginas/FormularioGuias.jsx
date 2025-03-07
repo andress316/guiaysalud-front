@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth.jsx";
 
 import { Form, useFieldAnswer, useCurrentBlock, useFormAnswers } from "@quillforms/renderer-core";
@@ -17,7 +17,6 @@ import siTuvoCirugia from "../formularios/cirugiaafirmativo.js";
 import tratamientos from "../formularios/tratramientos.js";
 import ecogForm from "../formularios/ecog.js";
 import seleccionGuias from "../formularios/guiasSeleccion.js";
-import contacto from "../formularios/contacto.js";
 import terminosForm from "../formularios/terminosYcondiciones.js";
 import tratamientoDespues from "../formularios/tratamientoDespues.js";
 import cancerMamaFormulario from "../formularios/cancerDeMama.js";
@@ -25,9 +24,17 @@ import cancerCabezaCuelloFormulario from "../formularios/cancerDeCabezaCuello.js
 import cancerLinfomaFormulario from "../formularios/cancerLinfoma.js";
 import cancerLeucemiaFormulario from "../formularios/cancerLeucemia.js";
 import metastasisTratamiento from "../formularios/metastasisTratamiento.js";
-import tratamientosCancer from "../formularios/tratamientosCancer.js";
+import cirugiaAntesDespues from "../formularios/cirugiaAntesDespues.js";
 
 import getAuthToken from "../utils/AuthToken.js";
+
+import imgPortada from "../assets/form-portada.jpg";
+import imgCirugia from "../assets/form-cirugia.webp";
+import imgNuevoTratamientos from "../assets/form-nuevostratamientos.webp";
+import imgTratamiento from "../assets/form-tratamiento.webp";
+
+import stringMayusculas from "../../helpers/stringMayusculas.jsx";
+
 
 
 registerCoreBlocks();
@@ -35,20 +42,32 @@ registerCoreBlocks();
 
 const Formulario = () => {
 
+  const [searchParams, setSearchParams] = useSearchParams()
+
   const { auth, setAuth } = useAuth();
 
   const enfermedad = useFieldAnswer("enfermedad");
   const tuvoCirugia = useFieldAnswer("cirugia");
   const recibioTratamiento = useFieldAnswer("tratamiento");
-  const cirugiaAntesODespues = useFieldAnswer("cirugiaAntesODespues");
+  const cirugiaDespues = useFieldAnswer("cirugiaAntesDespues");
   const metastasis = useFieldAnswer("metastasis")
-  const tratamientosSeleccionados = useFieldAnswer("tratamientosDelPaciente")
+  const guiaEstudiosClinicos = useFieldAnswer("guiaEstudiosClinicos")
 
+  const subtipoCabezaCuello = useFieldAnswer("cabezaCuelloCavidadOral")
+  const subtipoMama = useFieldAnswer("tipoDeCancerMama")
+  const subtipoLeucemia = useFieldAnswer("tipoLeucemia")
+  const subtipoLinfoma = useFieldAnswer("tipoDeLinfoma")
+  const subtipoPulmon = useFieldAnswer("tipoDeCancerPulmon")
+
+  const nombreValue = useFieldAnswer("nombre")
+
+
+
+  const [recibioTrata, setRecibioTrata] = useState("")
 
   const [userEmail, setUserEmail] = useState('')
   const [userPassword, setUserpassword] = useState('')
   const autoLoginUrl = `/login-usuario/${userEmail}/${userPassword}`
-  const navigate = useNavigate();
 
   const [cargando, setCargando] = useState(false)
 
@@ -72,35 +91,29 @@ const Formulario = () => {
   )
 
 
+
+
+
   return (
     <div className="h-screen w-screen z-50">
 
       <Form
-        formId="1"
+        formId="guias-feb-2025"
         formObj={{
-          FormMessages: {
-            block: {
-              dropdown: {
-                placeholder: "Bienvenido"
-              }
-            }
-          },
+
           blocks: [
-
-
             // Sección 1: Pantalla de bienvenida
             {
               name: "welcome-screen",
               id: "bienvenida",
               attributes: {
-                label: `Consejos y guías para pacientes con cáncer.`,
-                description: "Recibe gratis consejos y guías creadas por especialistas.",
+                label: `Crear y descargar`,
+                description: "Recibe por whatsapp tus PDF con consejos creados por especialistas.",
                 attachment: {
                   type: "image",
-                  url:
-                    "https://quillforms.com/wp-content/uploads/2022/01/4207-ai-1.jpeg"
+                  url: imgPortada
                 },
-                attachmentMaxWidth: "700px",
+                attachmentMaxWidth: "1600px",
                 buttonText: "Comenzar",
               }
             },
@@ -109,12 +122,12 @@ const Formulario = () => {
             tiposDeCancer,
 
             // Sección 3: Formularios de tipo de cáncer
-            ...(enfermedad?.includes("otro") ? otroTipoDeCancerForm : []),
-            ...(enfermedad?.includes("cancer-cabeza-cuello") ? cancerCabezaCuelloFormulario : []),
-            ...(enfermedad?.includes("cancer-pulmon") ? cancerPulmonFormulario : []),
-            ...(enfermedad?.includes("cancer-mama") ? cancerMamaFormulario : []),
-            ...(enfermedad?.includes("cancer-linfoma") ? cancerLinfomaFormulario : []),
-            ...(enfermedad?.includes("cancer-leucemia") ? cancerLeucemiaFormulario : []),
+            // ...(enfermedad?.includes("otro") ? otroTipoDeCancerForm : []),
+            ...(enfermedad?.includes("cabeza-cuello") ? cancerCabezaCuelloFormulario : []),
+            ...(enfermedad?.includes("pulmon") ? cancerPulmonFormulario : []),
+            ...(enfermedad?.includes("mama") ? cancerMamaFormulario : []),
+            ...(enfermedad?.includes("linfoma") ? cancerLinfomaFormulario : []),
+            ...(enfermedad?.includes("leucemia") ? cancerLeucemiaFormulario : []),
 
             // Sección 4: datos Generales
             datosGeneralesFormulario,
@@ -122,7 +135,6 @@ const Formulario = () => {
 
             // Sección 5: Estado del paciente
             metastasisForm,
-            ...(metastasis?.includes("true") ? metastasisTratamiento : []),
 
 
             // Sección 6: Cirugía
@@ -133,26 +145,26 @@ const Formulario = () => {
                 required: true,
                 attachment: {
                   type: "image",
-                  url:
-                    "https://quillforms.com/wp-content/uploads/2022/10/ludovic-migneault-B9YbNbaemMI-unsplash_50-scaled.jpeg"
+                  url: imgCirugia
                 },
                 choices: [
                   {
                     label: "Si",
-                    value: "si-cirugia"
+                    value: "1"
                   },
                   {
                     label: "No",
-                    value: "no-cirugia"
+                    value: "0"
                   },
                 ],
                 label: "¿Se le ha realizado alguna cirugía relacionada al cáncer?",
                 nextBtnLabel: "Siguiente",
-                layout: "split-right"
+                layout: "split-right",
+                description: "Incluyen cirugias relacionadas al cáncer sin contar las tomas de biopsia.",
               }
             },
 
-            ...(tuvoCirugia?.includes("si") ? siTuvoCirugia : []),
+            ...(tuvoCirugia?.includes("1") ? siTuvoCirugia : []),
 
 
             // Sección 7: Tratamientos del paciente
@@ -162,30 +174,29 @@ const Formulario = () => {
               attributes: {
                 attachment: {
                   type: "image",
-                  url:
-                    "https://quillforms.com/wp-content/uploads/2022/10/ludovic-migneault-B9YbNbaemMI-unsplash_50-scaled.jpeg"
+                  url: imgTratamiento
                 },
                 choices: [
                   {
                     label: "Si",
-                    value: "si-tratamiento"
+                    value: "1"
                   },
                   {
                     label: "No",
-                    value: "no-tratamiento"
+                    value: "0"
                   },
                 ],
                 label: "¿Ha recibido tratamiento para el cáncer?",
                 nextBtnLabel: "Siguiente",
                 layout: "split-right",
                 required: true,
+                description: "Incluye tratamientos tradicionales como Quimioterapia, Radioterapia, Inmunoterapia, Terapia Hormonal, Terapia Dirigida, etc."
               }
             },
-
-            ...(recibioTratamiento?.includes("si") ? tratamientos : []),
-            ...(recibioTratamiento?.includes("si") && cirugiaAntesODespues?.includes("despues") ? tratamientoDespues : []),
-            // ...(recibioTratamiento?.includes("si") && tuvoCirugia?.includes("si") ? tratamientoDespues : []),
-
+            ...(metastasis?.includes("1") && recibioTratamiento?.includes("1") ? metastasisTratamiento : []),
+            ...(recibioTratamiento?.includes("1") ? tratamientos : []),
+            ...(recibioTratamiento?.includes("1") && tuvoCirugia?.includes("1") ? cirugiaAntesDespues : []),
+            ...(recibioTratamiento?.includes("1") && cirugiaDespues?.includes("despues") ? tratamientoDespues : []),
 
 
             // Sección 8: ECOG
@@ -204,6 +215,34 @@ const Formulario = () => {
 
             // Sección 10: Selección de guías
             seleccionGuias,
+
+
+            // Sección 11: Guía de estudios clínicos
+            {
+              name: "dropdown",
+              id: "guiaEstudiosClinicos",
+              attributes: {
+                attachment: {
+                  type: "image",
+                  url: imgNuevoTratamientos
+                },
+                choices: [
+                  {
+                    label: "Si",
+                    value: "tratamiento"
+                  },
+                  {
+                    label: "No",
+                    value: "0"
+                  },
+                ],
+                label: "¿Desea recibir un listado de tratamientos de última generación en Chile?",
+                description: "Recibirá un documento con los estudios clínicos más avanzados en el país y un miembro de nuestro equipo podría contactarte.",
+                nextBtnLabel: "Siguiente",
+                layout: "split-right",
+                required: true,
+              }
+            },
 
             // Sección 11: Mensaje
             {
@@ -228,7 +267,50 @@ const Formulario = () => {
             // },
 
             // Sección 13: datos de contacto
-            contacto,
+            {
+              id: "datos-contacto",
+              name: "group",
+              attributes: {
+                label: "Responde las siguientes preguntas",
+                nextBtnLabel: "Siguiente"
+              },
+              innerBlocks: [
+                {
+                  id: "nombre",
+                  name: "short-text",
+                  attributes: {
+                    type: "string",
+                    "setMaxCharacters": true, // Default: false
+                    "maxCharacters": 35,
+                    label: "¿Cuál es tu nombre?",
+                    required: true,
+                    placeholder: "Escribe acá..."
+                  }
+                },
+                {
+                  name: "email",
+                  id: "email",
+                  attributes: {
+                    required: true,
+                    label: "Email:",
+                  }
+                },
+                {
+                  id: "telefono",
+                  name: "short-text",
+                  attributes: {
+                    type: "number",
+                    "setMaxCharacters": true, // Default: false
+                    "maxCharacters": 12,
+                    label: "Número de teléfono con whatsapp:",
+                    required: true,
+                    placeholder: "+56",
+                  }
+                },
+
+
+              ]
+            },
 
             // Sección 14: Términos y condiciones
             terminosForm
@@ -236,7 +318,7 @@ const Formulario = () => {
           ],
           settings: {
             animationDirection: "vertical",
-            disableWheelSwiping: false,
+            disableWheelSwiping: true,
             disableNavigationArrows: false,
             disableProgressBar: false
           },
@@ -279,79 +361,74 @@ const Formulario = () => {
         onSubmit={(data, { completeForm, setIsSubmitting }) => {
 
           let datosFormulario = data
+          datosFormulario.answers.subtipo = { value: "0" }
+          datosFormulario.answers.user = { id: null, nombre: null, email: null, telefono: null }
 
-          // Creamos respuesta de tratamientos seleccionados
-          const tratamientosSeleccionados = datosFormulario.answers.tratamientosDelPaciente.value
-          console.log(tratamientosSeleccionados)
-          datosFormulario.answers.quimioterapia = { value: '0' }
-          datosFormulario.answers.radioterapia = { value: '0' }
-          datosFormulario.answers.inmunoterapia = { value: '0' }
-          datosFormulario.answers.terapiaHormonal = { value: '0' }
-          datosFormulario.answers.terapiaDirigida = { value: '0' }
+          datosFormulario.answers.origenFormulario = { value: "guias-2025-nonloged" }
+          datosFormulario.answers.origenCampana = { value: searchParams.get("origen-campana") }
+          datosFormulario.answers.nombreFormulario = { value: 'Guias - Guía y Salud' }
+
+          datosFormulario.answers.nombre = { value: stringMayusculas(nombreValue) }
 
 
-          const quimioterapia = tratamientosSeleccionados.find(tratamiento => {
-            return tratamiento === 'quimioterapia'
-          })
+          // Tratamientos:
+          if (datosFormulario.answers.tratamientosDelPaciente) {
+            if (datosFormulario.answers.tratamientosDelPaciente.value.includes("quimioterapia")) {
+              datosFormulario.answers.quimioterapia = { value: "1" }
+            } else { datosFormulario.answers.quimioterapia = { value: "0" } }
 
-          if (quimioterapia === 'quimioterapia') {
-            datosFormulario.answers.quimioterapia.value = '1'
-          }
+            if (datosFormulario.answers.tratamientosDelPaciente.value.includes("radioterapia")) {
+              datosFormulario.answers.radioterapia = { value: "1" }
+            } else { datosFormulario.answers.radioterapia = { value: "0" } }
 
-          const radioterapia = tratamientosSeleccionados.find(tratamiento => {
-            return tratamiento === 'radioterapia'
-          })
+            if (datosFormulario.answers.tratamientosDelPaciente.value.includes("inmunoterapia")) {
+              datosFormulario.answers.inmunoterapia = { value: "1" }
+            } else { datosFormulario.answers.inmunoterapia = { value: "0" } }
 
-          if (radioterapia === 'radioterapia') {
-            datosFormulario.answers.radioterapia.value = '1'
-          }
+            if (datosFormulario.answers.tratamientosDelPaciente.value.includes("terapiaHormonal")) {
+              datosFormulario.answers.terapiaHormonal = { value: "1" }
+            } else { datosFormulario.answers.terapiaHormonal = { value: "0" } }
 
-          const inmunoterapia = tratamientosSeleccionados.find(tratamiento => {
-            return tratamiento === 'inmunoterapia'
-          })
-
-          if (inmunoterapia === 'inmunoterapia') {
-            datosFormulario.answers.inmunoterapia.value = '1'
-          }
-
-          const terapiaHormonal = tratamientosSeleccionados.find(tratamiento => {
-            return tratamiento === 'terapiaHormonal'
-          })
-
-          if (terapiaHormonal === 'terapiaHormonal') {
-            datosFormulario.answers.terapiaHormonal.value = '1'
-          }
-
-          const terapiaDirigida = tratamientosSeleccionados.find(tratamiento => {
-            return tratamiento === 'terapiaDirigida'
-          })
-
-          if (terapiaDirigida === 'terapiaDirigida') {
-            datosFormulario.answers.terapiaDirigida.value = '1'
+            if (datosFormulario.answers.tratamientosDelPaciente.value.includes("terapiaDirigida")) {
+              datosFormulario.answers.terapiaDirigida = { value: "1" }
+            } else { datosFormulario.answers.terapiaDirigida = { value: "0" } }
           }
 
 
+          // Subtipos:
+          if (datosFormulario.answers.enfermedad.value.includes("cabeza-cuello")) {
+            datosFormulario.answers.subtipo = { value: subtipoCabezaCuello }
+          }
 
+          if (datosFormulario.answers.enfermedad.value.includes("mama")) {
+            datosFormulario.answers.subtipo = { value: subtipoMama }
+          }
+
+          if (enfermedad === "linfoma") {
+            datosFormulario.answers.subtipo = { value: subtipoLinfoma }
+          }
+
+          if (enfermedad === "leucemia") {
+            datosFormulario.answers.subtipo = { value: subtipoLeucemia }
+          }
+
+          if (enfermedad === "pulmon") {
+            datosFormulario.answers.subtipo = { value: subtipoPulmon }
+          }
+
+          if (datosFormulario.answers.guiaEstudiosClinicos.value === "tratamiento") {
+            datosFormulario.answers.guiasSeleccionadas.value.push("tratamiento")
+          }
+
+          console.log("Datos enviados:")
           console.log(datosFormulario)
 
 
-
-          // Agregamos datos necesarios para crear usuarios al objeto de respuestas
-          // datosFormulario.answers.password = Math.random().toString(36).toUpperCase().slice(-8)
-          datosFormulario.answers.nombreFormulario = 'Meta Guías'
 
           async function submit(info) {
 
             setUserEmail(info.answers.email.value)
             setUserpassword(info.answers.password)
-
-
-
-
-
-
-
-
 
             try {
 
@@ -369,8 +446,9 @@ const Formulario = () => {
               const url = 'https://apiguia.guiaysalud.com/api/v2/guides'
               const formulario = await axios.post(url, info, configWithTokenAPI)
 
+              console.log("Respuesta recibida:")
               console.log(formulario)
-              console.log(formulario.data.msg)
+              console.log(formulario.data.message)
 
               const userNew = formulario.data.userNew
               console.log('userNew: ', userNew)
@@ -405,7 +483,8 @@ const Formulario = () => {
             }
           }
           submit(datosFormulario)
-        }}
+        }
+        }
       />
     </div>
   );

@@ -17,7 +17,6 @@ import siTuvoCirugia from "../formularios/cirugiaafirmativo.js";
 import tratamientos from "../formularios/tratramientos.js";
 import ecogForm from "../formularios/ecog.js";
 import seleccionGuias from "../formularios/guiasSeleccion.js";
-import contacto from "../formularios/contacto.js";
 import terminosForm from "../formularios/terminosYcondiciones.js";
 import tratamientoDespues from "../formularios/tratamientoDespues.js";
 import cancerMamaFormulario from "../formularios/cancerDeMama.js";
@@ -25,8 +24,19 @@ import cancerCabezaCuelloFormulario from "../formularios/cancerDeCabezaCuello.js
 import cancerLinfomaFormulario from "../formularios/cancerLinfoma.js";
 import cancerLeucemiaFormulario from "../formularios/cancerLeucemia.js";
 import metastasisTratamiento from "../formularios/metastasisTratamiento.js";
+import cirugiaAntesDespues from "../formularios/cirugiaAntesDespues.js";
+
+import cambiarNombreEnfermedad from "../../helpers/CambiarNombreEnfermedad.jsx";
 
 import getAuthToken from "../utils/AuthToken.js";
+
+
+import imgPortada from "../assets/form-portada.jpg";
+import imgCirugia from "../assets/form-cirugia.webp";
+import imgNuevoTratamientos from "../assets/form-nuevostratamientos.webp";
+import imgTratamiento from "../assets/form-tratamiento.webp";
+
+import stringMayusculas from "../../helpers/stringMayusculas.jsx";
 
 
 registerCoreBlocks();
@@ -35,18 +45,26 @@ registerCoreBlocks();
 const FormularioGuiasLogged = () => {
 
   const { auth, setAuth } = useAuth();
+  const userId = auth.id
+  const userTelefono = auth.telefono
+  const userNombre = auth.nombre
+  const userEmail = auth.email
+  const userEnfermedad = auth.enfermedad
 
   const enfermedad = useFieldAnswer("enfermedad");
   const tuvoCirugia = useFieldAnswer("cirugia");
   const recibioTratamiento = useFieldAnswer("tratamiento");
-  const cirugiaAntesODespues = useFieldAnswer("cirugiaAntesODespues");
+  const cirugiaDespues = useFieldAnswer("cirugiaAntesDespues");
   const metastasis = useFieldAnswer("metastasis")
 
+  const subtipoCabezaCuello = useFieldAnswer("cabezaCuelloCavidadOral")
+  const subtipoMama = useFieldAnswer("tipoDeCancerMama")
+  const subtipoLeucemia = useFieldAnswer("tipoLeucemia")
+  const subtipoLinfoma = useFieldAnswer("tipoDeLinfoma")
+  const subtipoPulmon = useFieldAnswer("tipoDeCancerPulmon")
 
-  const [userEmail, setUserEmail] = useState('')
-  const [userPassword, setUserpassword] = useState('')
-  const autoLoginUrl = `/login-usuario/${userEmail}/${userPassword}`
-  const navigate = useNavigate();
+  const nombreValue = useFieldAnswer("nombre")
+
 
   const [cargando, setCargando] = useState(false)
 
@@ -70,6 +88,9 @@ const FormularioGuiasLogged = () => {
   )
 
 
+
+
+
   return (
     <div className="h-screen w-screen z-50">
 
@@ -83,7 +104,7 @@ const FormularioGuiasLogged = () => {
               }
             }
           },
-          blocks:  [
+          blocks: [
 
 
             // Sección 1: Pantalla de bienvenida
@@ -91,12 +112,11 @@ const FormularioGuiasLogged = () => {
               name: "welcome-screen",
               id: "bienvenida",
               attributes: {
-                label: `Consejos y guías para pacientes con cáncer.`,
+                label: `Consejos para ${cambiarNombreEnfermedad(userEnfermedad)}`,
                 description: "Recibe gratis consejos y guías creadas por especialistas.",
                 attachment: {
                   type: "image",
-                  url:
-                    "https://quillforms.com/wp-content/uploads/2022/01/4207-ai-1.jpeg"
+                  url: imgPortada
                 },
                 attachmentMaxWidth: "700px",
                 buttonText: "Comenzar",
@@ -104,15 +124,15 @@ const FormularioGuiasLogged = () => {
             },
 
             // Sección 2: Opciones de enfermedad
-            tiposDeCancer,
+            // tiposDeCancer,
 
             // Sección 3: Formularios de tipo de cáncer
-            ...(enfermedad?.includes("otro") ? otroTipoDeCancerForm : []),
-            ...(enfermedad?.includes("cancer-cabeza-cuello") ? cancerCabezaCuelloFormulario : []),
-            ...(enfermedad?.includes("cancer-pulmon") ? cancerPulmonFormulario : []),
-            ...(enfermedad?.includes("cancer-mama") ? cancerMamaFormulario : []),
-            ...(enfermedad?.includes("cancer-linfoma") ? cancerLinfomaFormulario : []),
-            ...(enfermedad?.includes("cancer-leucemia") ? cancerLeucemiaFormulario : []),
+            // ...(enfermedad?.includes("otro") ? otroTipoDeCancerForm : []),
+            ...(auth.enfermedad.includes("cabeza-cuello") ? cancerCabezaCuelloFormulario : []),
+            ...(auth.enfermedad.includes("pulmon") ? cancerPulmonFormulario : []),
+            ...(auth.enfermedad.includes("mama") ? cancerMamaFormulario : []),
+            ...(auth.enfermedad.includes("linfoma") ? cancerLinfomaFormulario : []),
+            ...(auth.enfermedad.includes("leucemia") ? cancerLeucemiaFormulario : []),
 
             // Sección 4: datos Generales
             datosGeneralesFormulario,
@@ -120,7 +140,6 @@ const FormularioGuiasLogged = () => {
 
             // Sección 5: Estado del paciente
             metastasisForm,
-            ...(metastasis?.includes("true") ? metastasisTratamiento : []),
 
 
             // Sección 6: Cirugía
@@ -131,17 +150,16 @@ const FormularioGuiasLogged = () => {
                 required: true,
                 attachment: {
                   type: "image",
-                  url:
-                    "https://quillforms.com/wp-content/uploads/2022/10/ludovic-migneault-B9YbNbaemMI-unsplash_50-scaled.jpeg"
+                  url: imgCirugia
                 },
                 choices: [
                   {
                     label: "Si",
-                    value: "si-cirugia"
+                    value: "1"
                   },
                   {
                     label: "No",
-                    value: "no-cirugia"
+                    value: "0"
                   },
                 ],
                 label: "¿Se le ha realizado alguna cirugía relacionada al cáncer?",
@@ -150,7 +168,7 @@ const FormularioGuiasLogged = () => {
               }
             },
 
-            ...(tuvoCirugia?.includes("si") ? siTuvoCirugia : []),
+            ...(tuvoCirugia?.includes("1") ? siTuvoCirugia : []),
 
 
             // Sección 7: Tratamientos del paciente
@@ -160,17 +178,16 @@ const FormularioGuiasLogged = () => {
               attributes: {
                 attachment: {
                   type: "image",
-                  url:
-                    "https://quillforms.com/wp-content/uploads/2022/10/ludovic-migneault-B9YbNbaemMI-unsplash_50-scaled.jpeg"
+                  url: imgTratamiento
                 },
                 choices: [
                   {
                     label: "Si",
-                    value: "si-tratamiento"
+                    value: "1"
                   },
                   {
                     label: "No",
-                    value: "no-tratamiento"
+                    value: "0"
                   },
                 ],
                 label: "¿Ha recibido tratamiento para el cáncer?",
@@ -179,13 +196,12 @@ const FormularioGuiasLogged = () => {
                 required: true,
               }
             },
+            ...(metastasis?.includes("1") && recibioTratamiento?.includes("1") ? metastasisTratamiento : []),
+            ...(recibioTratamiento?.includes("1") ? tratamientos : []),
+            ...(recibioTratamiento?.includes("1") && tuvoCirugia?.includes("1") ? cirugiaAntesDespues : []),
+            ...(recibioTratamiento?.includes("1") && cirugiaDespues?.includes("despues") ? tratamientoDespues : []),
 
-            ...(recibioTratamiento?.includes("si") ? tratamientos : []),
-            ...(recibioTratamiento?.includes("si") && cirugiaAntesODespues?.includes("despues") ? tratamientoDespues : []),
-            // ...(recibioTratamiento?.includes("si") && tuvoCirugia?.includes("si") ? tratamientoDespues : []),
-            
-            
-            
+
             // Sección 8: ECOG
             ecogForm,
 
@@ -202,6 +218,33 @@ const FormularioGuiasLogged = () => {
 
             // Sección 10: Selección de guías
             seleccionGuias,
+
+            // Sección 11: Guía de estudios clínicos
+            {
+              name: "dropdown",
+              id: "guiaEstudiosClinicos",
+              attributes: {
+                attachment: {
+                  type: "image",
+                  url: imgNuevoTratamientos
+                },
+                choices: [
+                  {
+                    label: "Si",
+                    value: "tratamiento"
+                  },
+                  {
+                    label: "No",
+                    value: "0"
+                  },
+                ],
+                label: "¿Desea recibir un listado de tratamientos de última generación en Chile?",
+                description: "Recibirá un documento con los estudios clínicos más avanzados en el país y un miembro de nuestro equipo podría contactarte.",
+                nextBtnLabel: "Siguiente",
+                layout: "split-right",
+                required: true,
+              }
+            },
 
             // Sección 11: Mensaje
             {
@@ -230,49 +273,38 @@ const FormularioGuiasLogged = () => {
               id: "datos-contacto",
               name: "group",
               attributes: {
-                  label: "Datos para la guía:",
-                  nextBtnLabel: "Siguiente"
+                label: "Datos para enviar tus documentos:",
+                nextBtnLabel: "Siguiente"
               },
               innerBlocks: [
-                  {
-                      id: "nombre",
-                      name: "short-text",
-                      attributes: {
-                          type: "string",
-                          "setMaxCharacters": true, // Default: false
-                          "maxCharacters": 35,
-                          label: "Nombre:",
-                          required: true,
-                          placeholder: "Escribe acá...",
-                          defaultValue: auth.nombre
-                      }
-                  },
-                  {
-                      name: "email",
-                      id: "email",
-                      attributes: {
-                          required: true,
-                          label: "Email:",
-                          defaultValue: auth.email
-                      }
-                  },
-                  {
-                      id: "telefono",
-                      name: "short-text",
-                      attributes: {
-                          type: "number",
-                          "setMaxCharacters": true, // Default: false
-                          "maxCharacters": 12,
-                          label: "Número de teléfono con whatsapp:",
-                          required: true,
-                          placeholder: "+56",
-                          defaultValue: auth.telefono
-                      }
-                  },
-          
-          
+                {
+                  id: "nombre",
+                  name: "short-text",
+                  attributes: {
+                    type: "number",
+                    "setMaxCharacters": true, // Default: false
+                    "maxCharacters": 35,
+                    label: "¿Cuál es tu nombre?",
+                    required: true,
+                    placeholder: "Escribe acá...",
+                    defaultValue: userNombre
+                  }
+                },
+                {
+                  id: "telefono",
+                  name: "short-text",
+                  attributes: {
+                    type: "number",
+                    "setMaxCharacters": true, // Default: false
+                    "maxCharacters": 12,
+                    label: "Número de whatsapp:",
+                    required: true,
+                    placeholder: "+56",
+                    defaultValue: userTelefono
+                  }
+                },
               ]
-          },
+            },
 
             // Sección 14: Términos y condiciones
             terminosForm
@@ -280,7 +312,7 @@ const FormularioGuiasLogged = () => {
           ],
           settings: {
             animationDirection: "vertical",
-            disableWheelSwiping: false,
+            disableWheelSwiping: true,
             disableNavigationArrows: false,
             disableProgressBar: false
           },
@@ -315,24 +347,78 @@ const FormularioGuiasLogged = () => {
             'label.errorAlert.email': 'Email inválido',
             'block.email.placeholder': 'Escribe acá...',
 
-            'block.defaultThankYouScreen.label': `En poco recibirás tus guías.\n\nRevisa tu correo y whatsapp.\n\n\n\n<a class="renderer-core-button css-ai2jtz" href="/login">Iniciar Sesión<svg class="renderer-core-arrow-icon css-1aucf1m" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"></path></svg></a>`
+            'block.defaultThankYouScreen.label': `En poco recibirás tus guías.\n\nRevisa tu correo y whatsapp.\n\n\n\n<a class="renderer-core-button css-ai2jtz" href="/app">Volver a inicio<svg class="renderer-core-arrow-icon css-1aucf1m" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"></path></svg></a>`
           }
         }}
-
-
-
-
-
 
         // Enviamos el formulario
         onSubmit={(data, { completeForm, setIsSubmitting }) => {
 
-          const datosFormulario = data
-          datosFormulario.answers.userId = {value: auth.id}
-          console.log(datosFormulario)
+          let datosFormulario = data
+          datosFormulario.answers.email = { value: userEmail }
+          datosFormulario.answers.enfermedad = { value: userEnfermedad }
+          datosFormulario.answers.subtipo = { value: null }
+          datosFormulario.answers.user = { id: userId, nombre: userNombre, email: userEmail, telefono: userTelefono }
 
-          // datosFormulario.answers.password = Math.random().toString(36).toUpperCase().slice(-8)
-          datosFormulario.answers.nombreFormulario = {value: 'Guias interno'}
+          datosFormulario.answers.origenFormulario = { value: "guias-2025-loged" }
+          datosFormulario.answers.origenCampana = { value: "sin-campaña" }
+          datosFormulario.answers.nombreFormulario = { value: 'Guias Logged - Guía y Salud' }
+          
+          datosFormulario.answers.nombre = { value: stringMayusculas(nombreValue) }
+
+          // Tratamientos:
+          if (datosFormulario.answers.tratamientosDelPaciente) {
+            if (datosFormulario.answers.tratamientosDelPaciente.value.includes("quimioterapia")) {
+              datosFormulario.answers.quimioterapia = { value: "1" }
+            } else { datosFormulario.answers.quimioterapia = { value: "0" } }
+
+            if (datosFormulario.answers.tratamientosDelPaciente.value.includes("radioterapia")) {
+              datosFormulario.answers.radioterapia = { value: "1" }
+            } else { datosFormulario.answers.radioterapia = { value: "0" } }
+
+            if (datosFormulario.answers.tratamientosDelPaciente.value.includes("inmunoterapia")) {
+              datosFormulario.answers.inmunoterapia = { value: "1" }
+            } else { datosFormulario.answers.inmunoterapia = { value: "0" } }
+
+            if (datosFormulario.answers.tratamientosDelPaciente.value.includes("terapiaHormonal")) {
+              datosFormulario.answers.terapiaHormonal = { value: "1" }
+            } else { datosFormulario.answers.terapiaHormonal = { value: "0" } }
+
+            if (datosFormulario.answers.tratamientosDelPaciente.value.includes("terapiaDirigida")) {
+              datosFormulario.answers.terapiaDirigida = { value: "1" }
+            } else { datosFormulario.answers.terapiaDirigida = { value: "0" } }
+          }
+
+
+          // Subtipos:
+          if (datosFormulario.answers.enfermedad.value.includes("cabeza-cuello")) {
+            datosFormulario.answers.subtipo = { value: subtipoCabezaCuello }
+          }
+
+          if (datosFormulario.answers.enfermedad.value.includes("mama")) {
+            datosFormulario.answers.subtipo = { value: subtipoMama }
+          }
+
+          if (enfermedad === "linfoma") {
+            datosFormulario.answers.subtipo = { value: subtipoLinfoma }
+          }
+
+          if (enfermedad === "leucemia") {
+            datosFormulario.answers.subtipo = { value: subtipoLeucemia }
+          }
+
+          if (enfermedad === "pulmon") {
+            datosFormulario.answers.subtipo = { value: subtipoPulmon }
+          }
+
+
+
+
+
+          console.log("Datos enviados:")
+          console.log(datosFormulario)
+          datosFormulario.answers.nombreFormulario = 'Meta Guías'
+
 
           async function submit(info) {
 
@@ -350,15 +436,39 @@ const FormularioGuiasLogged = () => {
 
               // Petición enviando formulario para guías
               const url = 'https://apiguia.guiaysalud.com/api/v2/guides'
-              const formulario = await axios.post(url, info.answers, configWithTokenAPI)
-              
+              const formulario = await axios.post(url, info, configWithTokenAPI)
+
+              console.log("Respuesta recibida:")
               console.log(formulario)
+              console.log(formulario.data.message)
+
+              const userNew = formulario.data.userNew
+              console.log('userNew: ', userNew)
+              const email = formulario.data.correo
+              const password = formulario.data.password
+
+
+              if (!password) {
+                await setIsSubmitting(false);
+                await completeForm();
+                setMensajeFinal(true)
+                return
+              }
+
 
               setCargando(true)
               await setIsSubmitting(false);
               await completeForm();
 
+              // Petición para login
+              const { data } = await axios.post('https://apiusers.guiaysalud.com/api/users/login', { email, password }, configWithTokenAPI);
+
+              const token = data.token.replace('Bearer ', '');
+              localStorage.setItem('tokenUser', token);
+              setAuth(data.user);
+
               window.open("/app", "_self");
+
 
             } catch (error) {
               console.log(error)
@@ -370,6 +480,5 @@ const FormularioGuiasLogged = () => {
     </div>
   );
 };
-
 
 export default FormularioGuiasLogged;

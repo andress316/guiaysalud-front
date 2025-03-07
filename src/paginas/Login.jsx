@@ -8,7 +8,7 @@ import loginImage from '../assets/home.png'; // Asegúrate de importar tu imagen
 import getAuthToken from '../utils/AuthToken'; // Importa la función
 import { Spinner } from "flowbite-react";
 
-import backgroundImage from '../assets/IMG-1.png'
+import backgroundImage from '../assets/guiaysalud-login.webp'
 
 
 const Login = () => {
@@ -37,6 +37,7 @@ const Login = () => {
 
         try {
             const tokenAPI = await getAuthToken(); // Obtén el token usando la función
+           
 
             const configWithTokenAPI = {
                 headers: {
@@ -74,7 +75,7 @@ const Login = () => {
             setAuth(data.user);
             setBotonCargando(false)
 
-            console.log(data)
+ 
             window.open("/app","_self");
             // navigate('/app'); // Sección privada
 
@@ -144,7 +145,7 @@ const Login = () => {
                         <Link to="/registrar" className="font-bold hover:underline"> Crear Cuenta</Link>
                     </p>
 
-                    <div className="mt-8 flex justify-center space-x-4">
+                    {/* <div className="mt-8 flex justify-center space-x-4">
                         <Link t="#" className="text-white hover:text-pink-200 transition-colors duration-200">
                             <i className="fab fa-facebook-f text-2xl"></i>
                         </Link>
@@ -154,7 +155,7 @@ const Login = () => {
                         <Link t="#" className="text-white hover:text-pink-200 transition-colors duration-200">
                             <i className="fab fa-google text-2xl"></i>
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 

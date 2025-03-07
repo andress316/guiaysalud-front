@@ -1,3 +1,5 @@
+import imgGuias from "../assets/form-guias.jpg";
+
 const seleccionGuias = {
     name: "multiple-choice",
     id: "guiasSeleccionadas",
@@ -5,8 +7,7 @@ const seleccionGuias = {
         layout: "split-right",
         attachment: {
             type: "image",
-            url:
-                "https://quillforms.com/wp-content/uploads/2022/10/ludovic-migneault-B9YbNbaemMI-unsplash_50-scaled.jpeg"
+            url: imgGuias
         },
         required: true,
         multiple: true,
@@ -18,16 +19,13 @@ const seleccionGuias = {
                 value: "info-general"
             },
             {
-                label: "Nutrición",
-                value: "nutricion"
-            },
+                label: "Alimentación y Efectos Secundarios",
+                value: "alimentacion-efectos-secundarios"
+            }
+            ,
             {
-                label: "Tratamiento",
-                value: "tratamiento"
-            },
-            {
-                label: "Apoyo psicológico",
-                value: "apoyo"
+                label: "Consejos de Salud Mental",
+                value: "salud-mental"
             }
         ]
     }

@@ -1,3 +1,5 @@
+import imgPulmon from "../assets/form-pulmon.webp";
+
 const cancerPulmonFormulario = [
   {
     name: "dropdown",
@@ -5,17 +7,16 @@ const cancerPulmonFormulario = [
     attributes: {
       attachment: {
         type: "image",
-        url:
-          "https://quillforms.com/wp-content/uploads/2022/10/ludovic-migneault-B9YbNbaemMI-unsplash_50-scaled.jpeg"
+        url: imgPulmon
       },
       choices: [
         {
           label: "Células Pequeñas",
-          value: "celulas-pequeñas"
+          value: "celulas-pequenas"
         },
         {
           label: "Células NO pequeñas",
-          value: "celulas-no-pequeñas"
+          value: "celulas-no-pequenas"
         },
         {
           label: "No estoy seguro",
@@ -24,8 +25,9 @@ const cancerPulmonFormulario = [
       ],
       label: "¿Selecciona tu tipo de cáncer de pulmón?",
       nextBtnLabel: "Siguiente",
+      required: true,
       layout: "split-right",
-      required: true
+      description:"El cáncer de pulmón se clasifica principalmente en dos tipos: cáncer de pulmón de células no pequeñas (CPCNP) y cáncer de pulmón de células pequeñas (CPCP)."
     }
   }
 

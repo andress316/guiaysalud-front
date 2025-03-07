@@ -10,6 +10,13 @@ const AuthHeader = () => {
   const [hamburgerMenu, sethamburgerMenu] = useState(false)
   const [dropdown, setDropdown] = useState(false)
 
+  window.addEventListener('click', function(e) {
+    const subMenu = document.getElementById('subMenu1')
+    if (!subMenu.contains(e.target)) {
+      setDropdown(false)
+    }
+  })
+
   const handleCerrarSesion = e => {
     e.preventDefault();
     setAuth({});
@@ -69,7 +76,7 @@ const AuthHeader = () => {
 
 
               {/* <!--  Cuerpo de los enlaces --> */}
-              <div className="bg-white dark:bg-slate-900 dark:md:bg-slate-800 w-3/5 shadow-lg flex flex-col justify-between fixed inset-0 translate-x-[-100%] peer-checked:translate-x-0 md:w-auto md:static md:shadow-none md:translate-x-0 md:flex-row transition-all">
+              <div id="subMenu1" className="bg-white dark:bg-slate-900 dark:md:bg-slate-800 w-3/5 shadow-lg flex flex-col justify-between fixed inset-0 translate-x-[-100%] peer-checked:translate-x-0 md:w-auto md:static md:shadow-none md:translate-x-0 md:flex-row transition-all">
 
                 <div className="px-6 pt-32 flex flex-col md:flex-row md:items-center gap-3 md:p-0 ">
                   <Link to="/" className="tracking-wide cursor-pointer px-3 py-2 rounded hover:text-white font-semibold text-lg transition hover:bg-pink-500 ">Inicio</Link>
@@ -77,16 +84,16 @@ const AuthHeader = () => {
                   <div className="relative z-30">
 
                     <button onClick={handleDropdown1} className="flex items-center tracking-wide cursor-pointer px-3 py-2 rounded transition hover:bg-yellow-300 hover:text-white hover:fill-white dark:fill-white font-semibold text-lg text-left mr-2">
-                      <div className="mr-2">Guía y Apoyo</div>
+                      <div className="mr-2">Guía y apoyo</div>
                       <svg height="1rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" /></svg>
                     </button>
 
 
                     <div className={`rounded border border-gray-200 bg-white dark:bg-slate-800 dark:border-slate-700 absolute top-[50px] w-[250px] shadow-md ${!dropdown ? 'hidden' : ''}`}>
-                      <Link to={"/app/guias-form"}>
+                      <Link to={"/app/consejos-form"} target="_blank">
                         <div className="cursor-pointer hover:bg-gray-300 dark:hover:bg-slate-900 p-4">Consejos personalizados</div>
                       </Link>
-                      <Link to={"/app/estudios-clinicos-form"}>
+                      <Link to={"/app/estudios-clinicos-form"} target="_blank">
                         <div className="cursor-pointer hover:bg-gray-300 dark:hover:bg-slate-900 p-4">Búsqueda Estudios Clínicos</div>
                       </Link>
                       <Link to={"/app/grupos-apoyo"}>
@@ -116,7 +123,7 @@ const AuthHeader = () => {
 
                 {/* Botones */}
                 <div className="md:hidden border-t py-8 px-6 md:border-t-0 dark:border-slate-700 md:py-0 md:pr-0 md:pl-6 flex flex-col md:flex-row">
-                  <Link to="configuracion/perfil" className="flex items-center align-middle mt-2 gap-2 px-6 py-2 rounded text-center text-slate-800 text-lg font-semibold transition bg-gray-100 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-700 dark:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path className="fill-slate-400 dark:fill-slate-500" d="M24 13.616v-3.232c-1.651-.587-2.694-.752-3.219-2.019v-.001c-.527-1.271.1-2.134.847-3.707l-2.285-2.285c-1.561.742-2.433 1.375-3.707.847h-.001c-1.269-.526-1.435-1.576-2.019-3.219h-3.232c-.582 1.635-.749 2.692-2.019 3.219h-.001c-1.271.528-2.132-.098-3.707-.847l-2.285 2.285c.745 1.568 1.375 2.434.847 3.707-.527 1.271-1.584 1.438-3.219 2.02v3.232c1.632.58 2.692.749 3.219 2.019.53 1.282-.114 2.166-.847 3.707l2.285 2.286c1.562-.743 2.434-1.375 3.707-.847h.001c1.27.526 1.436 1.579 2.019 3.219h3.232c.582-1.636.75-2.69 2.027-3.222h.001c1.262-.524 2.12.101 3.698.851l2.285-2.286c-.744-1.563-1.375-2.433-.848-3.706.527-1.271 1.588-1.44 3.221-2.021zm-12 2.384c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z" /></svg>Configuración</Link>
+                  <Link to="configuracion" className="flex items-center align-middle mt-2 gap-2 px-6 py-2 rounded text-center text-slate-800 text-lg font-semibold transition bg-gray-100 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-700 dark:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path className="fill-slate-400 dark:fill-slate-500" d="M24 13.616v-3.232c-1.651-.587-2.694-.752-3.219-2.019v-.001c-.527-1.271.1-2.134.847-3.707l-2.285-2.285c-1.561.742-2.433 1.375-3.707.847h-.001c-1.269-.526-1.435-1.576-2.019-3.219h-3.232c-.582 1.635-.749 2.692-2.019 3.219h-.001c-1.271.528-2.132-.098-3.707-.847l-2.285 2.285c.745 1.568 1.375 2.434.847 3.707-.527 1.271-1.584 1.438-3.219 2.02v3.232c1.632.58 2.692.749 3.219 2.019.53 1.282-.114 2.166-.847 3.707l2.285 2.286c1.562-.743 2.434-1.375 3.707-.847h.001c1.27.526 1.436 1.579 2.019 3.219h3.232c.582-1.636.75-2.69 2.027-3.222h.001c1.262-.524 2.12.101 3.698.851l2.285-2.286c-.744-1.563-1.375-2.433-.848-3.706.527-1.271 1.588-1.44 3.221-2.021zm-12 2.384c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z" /></svg>Configuración</Link>
                   <Link to="/registrar" className="block mt-2  px-6 py-2 rounded text-center text-white text-lg font-semibold transition bg-blue-500 hover:hover:bg-blue-600" onClick={handleCerrarSesion}>Cerrar Sesión</Link>
                 </div>
 
@@ -132,7 +139,7 @@ const AuthHeader = () => {
 
               {/* Botones */}
               <div className="hidden sm:flex border-t py-8 px-6 md:border-t-0 dark:border-slate-700 md:py-0 md:pr-0 md:pl-6 flex-col md:flex-row">
-                <button to="/registrar" className="block mt-2  px-6 py-2 rounded text-center text-white text-lg font-semibold transition bg-blue-500 hover:hover:bg-blue-600" onClick={handleCerrarSesion}>Cerrar Sesión</button>
+                <Link to="/registrar" className="block mt-2  px-6 py-2 rounded text-center text-white text-lg font-semibold transition bg-blue-500 hover:hover:bg-blue-600" onClick={handleCerrarSesion}>Cerrar Sesión</Link>
               </div>
             </div>
           </div>

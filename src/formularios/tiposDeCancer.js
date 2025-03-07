@@ -6,63 +6,63 @@ const tiposDeCancer = {
         choices: [
             {
                 label: "Cabeza y cuello",
-                value: "cancer-cabeza-cuello"
+                value: "cabeza-cuello"
             },
             {
                 label: "Colorrectal",
-                value: "cancer-colorrectal"
+                value: "colorrectal"
             },
             {
                 label: "Endometrio",
-                value: "cancer-endometrio"
+                value: "endometrio"
             },
             {
                 label: "Esófago",
-                value: "cancer-esofago"
+                value: "esofago"
             },
             {
                 label: "Gástrico",
-                value: "cancer-gastrico"
+                value: "gastrico"
             },
             {
                 label: "GIST",
-                value: "cancer-gist"
+                value: "gist"
             },
             {
                 label: "Hígado",
-                value: "cancer-higado"
+                value: "higado"
             },
             {
                 label: "Leucemia",
-                value: "cancer-leucemia"
+                value: "leucemia"
             },
             {
                 label: "Linfoma",
-                value: "cancer-linfoma"
+                value: "linfoma"
             },
             {
                 label: "Mama",
-                value: "cancer-mama"
+                value: "mama"
             },
             {
                 label: "Melanoma",
-                value: "cancer-melanoma"
+                value: "melanoma"
             },
             {
                 label: "Mieloma Múltiple",
-                value: "cancer-mieloma-multiple"
+                value: "mieloma-multiple"
             },
             {
                 label: "Ovario",
-                value: "cancer-ovario"
+                value: "ovario"
             },
             {
                 label: "Páncreas",
-                value: "cancer-pancreas"
+                value: "pancreas"
             },
             {
                 label: "Próstata",
-                value: "cancer-prostata"
+                value: "prostata"
             },
             {
                 label: "Pulmón",
@@ -70,20 +70,12 @@ const tiposDeCancer = {
             },
             {
                 label: "Renal",
-                value: "cancer-renal"
+                value: "renal"
             },
             {
                 label: "Vejiga",
-                value: "cancer-vejiga"
-            },
-            {
-                label: "Vesícula y Vías Biliares",
-                value: "cancer-viliar-vias-biliares"
-            },
-            {
-                label: "otro",
-                value: "Otro"
-            },
+                value: "vejiga"
+            }
         ],
         label: "¿Selecciona tu tipo de cáncer?",
         description: "Selecciona el tipo de cáncer con el que fuiste diagnosticado.",

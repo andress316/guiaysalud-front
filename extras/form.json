@@ -1,0 +1,168 @@
+{
+    "answers": {
+        "enfermedad": {
+            "value": "cabeza-cuello",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "metastasis": {
+            "value": "0",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "cirugia": {
+            "value": "0",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "tratamiento": {
+            "value": "0",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "guiasSeleccionadas": {
+            "value": [
+                "info-general",
+                "nutricion"
+            ],
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "multiple-choice"
+        },
+        "terminos": {
+            "value": "si-acepto",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "sexoDelPaciente": {
+            "value": "masculino",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "paisDelPaciente": {
+            "value": "chile",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "regionDelPaciente": {
+            "value": "tarapaca",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "ciudadDelPaciente": {
+            "value": "qwe",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "short-text"
+        },
+        "dolorSintomas": {
+            "value": "2",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "descansoEnCama": {
+            "value": "1",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "actividadDiaria": {
+            "value": "1",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "nombre": {
+            "value": "juanito 2",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "short-text"
+        },
+        "email": {
+            "value": "jandresr91@gmail.com",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "email"
+        },
+        "telefono": {
+            "value": "+56957600539",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "short-text"
+        },
+        "nombreFormulario": "Meta Guías"
+    }
+}

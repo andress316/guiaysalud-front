@@ -1,3 +1,5 @@
+import imgLinfoma from "../assets/form-linfoma.webp";
+
 const cancerLinfomaFormulario = [
     {
       name: "dropdown",
@@ -5,17 +7,16 @@ const cancerLinfomaFormulario = [
       attributes: {
         attachment: {
           type: "image",
-          url:
-            "https://quillforms.com/wp-content/uploads/2022/10/ludovic-migneault-B9YbNbaemMI-unsplash_50-scaled.jpeg"
+          url: imgLinfoma
         },
         choices: [
           {
             label: "Linfoma difuso células B",
-            value: "difusoCelulasB"
+            value: "difuso-celulas-b"
           },
           {
             label: "Linfoma células del manto",
-            value: "celulasDelManto"
+            value: "celulas-manto"
           },
           {
             label: "Linfoma folicular",
@@ -27,7 +28,7 @@ const cancerLinfomaFormulario = [
           },
           {
             label: "Linfoma de la zona marginal",
-            value: "zonaMarginal"
+            value: "zona-marginal"
           },
           {
             label: "Linfoma cutáneo",
@@ -44,8 +45,9 @@ const cancerLinfomaFormulario = [
         ],
         label: "¿Qué tipo de Linfoma es?",
         nextBtnLabel: "Siguiente",
+        required: true,
         layout: "split-right",
-        required: true
+        description:"Si no recuerdas o no estás seguro del tipo de linfoma selecciona 'No lo sé'."
       }
     }
   

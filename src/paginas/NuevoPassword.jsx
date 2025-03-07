@@ -14,6 +14,7 @@ const NuevoPassword = () => {
   const [validarPassword, setValidarPassword] = useState('')
   const [alerta, setAlerta] = useState({})
   const [botonCargando, setBotonCargando] = useState(false)
+  const [respuestaExitosa, setRespuestaExitosa] = useState(false)
 
   const params = useParams()
   const token = params
@@ -56,7 +57,7 @@ const NuevoPassword = () => {
         }
       };
 
-      const { data, status } = await axios.post(`https://apiusers.guiaysalud.com/api/users/reset-password/`, userNewPassword , configWithTokenAPI)
+      const { data, status } = await axios.post(`https://apiusers.guiaysalud.com/api/users/reset-password/`, userNewPassword, configWithTokenAPI)
       console.log(status)
 
       if (status === 200) {
@@ -65,6 +66,7 @@ const NuevoPassword = () => {
           error: false
         })
         setBotonCargando(false)
+        setRespuestaExitosa(true)
         return
       }
 
@@ -120,11 +122,26 @@ const NuevoPassword = () => {
             </div>
             {msg && <Alerta alerta={alerta} />}
 
-            <button
-              type="submit"
-              className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 focus:ring-4 focus:ring-purple-300 transition duration-300 transform">
-              {botonCargando ? <Spinner color="purple" aria-label="Default status example" /> : <>Cambiar Contraseña <i className="fas fa-arrow-right ml-2"></i></>}
-            </button>
+
+
+            {
+              respuestaExitosa ?
+                <Link to="/login">
+                  <button
+                    className="mt-3 w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 focus:ring-4 focus:ring-purple-300 transition duration-300 transform">Iniciar Sesión <i className="fas fa-arrow-right ml-2"></i>
+                  </button>
+                </Link>
+                :
+                <button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 focus:ring-4 focus:ring-purple-300 transition duration-300 transform">
+                  {botonCargando ? <Spinner color="purple" aria-label="Default status example" /> : <>Cambiar Contraseña <i className="fas fa-arrow-right ml-2"></i></>}
+                </button>
+            }
+
+
+
+
           </form>
 
 

@@ -5,13 +5,7 @@ const siTuvoCirugia = [
       attributes: {
         description: "Puedes ingresar una fecha estimada y una breve descripción.",
         label: "Responde las siguientes preguntas",
-        nextBtnLabel: "Siguiente",
-        layout: "split-left",
-        attachment: {
-          type: "image",
-          url:
-            "https://quillforms.com/wp-content/uploads/2022/10/ludovic-migneault-B9YbNbaemMI-unsplash_50-scaled.jpeg"
-        },
+        nextBtnLabel: "Siguiente"
       },
       innerBlocks: [
         {
@@ -21,8 +15,7 @@ const siTuvoCirugia = [
             "format": "DDMMYYYY",
             "separator": "/",
             required: true,
-            label: "Ingresa la fecha de la cirugía.",
-            placeholder:"Día / Mes / Año"
+            label: "Ingresa la fecha estimada de la cirugía (Día / Mes / Año)."
           }
         },
         {
@@ -30,11 +23,6 @@ const siTuvoCirugia = [
           id: "detallesCirugia",
           'label.errorAlert.required': 'Este campo es obligatorio',
           attributes: {
-            attachment: {
-              type: "image",
-              url:
-                "https://quillforms.com/wp-content/uploads/2022/10/ludovic-migneault-B9YbNbaemMI-unsplash_50-scaled.jpeg"
-            },
             required: true,
             label: "Describe brevemente los detalles de la cirugía.",
             placeholder: "Escribe acá...",

@@ -3,13 +3,7 @@ const datosGeneralesFormulario = {
         name: "group",
         attributes: {
           label: "Responde las siguientes preguntas",
-          nextBtnLabel: "Siguiente",
-          layout: "split-left",
-          attachment: {
-            type: "image",
-            url:
-              "https://quillforms.com/wp-content/uploads/2022/10/ludovic-migneault-B9YbNbaemMI-unsplash_50-scaled.jpeg"
-          },
+          nextBtnLabel: "Siguiente"
         },
         innerBlocks: [
           {
@@ -38,7 +32,7 @@ const datosGeneralesFormulario = {
               choices: [
                 {
                   label: "Chile",
-                  value: "chile"
+                  value: "chile",
                 }
               ],
               label: "¿Cuál es el país del paciente?",

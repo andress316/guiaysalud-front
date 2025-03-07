@@ -7,11 +7,12 @@ import getAuthToken from '../utils/AuthToken'; // Importa la función
 import { Spinner } from "flowbite-react";
 
 
-import backgroundImage from '../assets/IMG-1.png'
+import backgroundImage from '../assets/guiaysalud-login.webp'
+import stringMayusculas from "../../helpers/stringMayusculas"
 
 
 const Registrar = () => {
-    const [nombre, setNombre] = useState('')
+    const [nombreUsuario, setNombreUsuario] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [repetirPassword, setRepetirPassword] = useState('')
@@ -90,8 +91,8 @@ const Registrar = () => {
 
 
         try {
+            console.log("registrandooooo....")
             const tokenAPI = await getAuthToken(); // Obtén el token usando la función
-            //localStorage.setItem('tokenAPI', tokenAPI);
 
             const configWithTokenAPI = {
                 headers: {
@@ -99,11 +100,17 @@ const Registrar = () => {
                     Authorization: tokenAPI
                 }
             };
-
+            
+            const nombre = stringMayusculas(nombreUsuario)
+            console.log(nombre)
             const {data, status} = await axios.post('https://apiusers.guiaysalud.com/api/users', { nombre, email, password, confirmPassword: repetirPassword, consentimiento, tipoUsuario: false}, configWithTokenAPI);
 
+            console.log(data)
+
+
+
             
-            if (status === 400){
+            if (data.estatus === 0){
                 setAlerta({
                     msg: 'Usuario ya existente, inicia sesión o recupera tu contraseña',
                     error: true
@@ -146,7 +153,7 @@ const Registrar = () => {
                                 type="text"
                                 id="nombre"
                                 name="nombre"
-                                onChange={e => setNombre(e.target.value)}
+                                onChange={e => setNombreUsuario(e.target.value)}
                                 required className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 focus:outline-none focus:bg-opacity-30 focus:ring-2 focus:ring-blue-300 text-white placeholder-gray-200 transition duration-200"
                                 placeholder="Nombre" />
                             <i className="fas fa-user absolute right-3 top-3 text-white"></i>
@@ -225,7 +232,7 @@ const Registrar = () => {
                                     </svg>
                                 </span>
                             </label>
-                            <p className="text-white px-2">Acepto los <Link to="/terminosycondiciones" target="_blank" className="font-extrabold hover:underline ">términos y condiciones</Link></p>
+                            <p className="text-white px-2">Acepto los <Link to="/terminos-y-condiciones" target="_blank" className="font-extrabold hover:underline ">términos de uso</Link> y <Link to="/politicas-de-privacidad" target="_blank" className="font-extrabold hover:underline ">políticas de privacidad</Link></p>
                         </div>
 
                         {msg && <Alerta alerta={alerta} />}
@@ -243,7 +250,7 @@ const Registrar = () => {
                         <Link to="/login" className="font-bold hover:underline"> Ingresar</Link>
                     </p>
 
-                    <div className="mt-8 flex justify-center space-x-4">
+                    {/* <div className="mt-8 flex justify-center space-x-4">
                         <Link t="#" className="text-white hover:text-pink-200 transition-colors duration-200">
                             <i className="fab fa-facebook-f text-2xl"></i>
                         </Link>
@@ -253,7 +260,7 @@ const Registrar = () => {
                         <Link t="#" className="text-white hover:text-pink-200 transition-colors duration-200">
                             <i className="fab fa-google text-2xl"></i>
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 

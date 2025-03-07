@@ -15,7 +15,8 @@ const contacto = {
                 "maxCharacters": 35,
                 label: "¿Cuál es tu nombre?",
                 required: true,
-                placeholder: "Escribe acá..."
+                placeholder: "Escribe acá...",
+                defaultValue:"Test"
             }
         },
         {
@@ -23,7 +24,8 @@ const contacto = {
             id: "email",
             attributes: {
                 required: true,
-                label: "Email:"
+                label: "Email:",
+                defaultValue:"jandresr91@gmail.com"
             }
         },
         {
@@ -35,7 +37,8 @@ const contacto = {
                 "maxCharacters": 12,
                 label: "Número de teléfono con whatsapp:",
                 required: true,
-                placeholder: "+56"
+                placeholder: "+56",
+                defaultValue:"+56957600539"
             }
         },
 

@@ -22,9 +22,9 @@ module.exports = {
         'slide-left-infinite': 'slide-left 25s linear infinite',
       }
     },
-    fontFamily:{
-      poppins:["poppins"]
-    },
+    // fontFamily:{
+    //   poppins:["poppins"]
+    // },
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),

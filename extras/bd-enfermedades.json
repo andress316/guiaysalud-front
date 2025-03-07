@@ -1,120 +1,154 @@
 [
 {
-  "nombre": "Cáncer de Cabeza y Cuello",
-  "tipo": "cancer-cabeza-cuello",
+  "nombre": "cabeza-cuello",
+  "tipo": "cabeza-cuello",
   "descripcion":"El cáncer de cabeza y cuello es un grupo de cánceres que se desarrollan en la región de la cabeza y el cuello, que incluye la cavidad oral, garganta (faringe y laringe), nariz, senos paranasales y glándulas salivales. La mayoría de estos cánceres son carcinomas de células escamosas y suelen estar asociados con el consumo de tabaco, alcohol y el virus del papiloma humano (VPH).",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
 },
 {
-  "nombre": "Cáncer de Endometrio",
-  "tipo": "cancer-endometrio",
+  "nombre": "colorrectal",
+  "tipo": "colorrectal",
+  "descripcion":"El cáncer colorrectal es un tipo de cáncer que se origina en el colon o el recto, generalmente a partir de pólipos que con el tiempo pueden volverse malignos. Es una de las principales causas de muerte por cáncer en el mundo, pero su detección temprana mediante colonoscopía y pruebas de sangre oculta en heces puede aumentar significativamente las posibilidades de tratamiento exitoso. Factores como la edad avanzada, antecedentes familiares, dieta rica en carnes procesadas, obesidad y sedentarismo aumentan el riesgo de desarrollarlo. El tratamiento puede incluir cirugía, quimioterapia, radioterapia e inmunoterapia, dependiendo del estadio en que se diagnostique.",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "endometrio",
+  "tipo": "endometrio",
   "descripcion":"El cáncer de endometrio es un tipo de cáncer que se origina en el revestimiento interno del útero, llamado endometrio. Es el tipo más común de cáncer uterino y generalmente afecta a mujeres después de la menopausia. Los factores de riesgo incluyen la obesidad, desequilibrios hormonales y el uso prolongado de estrógenos sin progestina. Los síntomas suelen incluir sangrado vaginal anormal.",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
 },
 {
-  "nombre": "Cáncer de Esófago",
-  "tipo": "cancer-esofago",
+  "nombre": "esofago",
+  "tipo": "esofago",
   "descripcion":"El cáncer de esófago se desarrolla en el esófago, el tubo que conecta la garganta con el estómago. Los dos tipos principales son el carcinoma de células escamosas y el adenocarcinoma. Los factores de riesgo incluyen el consumo excesivo de alcohol, tabaco, reflujo ácido crónico y la obesidad. Los síntomas comunes incluyen dificultad para tragar, pérdida de peso y dolor en el pecho.",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
 },
 {
-  "nombre": "Cáncer Gástrico",
-  "tipo": "cancer-gastrico",
+  "nombre": "gastrico",
+  "tipo": "gastrico",
   "descripcion":"El cáncer gástrico, o de estómago, es una enfermedad caracterizada por el crecimiento descontrolado de células malignas en el revestimiento interno del estómago, siendo el adenocarcinoma el tipo más común. Suele estar asociado a factores como la infección por Helicobacter pylori, dietas altas en sal o alimentos procesados, consumo de alcohol y tabaco, predisposición genética y condiciones médicas como gastritis crónica. Sus síntomas iniciales suelen ser inespecíficos, incluyendo indigestión persistente, pérdida de peso y apetito, náuseas o vómitos, lo que dificulta un diagnóstico temprano y favorece su detección en etapas avanzadas.",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
 },
 {
-  "nombre": "Cáncer de GIST",
-  "tipo": "cancer-gist",
+  "nombre": "gist",
+  "tipo": "gist",
   "descripcion":"El cáncer GIST (tumor del estroma gastrointestinal) es un tipo raro de tumor que se origina en las células intersticiales de Cajal, responsables de coordinar los movimientos del tracto gastrointestinal. Puede desarrollarse en cualquier parte del sistema digestivo, siendo más común en el estómago y el intestino delgado. Se asocia con mutaciones genéticas como las de los genes KIT o PDGFRA. Los síntomas incluyen dolor abdominal, sangrado gastrointestinal, fatiga y pérdida de peso. Su tratamiento principal es la cirugía, complementada con terapias dirigidas como el imatinib en casos avanzados o metastásicos.",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
 },
 {
-  "nombre": "Cáncer de Hígado",
-  "tipo": "cancer-higado",
+  "nombre": "higado",
+  "tipo": "higado",
   "descripcion":"El cáncer de hígado es una enfermedad en la que se forman células malignas en los tejidos del hígado. El tipo más común es el carcinoma hepatocelular, que suele estar asociado con enfermedades hepáticas crónicas como la cirrosis, infecciones por hepatitis B o C, y el consumo excesivo de alcohol. Los síntomas incluyen pérdida de peso, dolor abdominal y coloración amarillenta de la piel (ictericia).",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
 },
 {
-  "nombre": "Leucemia",
-  "tipo": "cancer-leucemia",
+  "nombre": "leucemia",
+  "tipo": "leucemia",
   "descripcion":"La leucemia es un tipo de cáncer que afecta la sangre y la médula ósea, donde se produce una proliferación anormal de glóbulos blancos. Esta enfermedad impide que la sangre funcione correctamente, lo que causa fatiga, infecciones frecuentes, moretones o sangrados fáciles y anemia. Existen varios tipos de leucemia, como la leucemia mieloide y la linfocítica, que pueden ser agudas o crónicas.",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
 },
 {
-  "nombre": "Cáncer de Ovario",
-  "tipo": "cancer-ovario",
-  "descripcion":"El cáncer de ovario es una enfermedad en la que células malignas crecen en los ovarios, las glándulas responsables de producir óvulos y hormonas femeninas. Es conocido como un “asesino silencioso” porque en sus etapas iniciales suele ser asintomático o presenta síntomas inespecíficos, como hinchazón abdominal, dolor pélvico, cambios en los hábitos urinarios o digestivos, y fatiga. Los factores de riesgo incluyen antecedentes familiares, mutaciones genéticas como BRCA1 y BRCA2, y la edad avanzada. El tratamiento depende de la etapa e incluye cirugía, quimioterapia y, en algunos casos, terapia dirigida o inmunoterapia.",
+  "nombre": "linfoma",
+  "tipo": "linfoma",
+  "descripcion":"El linfoma es un tipo de cáncer que afecta el sistema linfático, una parte clave del sistema inmunológico encargada de defender el cuerpo contra infecciones. Se origina en los linfocitos, un tipo de glóbulo blanco, y puede dividirse en dos grandes categorías: linfoma de Hodgkin y linfoma no Hodgkin, cada uno con diferentes subtipos y características. Aunque sus causas exactas no siempre son claras, factores de riesgo como infecciones virales, trastornos inmunológicos y antecedentes familiares pueden influir en su desarrollo. Los síntomas más comunes incluyen inflamación indolora de los ganglios linfáticos, fatiga, fiebre, sudoración nocturna y pérdida de peso. El tratamiento varía según el tipo y estadio, e incluye quimioterapia, inmunoterapia, radioterapia y, en algunos casos, trasplante de médula ósea.",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
 },
 {
-  "nombre": "Melanoma",
-  "tipo": "cancer-melanoma",
+  "nombre": "mama",
+  "tipo": "mama",
+  "descripcion":"El melanoma es un tipo agresivo de cáncer de piel que se origina en los melanocitos, las células que producen melanina, el pigmento que da color a la piel. Suele estar asociado a la exposición excesiva a los rayos UV del sol o de camas de bronceado. Aparece como un lunar nuevo o un cambio en uno existente. Si no se detecta temprano, puede diseminarse a otros órganos.",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+
+{
+  "nombre": "melanoma",
+  "tipo": "melanoma",
   "descripcion":"El melanoma es un tipo agresivo de cáncer de piel que se origina en los melanocitos, las células que producen melanina, el pigmento que da color a la piel. Suele estar asociado a la exposición excesiva a los rayos UV del sol o de camas de bronceado. Aparece como un lunar nuevo o un cambio en uno existente. Si no se detecta temprano, puede diseminarse a otros órganos.",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
 },
 {
-  "nombre": "Mieloma Múltiple",
-  "tipo": "cancer-mieloma-multiple",
+  "nombre": "mieloma-multiple",
+  "tipo": "mieloma-multiple",
   "descripcion":"El mieloma múltiple es un tipo de cáncer de la sangre que afecta a las células plasmáticas, un tipo de glóbulo blanco responsable de producir anticuerpos en la médula ósea. En esta enfermedad, las células plasmáticas anormales se multiplican de forma descontrolada, interfiriendo con la producción normal de células sanguíneas y formando tumores en los huesos o tejidos blandos. Los síntomas incluyen dolor óseo, fatiga, infecciones frecuentes, anemia, daño renal y niveles elevados de calcio en sangre. Es una enfermedad crónica que requiere tratamiento especializado, como quimioterapia, terapia dirigida, inmunoterapia y, en algunos casos, trasplante de médula ósea.",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
 },
 {
-  "nombre": "Cáncer de Próstata",
-  "tipo": "cancer-prostata",
+  "nombre": "ovario",
+  "tipo": "ovario",
+  "descripcion":"El cáncer de ovario es una enfermedad en la que células malignas crecen en los ovarios, las glándulas responsables de producir óvulos y hormonas femeninas. Es conocido como un “asesino silencioso” porque en sus etapas iniciales suele ser asintomático o presenta síntomas inespecíficos, como hinchazón abdominal, dolor pélvico, cambios en los hábitos urinarios o digestivos, y fatiga. Los factores de riesgo incluyen antecedentes familiares, mutaciones genéticas como BRCA1 y BRCA2, y la edad avanzada. El tratamiento depende de la etapa e incluye cirugía, quimioterapia y, en algunos casos, terapia dirigida o inmunoterapia.",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "prostata",
+  "tipo": "prostata",
   "descripcion":"El cáncer de próstata es una enfermedad en la que células malignas crecen de forma descontrolada en la próstata, una glándula del sistema reproductor masculino que produce parte del líquido seminal. Es uno de los cánceres más comunes en hombres, especialmente en mayores de 50 años, y puede ser de crecimiento lento o agresivo. Aunque en etapas tempranas puede ser asintomático, síntomas como dificultad para orinar, necesidad frecuente de orinar, sangre en la orina o semen y dolor en la pelvis pueden aparecer en etapas avanzadas. El tratamiento incluye vigilancia activa, cirugía, radioterapia, terapia hormonal y, en algunos casos, quimioterapia o inmunoterapia.",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
 },
 {
-  "nombre": "Cáncer Pulmón",
-  "tipo": "cancer-pulmon",
+  "nombre": "pancreas",
+  "tipo": "pancreas",
+  "descripcion":"El cáncer de páncreas es una enfermedad agresiva en la que las células del páncreas crecen de manera descontrolada, afectando su función en la digestión y la regulación del azúcar en la sangre. Generalmente se detecta en etapas avanzadas debido a la falta de síntomas tempranos, lo que dificulta su tratamiento. Sus principales factores de riesgo incluyen el tabaquismo, la obesidad, antecedentes familiares y ciertas afecciones médicas como la pancreatitis crónica. El tratamiento varía según el estadio e incluye cirugía, quimioterapia, radioterapia e inmunoterapia.",
+  "sintomas":[""],
+  "etapas":[""],
+  "tratamiento":[""]
+},
+{
+  "nombre": "pulmon",
+  "tipo": "pulmon",
   "descripcion":"El cáncer de próstata es una enfermedad en la que células malignas crecen de forma descontrolada en la próstata, una glándula del sistema reproductor masculino que produce parte del líquido seminal. Es uno de los cánceres más comunes en hombres, especialmente en mayores de 50 años, y puede ser de crecimiento lento o agresivo. Aunque en etapas tempranas puede ser asintomático, síntomas como dificultad para orinar, necesidad frecuente de orinar, sangre en la orina o semen y dolor en la pelvis pueden aparecer en etapas avanzadas. El tratamiento incluye vigilancia activa, cirugía, radioterapia, terapia hormonal y, en algunos casos, quimioterapia o inmunoterapia.",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
 },
 {
-  "nombre": "Cáncer Renal",
-  "tipo": "cancer-renal",
-  "descripcion":"El cáncer renal es una enfermedad en la que células malignas crecen en los riñones, los órganos encargados de filtrar la sangre y producir orina. El tipo más común es el carcinoma de células renales. Factores de riesgo incluyen tabaquismo, obesidad, presión arterial alta, exposición a toxinas y antecedentes familiares. Puede ser asintomático en etapas iniciales, pero en fases avanzadas puede causar sangre en la orina, dolor en la parte baja de la espalda, fatiga, pérdida de peso y fiebre persistente. El tratamiento incluye cirugía, inmunoterapia, terapias dirigidas y, en casos seleccionados, radioterapia o quimioterapia.",
+  "nombre": "renal",
+  "tipo": "renal",
+  "descripcion":"El cáncer renal es una enfermedad en la que las células del riñón crecen de manera descontrolada, formando tumores malignos. El tipo más común es el carcinoma de células renales, que suele desarrollarse en los túbulos del riñón. Sus factores de riesgo incluyen tabaquismo, obesidad, hipertensión y antecedentes familiares. En etapas tempranas, puede ser asintomático, pero en fases avanzadas puede causar sangre en la orina, dolor lumbar y fatiga. El tratamiento depende del estadio e incluye cirugía, terapias dirigidas, inmunoterapia y, en algunos casos, radioterapia.",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
 },
 {
-  "nombre": "Cáncer de Vejiga",
-  "tipo": "cancer-vejiga",
+  "nombre": "vejiga",
+  "tipo": "vejiga",
   "descripcion":"El cáncer de vejiga es una enfermedad en la que células malignas crecen en el revestimiento interno de la vejiga, un órgano del sistema urinario que almacena la orina. El tipo más común es el carcinoma urotelial. Los factores de riesgo incluyen el tabaquismo, la exposición a productos químicos, infecciones crónicas de la vejiga y antecedentes familiares. Los síntomas frecuentes incluyen sangre en la orina, necesidad urgente o frecuente de orinar y dolor al orinar. El tratamiento depende de la etapa e incluye cirugía, quimioterapia, inmunoterapia y, en algunos casos, radioterapia.",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
-},
+}
+,
 {
-  "nombre": "Cáncer Vesicular / Vías Biliares",
-  "tipo": "cancer-viliar-vias-biliares",
-  "descripcion":"El cáncer de vesícula biliar es una enfermedad poco común en la que células malignas crecen en la vesícula biliar, un órgano pequeño debajo del hígado que almacena la bilis. Generalmente, se asocia con factores como cálculos biliares, inflamación crónica de la vesícula, obesidad y antecedentes familiares. Es difícil de diagnosticar en etapas tempranas debido a la falta de síntomas específicos, pero en etapas avanzadas puede causar dolor abdominal, ictericia, náuseas, pérdida de peso y fiebre. El tratamiento incluye cirugía, quimioterapia y, en casos seleccionados, radioterapia.",
+  "nombre": "enfermedad del este",
+  "tipo": "enfermedad-del-este",
+  "descripcion":"El cáncer de vejiga es una enfermedad en la que células malignas crecen en el revestimiento interno de la vejiga, un órgano del sistema urinario que almacena la orina. El tipo más común es el carcinoma urotelial. Los factores de riesgo incluyen el tabaquismo, la exposición a productos químicos, infecciones crónicas de la vejiga y antecedentes familiares. Los síntomas frecuentes incluyen sangre en la orina, necesidad urgente o frecuente de orinar y dolor al orinar. El tratamiento depende de la etapa e incluye cirugía, quimioterapia, inmunoterapia y, en algunos casos, radioterapia.",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
