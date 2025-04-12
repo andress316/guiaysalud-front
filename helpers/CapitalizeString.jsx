@@ -4,3 +4,5 @@ const capitalizeString = ((string) => {
 })
 
 export default capitalizeString
+
+

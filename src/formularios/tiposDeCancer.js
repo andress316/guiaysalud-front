@@ -76,6 +76,11 @@ const tiposDeCancer = {
                 label: "Vejiga",
                 value: "vejiga"
             }
+            ,
+            {
+                label: "Vesícula y vías biliares",
+                value: "vesicula-biliar"
+            }
         ],
         label: "¿Selecciona tu tipo de cáncer?",
         description: "Selecciona el tipo de cáncer con el que fuiste diagnosticado.",

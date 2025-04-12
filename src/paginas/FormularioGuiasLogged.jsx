@@ -246,6 +246,18 @@ const FormularioGuiasLogged = () => {
               }
             },
 
+            // Sección 12: Pregunta personalizada
+            {
+              id: "intereses",
+              name: "short-text",
+              attributes: {
+                label: "¿De qué temas en específico te gustaría recibir orientación?",
+                required: false,
+                placeholder: "Escribe acá...",
+                description: "Ayudanos a mejorar y apoyar más pacientes, cuéntanos en qué temas te gustaría recibir orientación.",
+              }
+            },
+
             // Sección 11: Mensaje
             {
               name: "statement",
@@ -257,16 +269,6 @@ const FormularioGuiasLogged = () => {
               }
             },
 
-            // Sección 12: Pregunta personalizada
-            // {
-            //   id: "preguntaPersonalizada",
-            //   name: "short-text",
-            //   attributes: {
-            //     label: "Ingresa una pregunta específica:",
-            //     required: false,
-            //     placeholder: "Escribe acá..."
-            //   }
-            // },
 
             // Sección 13: datos de contacto
             {
@@ -357,7 +359,7 @@ const FormularioGuiasLogged = () => {
           let datosFormulario = data
           datosFormulario.answers.email = { value: userEmail }
           datosFormulario.answers.enfermedad = { value: userEnfermedad }
-          datosFormulario.answers.subtipo = { value: null }
+          datosFormulario.answers.subtipo = { value: 0 }
           datosFormulario.answers.user = { id: userId, nombre: userNombre, email: userEmail, telefono: userTelefono }
 
           datosFormulario.answers.origenFormulario = { value: "guias-2025-loged" }
@@ -367,6 +369,15 @@ const FormularioGuiasLogged = () => {
           datosFormulario.answers.nombre = { value: stringMayusculas(nombreValue) }
 
           // Tratamientos:
+          if(datosFormulario.answers.tratamiento.value === "0"){
+            datosFormulario.answers.quimioterapia = { value: "0" }
+            datosFormulario.answers.radioterapia = { value: "0" }
+            datosFormulario.answers.inmunoterapia = { value: "0" }
+            datosFormulario.answers.terapiaHormonal = { value: "0" }
+            datosFormulario.answers.terapiaDirigida = { value: "0" }
+          }
+
+          
           if (datosFormulario.answers.tratamientosDelPaciente) {
             if (datosFormulario.answers.tratamientosDelPaciente.value.includes("quimioterapia")) {
               datosFormulario.answers.quimioterapia = { value: "1" }
@@ -411,12 +422,15 @@ const FormularioGuiasLogged = () => {
             datosFormulario.answers.subtipo = { value: subtipoPulmon }
           }
 
+          if (datosFormulario.answers.guiaEstudiosClinicos.value === "tratamiento") {
+            datosFormulario.answers.guiasSeleccionadas.value.push("tratamiento")
+          }
 
 
 
 
-          console.log("Datos enviados:")
-          console.log(datosFormulario)
+
+          
           datosFormulario.answers.nombreFormulario = 'Meta Guías'
 
 
@@ -438,12 +452,10 @@ const FormularioGuiasLogged = () => {
               const url = 'https://apiguia.guiaysalud.com/api/v2/guides'
               const formulario = await axios.post(url, info, configWithTokenAPI)
 
-              console.log("Respuesta recibida:")
-              console.log(formulario)
-              console.log(formulario.data.message)
+             
 
               const userNew = formulario.data.userNew
-              console.log('userNew: ', userNew)
+            
               const email = formulario.data.correo
               const password = formulario.data.password
 
@@ -471,7 +483,7 @@ const FormularioGuiasLogged = () => {
 
 
             } catch (error) {
-              console.log(error)
+              
             }
           }
           submit(datosFormulario)

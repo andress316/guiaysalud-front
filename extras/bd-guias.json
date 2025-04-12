@@ -215,6 +215,18 @@
         "autor": "Guia y Salud Spa",
         "urlAutor": "https://www.guiaysalud.com"
     },
+    {
+        "id": 76,
+        "enfermedad": "vesicula-biliar",
+        "tipoGuia": "info-general",
+        "nombreDisplay": "¿Qué es la enfermedad?",
+        "descripcion": "Descripción general del cáncer de vejiga para pacientes diagnosticados.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/vesicula-biliar.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
 
 
 
@@ -436,6 +448,18 @@
     {
         "id": 36,
         "enfermedad": "vejiga",
+        "tipoGuia": "alimentacion-efectos-secundarios",
+        "nombreDisplay": "Alimentación y Efectos Secundarios",
+        "descripcion": "Consejos de alimentación durante el tratamiento.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/alimentacion.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 75,
+        "enfermedad": "vesicula-biliar",
         "tipoGuia": "alimentacion-efectos-secundarios",
         "nombreDisplay": "Alimentación y Efectos Secundarios",
         "descripcion": "Consejos de alimentación durante el tratamiento.",
@@ -684,6 +708,18 @@
         "autor": "Guia y Salud Spa",
         "urlAutor": "https://www.guiaysalud.com"
     },
+    {
+        "id": 74,
+        "enfermedad": "vesicula-biliar",
+        "tipoGuia": "salud-mental",
+        "nombreDisplay": "Consejos de Salud Mental",
+        "descripcion": "Pensamientos que debes evitar como paciente.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/salud-mental.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
 
 
 
@@ -702,7 +738,7 @@
     {
         "id": 55,
         "enfermedad": "cabeza-cuello",
-        "tipoGuia": "estudios-clinicos",
+        "tipoGuia": "tratamiento",
         "nombreDisplay": "Tratamientos modernos en Chile",
         "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
         "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
@@ -714,7 +750,7 @@
     {
         "id": 56,
         "enfermedad": "colorrectal",
-        "tipoGuia": "estudios-clinicos",
+        "tipoGuia": "tratamiento",
         "nombreDisplay": "Tratamientos modernos en Chile",
         "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
         "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
@@ -726,7 +762,7 @@
     {
         "id": 57,
         "enfermedad": "endometrio",
-        "tipoGuia": "estudios-clinicos",
+        "tipoGuia": "tratamiento",
         "nombreDisplay": "Tratamientos modernos en Chile",
         "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
         "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
@@ -738,7 +774,7 @@
     {
         "id": 58,
         "enfermedad": "esofago",
-        "tipoGuia": "estudios-clinicos",
+        "tipoGuia": "tratamiento",
         "nombreDisplay": "Tratamientos modernos en Chile",
         "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
         "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
@@ -750,7 +786,7 @@
     {
         "id": 59,
         "enfermedad": "gastrico",
-        "tipoGuia": "estudios-clinicos",
+        "tipoGuia": "tratamiento",
         "nombreDisplay": "Tratamientos modernos en Chile",
         "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
         "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
@@ -762,7 +798,7 @@
     {
         "id": 60,
         "enfermedad": "gist",
-        "tipoGuia": "estudios-clinicos",
+        "tipoGuia": "tratamiento",
         "nombreDisplay": "Tratamientos modernos en Chile",
         "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
         "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
@@ -774,7 +810,7 @@
     {
         "id": 61,
         "enfermedad": "higado",
-        "tipoGuia": "estudios-clinicos",
+        "tipoGuia": "tratamiento",
         "nombreDisplay": "Tratamientos modernos en Chile",
         "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
         "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
@@ -786,7 +822,7 @@
     {
         "id": 62,
         "enfermedad": "leucemia",
-        "tipoGuia": "estudios-clinicos",
+        "tipoGuia": "tratamiento",
         "nombreDisplay": "Tratamientos modernos en Chile",
         "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
         "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
@@ -798,7 +834,7 @@
     {
         "id": 63,
         "enfermedad": "linfoma",
-        "tipoGuia": "estudios-clinicos",
+        "tipoGuia": "tratamiento",
         "nombreDisplay": "Tratamientos modernos en Chile",
         "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
         "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
@@ -810,7 +846,7 @@
     {
         "id": 64,
         "enfermedad": "mama",
-        "tipoGuia": "estudios-clinicos",
+        "tipoGuia": "tratamiento",
         "nombreDisplay": "Tratamientos modernos en Chile",
         "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
         "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
@@ -822,7 +858,7 @@
     {
         "id": 65,
         "enfermedad": "melanoma",
-        "tipoGuia": "estudios-clinicos",
+        "tipoGuia": "tratamiento",
         "nombreDisplay": "Tratamientos modernos en Chile",
         "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
         "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
@@ -834,7 +870,7 @@
     {
         "id": 66,
         "enfermedad": "mieloma-multiple",
-        "tipoGuia": "estudios-clinicos",
+        "tipoGuia": "tratamiento",
         "nombreDisplay": "Tratamientos modernos en Chile",
         "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
         "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
@@ -846,7 +882,7 @@
     {
         "id": 67,
         "enfermedad": "ovario",
-        "tipoGuia": "estudios-clinicos",
+        "tipoGuia": "tratamiento",
         "nombreDisplay": "Tratamientos modernos en Chile",
         "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
         "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
@@ -858,7 +894,7 @@
     {
         "id": 68,
         "enfermedad": "prostata",
-        "tipoGuia": "estudios-clinicos",
+        "tipoGuia": "tratamiento",
         "nombreDisplay": "Tratamientos modernos en Chile",
         "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
         "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
@@ -870,7 +906,7 @@
     {
         "id": 69,
         "enfermedad": "pancreas",
-        "tipoGuia": "estudios-clinicos",
+        "tipoGuia": "tratamiento",
         "nombreDisplay": "Tratamientos modernos en Chile",
         "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
         "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
@@ -882,7 +918,7 @@
     {
         "id": 70,
         "enfermedad": "pulmon",
-        "tipoGuia": "estudios-clinicos",
+        "tipoGuia": "tratamiento",
         "nombreDisplay": "Tratamientos modernos en Chile",
         "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
         "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
@@ -894,7 +930,7 @@
     {
         "id": 71,
         "enfermedad": "renal",
-        "tipoGuia": "estudios-clinicos",
+        "tipoGuia": "tratamiento",
         "nombreDisplay": "Tratamientos modernos en Chile",
         "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
         "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
@@ -906,7 +942,19 @@
     {
         "id": 72,
         "enfermedad": "vejiga",
-        "tipoGuia": "estudios-clinicos",
+        "tipoGuia": "tratamiento",
+        "nombreDisplay": "Tratamientos modernos en Chile",
+        "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
+        "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",
+        "fecha": "2025-01-22",
+        "estatus": "activo",
+        "autor": "Guia y Salud Spa",
+        "urlAutor": "https://www.guiaysalud.com"
+    },
+    {
+        "id": 73,
+        "enfermedad": "vesicula-biliar",
+        "tipoGuia": "tratamiento",
         "nombreDisplay": "Tratamientos modernos en Chile",
         "descripcion": "Conoce los tratamientos en investigación más modernos en Chile.",
         "img": "https://cs210032000b7b5ed89.blob.core.windows.net/imgs-guiaysalud-webapp/web-app/guias/tratamientos-modernos.webp",

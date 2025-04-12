@@ -219,15 +219,16 @@ const Formulario = () => {
 
 
             // Sección 12: Pregunta personalizada
-            // {
-            //   id: "preguntaPersonalizada",
-            //   name: "short-text",
-            //   attributes: {
-            //     label: "Ingresa una pregunta específica:",
-            //     required: false,
-            //     placeholder: "Escribe acá..."
-            //   }
-            // },
+            {
+              id: "intereses",
+              name: "short-text",
+              attributes: {
+                label: "¿De qué temas en específico te gustaría recibir orientación?",
+                required: false,
+                placeholder: "Escribe acá...",
+                description: "Ayudanos a mejorar y apoyar más pacientes, cuéntanos en qué temas te gustaría recibir orientación.",
+              }
+            },
 
             // Sección 13: datos de contacto
             {
@@ -323,10 +324,10 @@ const Formulario = () => {
         // Enviamos el formulario
         onSubmit={(data, { completeForm, setIsSubmitting }) => {
 
-          console.log(data)
+       
           
           let datosFormulario = data
-          datosFormulario.answers.subtipo = { value: "0" }
+          datosFormulario.answers.subtipo = { value: 0 }
           datosFormulario.answers.user = { id: null, nombre: null, email: null, telefono: null }
 
           datosFormulario.answers.origenFormulario = { value: "EC-2025-nonloged" }
@@ -338,6 +339,16 @@ const Formulario = () => {
 
 
           // Tratamientos:
+          if(datosFormulario.answers.tratamiento.value === "0"){
+            datosFormulario.answers.quimioterapia = { value: "0" }
+            datosFormulario.answers.radioterapia = { value: "0" }
+            datosFormulario.answers.inmunoterapia = { value: "0" }
+            datosFormulario.answers.terapiaHormonal = { value: "0" }
+            datosFormulario.answers.terapiaDirigida = { value: "0" }
+          }
+
+
+
           if (datosFormulario.answers.tratamientosDelPaciente) {
             if (datosFormulario.answers.tratamientosDelPaciente.value.includes("quimioterapia")) {
               datosFormulario.answers.quimioterapia = { value: "1" }
@@ -364,6 +375,10 @@ const Formulario = () => {
           // Subtipos:
           if (datosFormulario.answers.enfermedad.value.includes("cabeza-cuello")) {
             datosFormulario.answers.subtipo = { value: subtipoCabezaCuello }
+          }
+
+          if (datosFormulario.answers.enfermedad.value.includes("gist")) {
+            datosFormulario.answers.subtipo = { value: null }
           }
 
           if (datosFormulario.answers.enfermedad.value.includes("mama")) {
@@ -407,12 +422,11 @@ const Formulario = () => {
               const url = 'https://apifiltro.guiaysalud.com/api/v1/filter-ec/filter'
               const formulario = await axios.post(url, info, configWithTokenAPI)
 
-              console.log("Respuesta recibida:")
-              console.log(formulario)
+       
   
 
               const userNew = formulario.data.userNew
-              console.log('userNew: ', userNew)
+             
               const email = formulario.data.correo
               const password = formulario.data.password
 
@@ -440,7 +454,7 @@ const Formulario = () => {
 
 
             } catch (error) {
-              console.log(error)
+              
             }
           }
           submit(datosFormulario)

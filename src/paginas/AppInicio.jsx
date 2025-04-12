@@ -49,6 +49,8 @@ const AppInicio = () => {
 
 
 
+
+
   //Consultamos si el usuario lleno toda su información
   if (!openModal && !auth.enfermedad) {
     setOpenModal(true)
@@ -102,6 +104,7 @@ const AppInicio = () => {
       try {
         //Consultamos las guías del usuario
         const tokenAPI = await getAuthToken();
+       
         const configWithTokenAPI = {
           headers: {
             "Content-Type": "application/json",
@@ -111,10 +114,10 @@ const AppInicio = () => {
 
         const { data } = await axios.get(`https://apiusers.guiaysalud.com/api/users/${auth.id}/guide`, configWithTokenAPI);
 
-        console.log("data guias:", data)
+     
         let guiasDeUsuario
 
-        if (data.guias){
+        if (data.guias) {
           guiasDeUsuario = data.guias
         } else {
           guiasDeUsuario = []
@@ -203,20 +206,23 @@ const AppInicio = () => {
 
 
         const { data } = await axios.get(`https://apiusers.guiaysalud.com/api/users/${auth.id}/conversaciones`, configWithTokenAPI);
-        // console.log(data)
+
+
 
 
         const formattedData = data.map(msg => [
           { sender: 'me', text: msg.mensajeUsuario.split(/Thu|Sun|Mon|Tue|Wed|Fri|Sat/)[0], createdAt: msg.fecha },
           { sender: 'bot', text: msg.MensajeRespuestaBot.split(/Thu|Sun|Mon|Tue|Wed|Fri|Sat/)[0], createdAt: msg.fecha }
         ]).flat();
+        setConversacion(formattedData);
 
-        if (formattedData.length === 0) {
+        if (data.message) {
+         
           const welcomeMessage = { sender: 'bot', text: `Hola ${auth.user.nombre}, ¿En qué puedo ayudarte hoy?`, createdAt: new Date() };
           formattedData.push(welcomeMessage);
         }
 
-        setConversacion(formattedData);
+
       } catch (error) {
         console.error('Error al consultar la conversación en el chat:', error);
       }
@@ -230,7 +236,7 @@ const AppInicio = () => {
 
   useEffect(() => {
     if (mensajesEndRef.current) {
-      mensajesEndRef.current.scrollIntoView({ behavior: "smooth" });
+      // mensajesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [conversacion]);
 
@@ -239,7 +245,7 @@ const AppInicio = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setBotonCargando(true)
-    console.log(auth.id)
+   
 
     try {
       const token = await getAuthToken();
@@ -307,7 +313,7 @@ const AppInicio = () => {
       window.location.reload();
 
     } catch (error) {
-      console.log(error)
+    
       setBotonCargando(false)
     }
   }
@@ -418,26 +424,26 @@ const AppInicio = () => {
               <div className="flex flex-nowrap p-6">
 
                 {
-                (guiasNoCreadas.map((guia) => (
-                  <CardGuiaNoCreada
-                    key={guia.id}
-                    nombre={guia.tipoGuia}
-                    enfermedad={guia.enfermedad}
-                  />)))
+                  (guiasNoCreadas.map((guia) => (
+                    <CardGuiaNoCreada
+                      key={guia.id}
+                      nombre={guia.tipoGuia}
+                      enfermedad={guia.enfermedad}
+                    />)))
                 }
                 {
-                (guiasCreadas.map((guia) => (
-                  <CardGuiaCreada
-                    key={guia.id}
-                    nombre={guia.tipoGuia}
-                    enfermedad={guia.enfermedad}
-                    fecha={guia.fecha}
-                    url={guia.pdf}
-                    created={guia.fecha}
+                  (guiasCreadas.map((guia) => (
+                    <CardGuiaCreada
+                      key={guia.id}
+                      nombre={guia.tipoGuia}
+                      enfermedad={guia.enfermedad}
+                      fecha={guia.fecha}
+                      url={guia.pdf}
+                      created={guia.fecha}
 
-                  />)))
+                    />)))
                 }
-                
+
               </div>
             </div>
           </div>
@@ -469,7 +475,7 @@ const AppInicio = () => {
           </div>
         </div>
 
-        <div className="flex bg-white dark:bg-slate-700 rounded-xl mb-5 h-44 w-full md:w-1/2 items-center justify-start p-5 gap-3 transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+        {/* <div className="flex bg-white dark:bg-slate-700 rounded-xl mb-5 h-44 w-full md:w-1/2 items-center justify-start p-5 gap-3 transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
           <div className="w-1/3">
             <img src={iconoFundaciones} alt="" />
           </div>
@@ -477,7 +483,7 @@ const AppInicio = () => {
             <h1 className="font-poppins font-bold text-indigo-900 dark:text-white dark:text-gray100 md:text-lg text-md">Fundaciones y agrupaciones</h1>
             <Link role='button' to={"/app/grupos-apoyo"} target="_self" className="block mt-2  px-6 py-2 rounded text-center text-white text-lg font-semibold transition bg-blue-500 hover:hover:bg-blue-600">¡Unirme!</Link>
           </div>
-        </div>
+        </div> */}
 
         {/* <div className="flex bg-white dark:bg-slate-700 rounded-xl mb-5 h-44 w-full md:w-1/2 items-center justify-center transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">Acá van alianzas</div> */}
       </div>

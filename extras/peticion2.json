@@ -1,0 +1,205 @@
+{
+    "answers": {
+        "enfermedad": {
+            "value": "endometrio",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "metastasis": {
+            "value": "1",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "cirugia": {
+            "value": "0",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "tratamiento": {
+            "value": "0",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "guiasSeleccionadas": {
+            "value": [
+                "info-general",
+                "alimentacion-efectos-secundarios",
+                "salud-mental",
+                "tratamiento"
+            ],
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "multiple-choice"
+        },
+        "guiaEstudiosClinicos": {
+            "value": "tratamiento",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "terminos": {
+            "value": "si-acepto",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "sexoDelPaciente": {
+            "value": "masculino",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "paisDelPaciente": {
+            "value": "chile",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "regionDelPaciente": {
+            "value": "tarapaca",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "ciudadDelPaciente": {
+            "value": "Prueba",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "short-text"
+        },
+        "dolorSintomas": {
+            "value": "1",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "descansoEnCama": {
+            "value": "1",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "actividadDiaria": {
+            "value": "1",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "dropdown"
+        },
+        "nombre": {
+            "value": "Don Prueba"
+        },
+        "email": {
+            "value": "santelizelvis@gmail.com",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "email"
+        },
+        "telefono": {
+            "value": "+56988166107",
+            "isValid": true,
+            "isAnswered": true,
+            "isPending": false,
+            "validationErr": null,
+            "isCorrectIncorrectScreenDisplayed": false,
+            "isLocked": false,
+            "blockName": "short-text"
+        },
+        "subtipo": {
+            "value": "0"
+        },
+        "user": {
+            "id": null,
+            "nombre": null,
+            "email": null,
+            "telefono": null
+        },
+        "origenFormulario": {
+            "value": "guias-2025-nonloged"
+        },
+        "origenCampana": {
+            "value": null
+        },
+        "nombreFormulario": {
+            "value": "Guias - Guía y Salud"
+        },
+        "quimioterapia": {
+            "value": "0"
+        },
+        "radioterapia": {
+            "value": "0"
+        },
+        "inmunoterapia": {
+            "value": "0"
+        },
+        "terapiaHormonal": {
+            "value": "0"
+        },
+        "terapiaDirigida": {
+            "value": "0"
+        }
+    }
+}

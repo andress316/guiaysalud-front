@@ -23,6 +23,10 @@ const cancerLinfomaFormulario = [
             value: "folicular"
           },
           {
+            label: "Linfoma linfocítica crónica (LLC)",
+            value: "LLC"
+          },
+          {
             label: "Linfoma primario",
             value: "primario"
           },

@@ -244,18 +244,19 @@ const FormularioGuiasLogged = () => {
             //   }
             // },
 
-          
+
 
             // Sección 12: Pregunta personalizada
-            // {
-            //   id: "preguntaPersonalizada",
-            //   name: "short-text",
-            //   attributes: {
-            //     label: "Ingresa una pregunta específica:",
-            //     required: false,
-            //     placeholder: "Escribe acá..."
-            //   }
-            // },
+            {
+              id: "intereses",
+              name: "short-text",
+              attributes: {
+                label: "¿De qué temas en específico te gustaría recibir orientación?",
+                required: false,
+                placeholder: "Escribe acá...",
+                description: "Ayudanos a mejorar y apoyar más pacientes, cuéntanos en qué temas te gustaría recibir orientación.",
+              }
+            },
 
             // Sección 13: datos de contacto
             {
@@ -346,7 +347,7 @@ const FormularioGuiasLogged = () => {
           let datosFormulario = data
           datosFormulario.answers.email = { value: userEmail }
           datosFormulario.answers.enfermedad = { value: userEnfermedad }
-          datosFormulario.answers.subtipo = { value: null }
+          datosFormulario.answers.subtipo = { value: 0 }
           datosFormulario.answers.user = { id: userId, nombre: userNombre, email: userEmail, telefono: userTelefono }
 
           datosFormulario.answers.origenFormulario = { value: "EC-2025-loged" }
@@ -357,6 +358,15 @@ const FormularioGuiasLogged = () => {
 
 
           // Tratamientos:
+
+          if (datosFormulario.answers.tratamiento.value === "0") {
+            datosFormulario.answers.quimioterapia = { value: "0" }
+            datosFormulario.answers.radioterapia = { value: "0" }
+            datosFormulario.answers.inmunoterapia = { value: "0" }
+            datosFormulario.answers.terapiaHormonal = { value: "0" }
+            datosFormulario.answers.terapiaDirigida = { value: "0" }
+          }
+
           if (datosFormulario.answers.tratamientosDelPaciente) {
             if (datosFormulario.answers.tratamientosDelPaciente.value.includes("quimioterapia")) {
               datosFormulario.answers.quimioterapia = { value: "1" }
@@ -405,8 +415,7 @@ const FormularioGuiasLogged = () => {
 
 
 
-          console.log("Datos enviados:")
-          console.log(datosFormulario)
+         
           datosFormulario.answers.nombreFormulario = 'Estudios Clínicos Interno'
 
 
@@ -428,15 +437,13 @@ const FormularioGuiasLogged = () => {
               const url = 'https://apifiltro.guiaysalud.com/api/v1/filter-ec/filter'
               const formulario = await axios.post(url, info, configWithTokenAPI)
 
-              console.log("Respuesta recibida:")
-              console.log(formulario)
-              console.log(formulario.data.message)
+             
 
               await setIsSubmitting(false);
               await completeForm();
 
             } catch (error) {
-              console.log(error)
+              
             }
           }
           submit(datosFormulario)

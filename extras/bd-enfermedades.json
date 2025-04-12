@@ -143,12 +143,11 @@
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]
-}
-,
+},
 {
-  "nombre": "enfermedad del este",
-  "tipo": "enfermedad-del-este",
-  "descripcion":"El cáncer de vejiga es una enfermedad en la que células malignas crecen en el revestimiento interno de la vejiga, un órgano del sistema urinario que almacena la orina. El tipo más común es el carcinoma urotelial. Los factores de riesgo incluyen el tabaquismo, la exposición a productos químicos, infecciones crónicas de la vejiga y antecedentes familiares. Los síntomas frecuentes incluyen sangre en la orina, necesidad urgente o frecuente de orinar y dolor al orinar. El tratamiento depende de la etapa e incluye cirugía, quimioterapia, inmunoterapia y, en algunos casos, radioterapia.",
+  "nombre": "vesicula-biliar",
+  "tipo": "vesicula-biliar",
+  "descripcion":"El cáncer de vesícula biliar es un tipo poco común de cáncer que se origina en las células que recubren la vesícula biliar, un órgano pequeño debajo del hígado que almacena bilis. Suelen ser difíciles de detectar en etapas tempranas debido a la falta de síntomas específicos. Factores de riesgo incluyen cálculos biliares, inflamación crónica y antecedentes familiares. El tratamiento depende del estadio del cáncer e incluye cirugía, quimioterapia y radioterapia.",
   "sintomas":[""],
   "etapas":[""],
   "tratamiento":[""]

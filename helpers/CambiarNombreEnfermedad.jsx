@@ -53,9 +53,9 @@ const cambiarNombreEnfermedad = (nombre) => {
     if(nombre === "vejiga"){
         return "Cáncer de vejiga"
     }
-    if(nombre === "vesicula"){
+    if(nombre === "vesicula-biliar"){
         return "Cáncer de vesícula y vías biliares"
-    }   
+    }
 }
 
 export default cambiarNombreEnfermedad

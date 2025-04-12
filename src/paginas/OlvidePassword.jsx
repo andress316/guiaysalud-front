@@ -13,11 +13,21 @@ const OlvidePassword = () => {
   const [email, setEmail] = useState('')
   const [alerta, setAlerta] = useState({})
   const [botonCargando, setBotonCargando] = useState(false)
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 
   const handleSubmit = async e => {
     e.preventDefault();
     setBotonCargando(true)
+
+    if (!emailRegex.test(email)) {
+      setAlerta({
+        msg: 'Ingresa un correo válido',
+        error: true
+      })
+      setBotonCargando(false)
+      return
+    }
 
     if (email === '') {
       setAlerta({
@@ -40,7 +50,18 @@ const OlvidePassword = () => {
 
       const { data, status } = await axios.post(`https://apiusers.guiaysalud.com/api/users/forgot-password/`, { email }, configWithTokenAPI)
 
-      if(status === 200){
+
+
+      if (status === 200) {
+        setAlerta({
+          msg: `usuario no encontrado.`,
+          error: false
+        })
+        setBotonCargando(false)
+        return
+      }
+
+      if (status === 201) {
         setAlerta({
           msg: `Revisa tu correo ${email} para continuar.`,
           error: false
@@ -95,7 +116,7 @@ const OlvidePassword = () => {
             <button
               type="submit"
               className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 focus:ring-4 focus:ring-purple-300 transition duration-300 transform">
-             {botonCargando ? <Spinner color="purple" aria-label="Default status example" /> : <>Recuperar Contraseña <i className="fas fa-arrow-right ml-2"></i></>}
+              {botonCargando ? <Spinner color="purple" aria-label="Default status example" /> : <>Recuperar Contraseña <i className="fas fa-arrow-right ml-2"></i></>}
             </button>
           </form>
 

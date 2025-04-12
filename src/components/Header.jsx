@@ -83,7 +83,7 @@ const Header = () => {
 
                     <div className={`rounded border border-gray-200 bg-white dark:bg-slate-800 dark:border-slate-700 absolute top-[50px] w-[250px] shadow-md font-poppins ${!dropdown ? 'hidden' : ''}`}>
                       <Link to={"/consejos-form"} target="_blank">
-                        <div className="cursor-pointer hover:bg-gray-300 dark:hover:bg-slate-900 p-4 font-poppins">Consejos Personalizados</div>
+                        <div className="cursor-pointer hover:bg-gray-300 dark:hover:bg-slate-900 p-4 font-poppins">Orientación para pacientes</div>
                       </Link>
                       <Link to={"/estudios-clinicos-form"} target="_blank">
                         <div className="cursor-pointer hover:bg-gray-300 dark:hover:bg-slate-900 p-4">Búsqueda Estudios Clínicos</div>

@@ -91,7 +91,7 @@ const AuthHeader = () => {
 
                     <div className={`rounded border border-gray-200 bg-white dark:bg-slate-800 dark:border-slate-700 absolute top-[50px] w-[250px] shadow-md ${!dropdown ? 'hidden' : ''}`}>
                       <Link to={"/app/consejos-form"} target="_blank">
-                        <div className="cursor-pointer hover:bg-gray-300 dark:hover:bg-slate-900 p-4">Consejos personalizados</div>
+                        <div className="cursor-pointer hover:bg-gray-300 dark:hover:bg-slate-900 p-4">Orientación para pacientes</div>
                       </Link>
                       <Link to={"/app/estudios-clinicos-form"} target="_blank">
                         <div className="cursor-pointer hover:bg-gray-300 dark:hover:bg-slate-900 p-4">Búsqueda Estudios Clínicos</div>

@@ -11,7 +11,7 @@ const CardGrupos = ({ nombre, enfermedad, descripcion, miembros, status, hidden,
             <div className={`mb-5 mx-auto mt-5 md:mb-10 items-start relative ${hidden ? 'hidden' : ""}`}>
                 <div className="inline-block w-60 m-2 p-2 bg-white dark:bg-slate-900 rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
                     <p className="font-poppins font-extrabold text-sm text-gray-600 text-center dark:text-gray-500 my-1">{enfermedad}</p>
-                    <img className="h-40 object-cover rounded-xl" src={imagenCard} alt="" />
+                    <img className="h-40 object-cover rounded-xl" src={img} alt="" />
                     <div className="p-2">
                         <h2 className="font-poppins font-bold text-lg">{nombre}</h2>
                         <p className="font-poppins font-medium text-md text-gray-600 dark:text-gray-500">{pais} / {ciudad}</p>
@@ -55,7 +55,7 @@ const CardGrupos = ({ nombre, enfermedad, descripcion, miembros, status, hidden,
                     {status === "activo" ?
                         <>
                             <div className="m-2 items-center">
-                                <Link to={link} className="block mt-2  px-6 py-2 rounded text-center text-white text-lg font-semibold transition bg-blue-500 hover:hover:bg-blue-600">Unirme</Link>
+                                <Link to={link} target="_blank" className="block mt-2  px-6 py-2 rounded text-center text-white text-lg font-semibold transition bg-blue-500 hover:hover:bg-blue-600">Unirme</Link>
                             </div>
                         </> : ""}
                     {status === "lleno" ?

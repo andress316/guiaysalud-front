@@ -19,6 +19,8 @@ const ConfiguracionLogin = () => {
     const [emailVerificacion, setEmailVerificacion] = useState('')
     const [botonCargando, setBotonCargando] = useState(false)
 
+    const [cambioPassExitoso, setCambioPassExitoso] = useState(false)
+
 
     function onCloseModal() {
         setOpenModalEmail(false);
@@ -85,7 +87,7 @@ const ConfiguracionLogin = () => {
 
 
         } catch (error) {
-            console.log(error)
+            
         }
     }
 
@@ -111,20 +113,21 @@ const ConfiguracionLogin = () => {
             };
 
             const { data, status } = await axios.post(`https://apiusers.guiaysalud.com/api/users/forgot-password/`, { email }, configWithTokenAPI)
-            console.log(status)
+            
 
-            if (status === 200) {
+            if (status === 201) {
                 setAlerta({
                     msg: `Revisa tu correo ${email} para continuar, la sesión se cerrará.`,
                     error: false
                 })
+                setCambioPassExitoso(true)
                 setBotonCargando(false)
 
 
-                setTimeout(() => {
-                    localStorage.removeItem("tokenUser")
-                    window.location.reload();
-                }, "1500")
+                // setTimeout(() => {
+                //     localStorage.removeItem("tokenUser")
+                //     window.location.reload();
+                // }, "3000")
 
 
 
@@ -240,15 +243,19 @@ const ConfiguracionLogin = () => {
                             Recibiras un correo con indicaciones y tu sesión será cerrada para que vuelvas a ingresar.
                         </h3>
                         {msg && <Alerta alerta={alerta} />}
-                        <div className="">
-                            <button className="block w-full mt-5 px-6 py-2 rounded text-center text-white text-sm font-semibold transition bg-blue-500 hover:hover:bg-blue-600" onClick={handleCambioPassword}>
-                                {botonCargando ? <Spinner color="dark" aria-label="Default status example" /> : <>Cambiar Contraseña</>}
-                            </button>
-                            <button className="block w-full mt-2 px-6 py-2 rounded text-center text-gray-600 text-sm font-semibold transition bg-gray-200 hover:bg-gray-300 dark:bg-slate-500 dark:hover:bg-slate-600 dark:text-gray-100" onClick={() => setOpenModalPassword(false)}>
-                                {botonCargando ? <Spinner color="dark" aria-label="Default status example" /> : <>Cancelar</>}
-                            </button>
 
-                        </div>
+                        {!cambioPassExitoso ?
+                            <div className="">
+                                <button className="block w-full mt-5 px-6 py-2 rounded text-center text-white text-sm font-semibold transition bg-blue-500 hover:hover:bg-blue-600" onClick={handleCambioPassword}>
+                                    {botonCargando ? <Spinner color="dark" aria-label="Default status example" /> : <>Cambiar Contraseña</>}
+                                </button>
+                                <button className="block w-full mt-2 px-6 py-2 rounded text-center text-gray-600 text-sm font-semibold transition bg-gray-200 hover:bg-gray-300 dark:bg-slate-500 dark:hover:bg-slate-600 dark:text-gray-100" onClick={() => setOpenModalPassword(false)}>
+                                    {botonCargando ? <Spinner color="dark" aria-label="Default status example" /> : <>Cancelar</>}
+                                </button>
+                            </div>
+                            : ""
+                        }
+
                     </div>
                 </Modal.Body>
             </Modal>

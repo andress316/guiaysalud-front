@@ -131,22 +131,7 @@ const Inicio = () => {
         </div>
 
         {/* imagen */}
-        <div className='flex w-full md:block'>
-          <div className='relative w-full mx-auto flex justify-center items-center md:items-start' style={{ paddingBottom: '56.25%' /* 16:9 aspect ratio */ }}>
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/bZtTlpPOOmI?si=AJAvEKobhGOojeob"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-              className='absolute top-0 left-0 w-full h-full'
-            ></iframe>
-          </div>
-        </div>
-
-        <img src={heroBackground} alt="" className='md:block absolute bottom-0 md:right-0 w-full xl:w-1/2 lg:w-[60%] md:w-[55%] -z-10' />
+        
       </div>
 
 
@@ -227,7 +212,7 @@ const Inicio = () => {
                   <img className="w-14 h-14" src={!darkTheme ? icono1 : iconoBlanco1} alt="" />
                 </div>
                 <h2 className="text-lg text-slate-800 font-poppins font-semibold title-font mb-2 dark:text-white">
-                Orientación y Recomendaciones
+                  Orientación y Recomendaciones
 
                 </h2>
                 <p className="leading-relaxed text-base dark:text-gray-400">
@@ -789,7 +774,7 @@ const Inicio = () => {
         <div className="logos group relative overflow-hidden whitespace-nowrap  py-10 [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)]">
           <div className="animate-slide-left-infinite group-hover:animation-pause inline-block w-max">
             {/* Ensure that the images cover entire screen width for a smooth transition */}
-            <img
+            {/* <img
               className="mx-4 inline h-16 ml-24"
               src={logoBiocenter}
               alt="Transistor"
@@ -818,7 +803,7 @@ const Inicio = () => {
               className="mx-4 inline h-16 ml-24"
               src={logoSanofi}
               alt="SavvyCal"
-            />
+            /> */}
             <img
               className="mx-4 inline h-16 ml-24"
               src={logoIncubaUc}
@@ -833,7 +818,7 @@ const Inicio = () => {
           {/* Duplicate of the above for infinite effect (you can use javascript to duplicate this too) */}
           <div className="animate-slide-left-infinite group-hover:animation-pause inline-block w-max">
             {/* Ensure that the images cover entire screen width for a smooth transition */}
-            <img
+            {/* <img
               className="mx-4 inline h-16 ml-24"
               src={logoBiocenter}
               alt="Transistor"
@@ -862,7 +847,95 @@ const Inicio = () => {
               className="mx-4 inline h-16 ml-24"
               src={logoSanofi}
               alt="SavvyCal"
+            /> */}
+            <img
+              className="mx-4 inline h-16 ml-24"
+              src={logoIncubaUc}
+              alt="SavvyCal"
             />
+            <img
+              className="mx-4 inline h-16 ml-24"
+              src={logoCorfo}
+              alt="SavvyCal"
+            />
+          </div>
+          {/* Duplicate of the above for infinite effect (you can use javascript to duplicate this too) */}
+          <div className="animate-slide-left-infinite group-hover:animation-pause inline-block w-max">
+            {/* Ensure that the images cover entire screen width for a smooth transition */}
+            {/* <img
+              className="mx-4 inline h-16 ml-24"
+              src={logoBiocenter}
+              alt="Transistor"
+            />
+            <img
+              className="mx-4 inline h-16 ml-24"
+              src={logoCop}
+              alt="Reform"
+            />
+            <img
+              className="mx-4 inline h-16 ml-24"
+              src={logoSaga}
+              alt="Reform"
+            />
+            <img
+              className="mx-4 inline h-16 ml-24"
+              src={logoJamesLynd}
+              alt="Tuple"
+            />
+            <img
+              className="mx-4 inline h-16 ml-24"
+              src={logoGenoma}
+              alt="SavvyCal"
+            />
+            <img
+              className="mx-4 inline h-16 ml-24"
+              src={logoSanofi}
+              alt="SavvyCal"
+            /> */}
+            <img
+              className="mx-4 inline h-16 ml-24"
+              src={logoIncubaUc}
+              alt="SavvyCal"
+            />
+            <img
+              className="mx-4 inline h-16 ml-24"
+              src={logoCorfo}
+              alt="SavvyCal"
+            />
+          </div>
+          {/* Duplicate of the above for infinite effect (you can use javascript to duplicate this too) */}
+          <div className="animate-slide-left-infinite group-hover:animation-pause inline-block w-max">
+            {/* Ensure that the images cover entire screen width for a smooth transition */}
+            {/* <img
+              className="mx-4 inline h-16 ml-24"
+              src={logoBiocenter}
+              alt="Transistor"
+            />
+            <img
+              className="mx-4 inline h-16 ml-24"
+              src={logoCop}
+              alt="Reform"
+            />
+            <img
+              className="mx-4 inline h-16 ml-24"
+              src={logoSaga}
+              alt="Reform"
+            />
+            <img
+              className="mx-4 inline h-16 ml-24"
+              src={logoJamesLynd}
+              alt="Tuple"
+            />
+            <img
+              className="mx-4 inline h-16 ml-24"
+              src={logoGenoma}
+              alt="SavvyCal"
+            />
+            <img
+              className="mx-4 inline h-16 ml-24"
+              src={logoSanofi}
+              alt="SavvyCal"
+            /> */}
             <img
               className="mx-4 inline h-16 ml-24"
               src={logoIncubaUc}
@@ -894,8 +967,7 @@ const Inicio = () => {
               Sobre Nosotros
             </h1>
             <p className="mb-8 leading-relaxed dark:text-gray-400">
-              Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid swag
-              typewriter affogato, hella selvage wolf narwhal dreamcatcher.
+              El apoyo y la orientación son fundamentales para los pacientes con cáncer, ya que estar informados les permite tomar decisiones que mejorarán su salud y calidad de vida.
             </p>
             <Accordion open={open === 1}>
               <AccordionHeader onClick={() => handleOpen(1)} className='dark:text-gray-400'>¿Qué es Guía y Salud?</AccordionHeader>

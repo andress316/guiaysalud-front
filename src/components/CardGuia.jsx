@@ -11,7 +11,6 @@ const CardGuiaCreada = ({ nombre, enfermedad, fecha, url, created, descripcion }
     let nombreDisplay
     const infoGuia = bdGuias.some((guia) => {
         if (guia.enfermedad === enfermedad && guia.tipoGuia === nombre[0]) {
-            console.log(guia)
             descripcionGuia = guia.descripcion
             imgPrevGuia = guia.img
             nombreDisplay = guia.nombreDisplay
